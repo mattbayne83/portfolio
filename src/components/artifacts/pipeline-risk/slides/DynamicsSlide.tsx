@@ -22,10 +22,10 @@ export default function DynamicsSlide() {
       <div className="w-full max-w-3xl">
         {/* Labels */}
         <div className="flex justify-between mb-6 px-4">
-          <span className="font-display text-sm font-medium text-accent tracking-widest uppercase">
+          <span className="font-display text-sm font-semibold text-accent tracking-widest uppercase">
             Headwinds
           </span>
-          <span className="font-display text-sm font-medium text-primary tracking-widest uppercase">
+          <span className="font-display text-sm font-semibold text-primary tracking-widest uppercase">
             Tailwinds
           </span>
         </div>

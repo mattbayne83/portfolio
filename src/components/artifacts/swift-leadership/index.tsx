@@ -30,7 +30,7 @@ export default function SwiftLeadershipArtifact() {
 
       {/* The Challenge */}
       <div className="mb-10">
-        <h3 className="font-display text-sm font-medium tracking-widest uppercase text-primary mb-4">
+        <h3 className="font-display text-sm font-semibold tracking-widest uppercase text-primary mb-4">
           The Challenge
         </h3>
         <div className="space-y-4 max-w-3xl">
@@ -52,7 +52,7 @@ export default function SwiftLeadershipArtifact() {
 
       {/* The Approach */}
       <div className="mb-10">
-        <h3 className="font-display text-sm font-medium tracking-widest uppercase text-primary mb-4">
+        <h3 className="font-display text-sm font-semibold tracking-widest uppercase text-primary mb-4">
           The Approach
         </h3>
         <div className="space-y-4 max-w-3xl">
@@ -81,7 +81,7 @@ export default function SwiftLeadershipArtifact() {
 
       {/* The Results */}
       <div className="mb-10">
-        <h3 className="font-display text-sm font-medium tracking-widest uppercase text-primary mb-4">
+        <h3 className="font-display text-sm font-semibold tracking-widest uppercase text-primary mb-4">
           The Results
         </h3>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
@@ -103,7 +103,7 @@ export default function SwiftLeadershipArtifact() {
 
       {/* Skills used */}
       <div className="mb-4">
-        <h3 className="font-display text-xs font-medium tracking-widest uppercase text-text-on-dark-muted mb-3">
+        <h3 className="font-display text-xs font-semibold tracking-widest uppercase text-text-on-dark-muted mb-3">
           Skills Used
         </h3>
         <div className="flex flex-wrap gap-4">

@@ -21,7 +21,7 @@ export default function ArtifactShell({ artifact, onBack, children }: ArtifactSh
             <ArrowLeft size={16} />
             Back to Quest Board
           </button>
-          <h1 className="font-display text-sm font-medium text-text-on-dark truncate ml-4">
+          <h1 className="font-display text-sm font-semibold text-text-on-dark truncate ml-4">
             {artifact.title}
           </h1>
         </div>

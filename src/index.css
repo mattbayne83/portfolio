@@ -3,7 +3,7 @@
 @theme {
   /* Typography */
   --font-sans: 'Inter', sans-serif;
-  --font-display: 'Space Grotesk', sans-serif;
+  --font-display: 'Cormorant Garamond', serif;
   --font-mono: 'JetBrains Mono', monospace;
   --font-serif: 'Crimson Pro', Georgia, serif;
 
@@ -23,7 +23,7 @@
   --color-text-body: #4A3F32;
   --color-text-muted: #8A7E6E;
   --color-text-on-dark: #D4C8B0;
-  --color-text-on-dark-muted: #8A7E6E;
+  --color-text-on-dark-muted: #9E9282;
 
   /* Skill Card Colors */
   --color-skill-belief: #8B2E3A;

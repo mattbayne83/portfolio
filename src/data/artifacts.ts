@@ -11,7 +11,7 @@ export const artifacts: ArtifactMeta[] = [
     category: 'lore',
     categoryLabel: 'Lore',
     tags: ['pipeline', 'risk', 'energy', 'strategy'],
-    date: '2025-03-11',
+    date: '2020-03-11',
     featured: true,
     immersive: true,
     component: lazy(() => import('../components/artifacts/pipeline-risk')),

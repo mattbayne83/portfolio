@@ -9,8 +9,8 @@ export default function SkillCardSpread() {
 
   return (
     <>
-      {/* Desktop: fan spread */}
-      <div className="hidden sm:flex items-end justify-center gap-[-8px] py-4">
+      {/* Desktop: fan spread — py-8 accommodates scale(1.2) on flip */}
+      <div className="hidden sm:flex items-end justify-center gap-[-8px] py-8">
         {skillCards.map((skill, i) => (
           <div
             key={skill.id}
@@ -31,19 +31,28 @@ export default function SkillCardSpread() {
         ))}
       </div>
 
-      {/* Mobile: horizontal scroll */}
-      <div className="sm:hidden flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 px-4 -mx-4 scrollbar-hide">
-        {skillCards.map((skill, i) => (
-          <div key={skill.id} className="snap-center shrink-0">
-            <SkillCard
-              skill={skill}
-              isFlipped={isFlipped(skill.id)}
-              onFlip={() => flip(skill.id)}
-              rotation={0}
-              index={i}
-            />
-          </div>
-        ))}
+      {/* Mobile: horizontal scroll — py-8 accommodates scale(1.2) on flip */}
+      <div className="sm:hidden relative">
+        <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory py-8 px-4 -mx-4 scrollbar-hide">
+          {skillCards.map((skill, i) => (
+            <div key={skill.id} className="snap-center shrink-0">
+              <SkillCard
+                skill={skill}
+                isFlipped={isFlipped(skill.id)}
+                onFlip={() => flip(skill.id)}
+                rotation={0}
+                index={i}
+              />
+            </div>
+          ))}
+        </div>
+        {/* Right fade hint — signals more cards offscreen */}
+        <div
+          className="absolute right-0 top-0 bottom-0 w-12 pointer-events-none"
+          style={{
+            background: 'linear-gradient(to right, transparent, #1A1410)',
+          }}
+        />
       </div>
     </>
   )

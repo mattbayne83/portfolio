@@ -11,7 +11,7 @@ export default function DifficultyPips({ level, max = 5 }: DifficultyPipsProps) 
       {Array.from({ length: max }, (_, i) => (
         <span
           key={i}
-          className={`text-[10px] ${
+          className={`text-[11px] ${
             i < level ? 'text-primary' : 'text-text-muted/30'
           }`}
         >

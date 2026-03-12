@@ -9,12 +9,13 @@
 - [x] **SWIFT Product Leadership** — case study with metrics grid (Challenge/Approach/Results)
 - [x] **Character sheet enrichment** — experience line, flavor badges (Podcast Host, Woodworker, F3 Tulsa, BS Mech. Engineering)
 - [x] **Quest board cleanup** — removed "Coming Soon" placeholders, fixed grid for 4 main quests
+- [x] **Deploy to GitHub Pages** — GitHub Actions workflow, custom domain mattbayne.dev
+- [x] **Mobile responsive fixes** — skill card scale clipping (py-8 padding), slide deck scaling (960×540 design resolution + CSS transform)
 
 ---
 
 ## P1 — Polish & Deploy
 
-- [ ] **Deploy to GitHub Pages** — set up gh-pages branch or GitHub Actions workflow
 - [ ] **Responsive audit** — verify all 4 artifact pages at mobile/tablet/desktop breakpoints
 - [ ] **Entrance animations** — staggered card-enter on quest cards, fade-in on artifact pages
 - [ ] **OG meta tags** — title, description, image for link previews (LinkedIn, Slack, etc.)
@@ -52,3 +53,5 @@
 | 2026-03-11 | All artifacts are Main Quest | No side quests until category variety warrants the split |
 | 2026-03-11 | Removed "Coming Soon" placeholders | Board feels confident with 4 real quests vs. empty promises |
 | 2026-03-11 | Removed col-span-2 on main quest cards | 4 cards all spanning 2 cols broke the 3-col grid |
+| 2026-03-11 | SlideViewer uses fixed 960×540 + CSS scale | Responsive font breakpoints don't work inside aspect-ratio containers — scale transform preserves layout at any viewport |
+| 2026-03-11 | Deploy via GitHub Actions (not gh-pages branch) | Modern approach, builds on push to main |

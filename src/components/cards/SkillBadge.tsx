@@ -4,14 +4,6 @@ interface SkillBadgeProps {
   skillId: string
 }
 
-const shortLabels: Record<string, string> = {
-  belief: 'Belief',
-  communication: 'Comm',
-  woo: 'Woo',
-  ideation: 'Idea',
-  maximizer: 'Max',
-}
-
 export default function SkillBadge({ skillId }: SkillBadgeProps) {
   const skill = skillCards.find((s) => s.id === skillId)
   if (!skill) return null
@@ -22,8 +14,8 @@ export default function SkillBadge({ skillId }: SkillBadgeProps) {
         className="w-1.5 h-1.5 rounded-full shrink-0"
         style={{ backgroundColor: skill.color }}
       />
-      <span className="font-display text-[10px] font-medium text-text-muted">
-        {shortLabels[skillId] ?? skill.name}
+      <span className="font-display text-[11px] font-semibold text-text-muted">
+        {skill.name}
       </span>
     </span>
   )

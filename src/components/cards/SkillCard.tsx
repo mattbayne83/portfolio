@@ -34,7 +34,10 @@ export default function SkillCard({
 
   return (
     <div
-      className="group cursor-pointer select-none"
+      className="group cursor-pointer select-none rounded-xl focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-bg focus-visible:outline-none"
+      tabIndex={0}
+      role="button"
+      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onFlip() } }}
       style={{
         perspective: '1000px',
         width: '200px',
@@ -86,7 +89,7 @@ export default function SkillCard({
 
             {/* Domain badge */}
             <span
-              className="mt-3 text-[9px] font-display font-medium tracking-widest uppercase px-2.5 py-1 rounded-full"
+              className="mt-3 text-[11px] font-display font-semibold tracking-widest uppercase px-2 py-0.5 rounded-full"
               style={{
                 backgroundColor: `${skill.color}15`,
                 color: skill.color,
@@ -101,7 +104,7 @@ export default function SkillCard({
             </p>
 
             {/* Rank */}
-            <span className="mt-2 font-mono text-[10px] text-text-muted/50">
+            <span className="mt-2 font-mono text-[11px] text-text-muted/50">
               #{skill.rank}
             </span>
           </div>
@@ -126,7 +129,7 @@ export default function SkillCard({
             />
 
             {/* Name */}
-            <h4 className="font-display text-xs font-medium text-text-high text-center mt-1 mb-2">
+            <h4 className="font-display text-xs font-semibold text-text-high text-center mt-1 mb-2">
               {skill.name}
             </h4>
 
@@ -143,7 +146,7 @@ export default function SkillCard({
               {skill.relatedTraits.map((trait) => (
                 <span
                   key={trait}
-                  className="font-mono text-[9px] text-text-muted/60 bg-surface-muted px-1.5 py-0.5 rounded"
+                  className="font-mono text-[11px] text-text-muted/60 bg-surface-muted px-1.5 py-0.5 rounded"
                 >
                   {trait}
                 </span>

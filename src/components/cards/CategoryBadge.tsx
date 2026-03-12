@@ -25,7 +25,7 @@ export default function CategoryBadge({ category }: CategoryBadgeProps) {
   return (
     <span className="inline-flex items-center gap-1.5 text-text-muted">
       <Icon size={12} />
-      <span className="font-display text-[10px] font-medium tracking-wider uppercase">
+      <span className="font-display text-[11px] font-semibold tracking-wider uppercase">
         {labelMap[category]}
       </span>
     </span>

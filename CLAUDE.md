@@ -8,12 +8,18 @@
 ## Product
 Premium tabletop game-inspired personal portfolio. Character sheet hero with 5 Clifton Strengths skill cards, quest board with portfolio artifacts as quests. Audience: external (employers/clients).
 
+## Deployment
+- **Live:** https://mattbayne.dev (GitHub Pages, custom domain)
+- **CI/CD:** `.github/workflows/deploy.yml` — builds + deploys on push to `main`
+- **Repo:** https://github.com/mattbayne83/portfolio
+
 ## Architecture
 - State-driven routing: `activeArtifactId` null = landing, string = artifact view
 - Hash URL sync via `useHashSync` hook (`#/` ↔ `#/pipeline-risk-integrity`)
 - Artifact registry: data-driven array in `data/artifacts.ts` — add one entry + one component to add a quest
 - Two render modes: **Immersive** (full-screen, Escape to close) for decks/demos, **Shell** (persistent nav) for articles/viz
 - 3D card flip on skill cards via CSS `perspective` + `rotateY(180deg)`
+- SlideViewer: fixed 960×540 design resolution, CSS `transform: scale()` to fit container at any viewport
 
 ## Design System — "The Gaming Table"
 - **Palette**: Dark walnut bg (#1A1410), parchment surface (#F2EAD9), burnished gold primary (#C8973E)
@@ -48,6 +54,8 @@ Premium tabletop game-inspired personal portfolio. Character sheet hero with 5 C
 - `portfolio-storage` localStorage key — don't change (backward compat)
 - Skill card fan rotations hardcoded in `SkillCardSpread.tsx` — change `fanRotations` array for different spread
 - Slide components use their own internal colors (neutral-50/950) — not affected by theme tokens
+- **Slides are designed at 960×540** — use fixed pixel sizes inside slides (NOT responsive Tailwind breakpoints). SlideViewer scales the entire slide with CSS transform.
 - Gold gradient border uses `padding` trick on wrapper div with `bg-surface` inner — NOT a CSS border
 - 3D flip: `backface-visibility: hidden` required on BOTH faces, `transform-style: preserve-3d` on inner container
+- **`overflow-x-auto` forces `overflow-y: auto`** (CSS spec) — scroll containers need extra padding to accommodate `scale()` transforms on children
 - Category filter bar only renders when `allCategories.length > 1`

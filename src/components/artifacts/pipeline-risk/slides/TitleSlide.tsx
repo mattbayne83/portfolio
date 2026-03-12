@@ -26,7 +26,7 @@ export default function TitleSlide() {
 
       {/* Content */}
       <div className="relative z-10 px-12 sm:px-16 lg:px-20 max-w-[70%]">
-        <p className="text-primary-light font-display text-sm sm:text-base font-medium tracking-widest uppercase mb-4">
+        <p className="text-primary-light font-display text-sm sm:text-base font-semibold tracking-widest uppercase mb-4">
           Executive Presentation
         </p>
         <h1 className="font-display text-white leading-none">
@@ -38,7 +38,7 @@ export default function TitleSlide() {
           </span>
         </h1>
         <div className="mt-6 flex items-baseline gap-3">
-          <span className="font-display text-3xl sm:text-4xl lg:text-5xl font-medium italic text-neutral-400">
+          <span className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold italic text-neutral-400">
             in the year
           </span>
           <span className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-primary">

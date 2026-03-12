@@ -20,7 +20,7 @@ export default function QuestBoard() {
     <section className="px-6 pb-20">
       <div className="max-w-5xl mx-auto">
         {/* Section header */}
-        <h2 className="font-display text-sm font-medium tracking-[0.2em] uppercase text-primary mb-6">
+        <h2 className="font-display text-sm font-semibold tracking-[0.2em] uppercase text-primary mb-6">
           Quest Log
         </h2>
 
@@ -29,7 +29,7 @@ export default function QuestBoard() {
           <div className="flex gap-2 mb-8">
             <button
               onClick={() => setFilterCategory(null)}
-              className={`px-3.5 py-1.5 rounded-full text-sm font-display font-medium transition-colors cursor-pointer border ${
+              className={`px-3.5 py-1.5 rounded-full text-sm font-display font-semibold transition-colors cursor-pointer border focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:outline-none ${
                 filterCategory === null
                   ? 'bg-primary/15 text-primary border-primary/30'
                   : 'bg-transparent text-text-on-dark-muted border-text-on-dark-muted/20 hover:border-primary/30 hover:text-primary'
@@ -43,7 +43,7 @@ export default function QuestBoard() {
                 onClick={() =>
                   setFilterCategory(filterCategory === cat ? null : (cat as ArtifactCategory))
                 }
-                className={`px-3.5 py-1.5 rounded-full text-sm font-display font-medium transition-colors cursor-pointer border ${
+                className={`px-3.5 py-1.5 rounded-full text-sm font-display font-semibold transition-colors cursor-pointer border focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:outline-none ${
                   filterCategory === cat
                     ? 'bg-primary/15 text-primary border-primary/30'
                     : 'bg-transparent text-text-on-dark-muted border-text-on-dark-muted/20 hover:border-primary/30 hover:text-primary'
@@ -58,10 +58,10 @@ export default function QuestBoard() {
         {/* Main Quests */}
         {mainQuests.length > 0 && (
           <div className="mb-10">
-            <h3 className="font-display text-xs font-medium tracking-widest uppercase text-text-on-dark-muted mb-4">
+            <h3 className="font-display text-xs font-semibold tracking-widest uppercase text-text-on-dark-muted mb-4">
               Main Quests
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {mainQuests.map((artifact, i) => (
                 <QuestCard
                   key={artifact.id}
@@ -77,10 +77,10 @@ export default function QuestBoard() {
         {/* Side Quests */}
         {sideQuests.length > 0 && (
           <div className="mb-10">
-            <h3 className="font-display text-xs font-medium tracking-widest uppercase text-text-on-dark-muted mb-4">
+            <h3 className="font-display text-xs font-semibold tracking-widest uppercase text-text-on-dark-muted mb-4">
               Side Quests
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {sideQuests.map((artifact, i) => (
                 <QuestCard
                   key={artifact.id}

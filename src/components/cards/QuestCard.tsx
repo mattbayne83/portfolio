@@ -17,7 +17,7 @@ export default function QuestCard({ artifact, onClick, index }: QuestCardProps) 
   return (
     <button
       onClick={onClick}
-      className="group text-left w-full cursor-pointer rounded-xl transition-all duration-300 hover:-translate-y-1 will-change-transform"
+      className="group text-left w-full cursor-pointer rounded-xl transition-all duration-300 hover:-translate-y-1 will-change-transform focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-bg focus-visible:outline-none"
       style={{
         padding: isMain ? '2px' : '1.5px',
         background:

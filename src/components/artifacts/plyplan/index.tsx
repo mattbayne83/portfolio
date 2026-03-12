@@ -55,7 +55,7 @@ export default function PlyplanArtifact() {
 
       {/* Tech stack */}
       <div className="mb-8">
-        <h3 className="font-display text-xs font-medium tracking-widest uppercase text-text-on-dark-muted mb-3">
+        <h3 className="font-display text-xs font-semibold tracking-widest uppercase text-text-on-dark-muted mb-3">
           Tech Stack
         </h3>
         <div className="flex flex-wrap gap-2">
@@ -72,7 +72,7 @@ export default function PlyplanArtifact() {
 
       {/* Skills used */}
       <div className="mb-8">
-        <h3 className="font-display text-xs font-medium tracking-widest uppercase text-text-on-dark-muted mb-3">
+        <h3 className="font-display text-xs font-semibold tracking-widest uppercase text-text-on-dark-muted mb-3">
           Skills Used
         </h3>
         <div className="flex flex-wrap gap-4">

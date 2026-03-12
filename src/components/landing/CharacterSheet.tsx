@@ -76,7 +76,7 @@ export default function CharacterSheet() {
           {/* Name and title */}
           <div className="text-center sm:text-left">
             <h1
-              className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-text-on-dark tracking-tight"
+              className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold text-text-on-dark tracking-tight"
               style={{ textShadow: '0 2px 20px rgba(200, 151, 62, 0.15)' }}
             >
               Matt Bayne
@@ -84,20 +84,20 @@ export default function CharacterSheet() {
             <p className="font-serif italic text-xl sm:text-2xl text-primary mt-2">
               The Synthesizer
             </p>
-            <p className="font-serif text-base text-text-on-dark-muted mt-3 max-w-lg leading-relaxed">
-              Pipeline strategist, pattern finder, and relentless refiner. Takes vast
+            <p className="font-serif text-base sm:text-lg text-text-on-dark-muted mt-4 max-w-lg leading-relaxed">
+              Strategist, pattern finder, and relentless refiner. Takes vast
               information, sees themes and connections, and builds things that are
               beautiful, functional, and enduring.
             </p>
-            <p className="font-serif italic text-sm text-text-on-dark-muted/80 mt-2 max-w-lg">
+            <p className="font-serif italic text-sm text-text-on-dark-muted/80 mt-3 max-w-lg">
               Started in the field. Built risk models. Now ships product.
               Still builds furniture on weekends.
             </p>
-            <div className="flex flex-wrap gap-2 mt-3">
-              {['Podcast Host', 'Woodworker', 'F3 Tulsa', 'BS Mech. Engineering'].map((badge) => (
+            <div className="flex flex-wrap gap-2 mt-4">
+              {['Engineer', 'Builder', 'Podcast Host', 'Woodworker', 'F3 Tulsa'].map((badge) => (
                 <span
                   key={badge}
-                  className="font-display text-[10px] font-medium tracking-wider uppercase px-2.5 py-1 rounded-full border border-primary/20 text-text-on-dark-muted/70 bg-primary/5"
+                  className="font-display text-[11px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-full border border-primary/20 text-text-on-dark-muted/70 bg-primary/5"
                 >
                   {badge}
                 </span>
