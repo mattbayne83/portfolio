@@ -1,0 +1,8 @@
+export { default as TitleSlide } from './TitleSlide'
+export { default as MacroViewSlide } from './MacroViewSlide'
+export { default as YearSlide } from './YearSlide'
+export { default as DynamicsSlide } from './DynamicsSlide'
+export { default as OpportunitiesSlide } from './OpportunitiesSlide'
+export { default as DerivativeSlide } from './DerivativeSlide'
+export { default as ImplicationsSlide } from './ImplicationsSlide'
+export { default as ConclusionSlide } from './ConclusionSlide'
