@@ -4,7 +4,7 @@ import type { ArtifactMeta } from '../types'
 export const artifacts: ArtifactMeta[] = [
   {
     id: 'pipeline-risk-integrity',
-    title: 'Pipeline Risk & Integrity',
+    title: 'The Prophecy',
     description:
       'Executive presentation on the future of pipeline safety, risk maturity models, and data-driven integrity programs.',
     type: 'deck',
@@ -23,7 +23,7 @@ export const artifacts: ArtifactMeta[] = [
   },
   {
     id: 'swift-leadership',
-    title: 'SWIFT Product Leadership',
+    title: 'Rags to Riches',
     description:
       'Transformed a legacy authorization platform into a modern product serving 100+ companies and protecting $1.5B in revenue.',
     type: 'article',
@@ -42,7 +42,7 @@ export const artifacts: ArtifactMeta[] = [
   },
   {
     id: 'shape-matters',
-    title: 'Shape Matters',
+    title: 'Shape Shifter',
     description:
       'Interactive research tool exploring how organizational depth drives signal decay and shapes institutional behavior.',
     type: 'demo',
@@ -61,7 +61,7 @@ export const artifacts: ArtifactMeta[] = [
   },
   {
     id: 'plyplan',
-    title: 'Plyplan',
+    title: 'Pocket Sage',
     description:
       'Know how many sheets to buy before you get in the truck. A phone-first plywood cut optimizer with AI-powered photo extraction.',
     type: 'demo',

@@ -1,25 +1,25 @@
 const bullets = [
-  'Digitization + NLP provides a mountain of data to mine',
-  'Integration & comparison with other asset & operational data',
-  'Risk = Decision Support Tool — we must prioritize',
-  'Why just pipelines? Move inside the fence',
-  'Risk model maturity: relative → absolute, siloed → integrated',
-  'Benchmarking for operators',
+  'Digitization unveils a mountain of uncharted data to mine',
+  'Integration with other knowledge domains multiplies insight',
+  'Risk becomes the compass by which the realm prioritizes its campaigns',
+  'Why guard only the roads? Venture inside the fortress walls',
+  'From relative to absolute, from siloed to integrated \u2014 the models must evolve',
+  'Benchmarking: a mirror for every steward to measure their readiness',
 ]
 
 const pyramid = [
-  { level: 1, label: 'No Risk Systems', color: 'bg-neutral-200 text-neutral-600' },
-  { level: 2, label: 'Disparate Risk Systems', color: 'bg-neutral-200 text-neutral-600' },
-  { level: 3, label: 'Integrated Risk System', color: 'bg-primary/10 text-primary' },
-  { level: 4, label: 'Actionable Risk System', color: 'bg-primary/20 text-primary-dark' },
-  { level: 5, label: 'Risk as Competitive Advantage', color: 'bg-accent/15 text-accent' },
+  { level: 1, label: 'No Defenses', color: 'bg-surface-muted text-text-muted' },
+  { level: 2, label: 'Scattered Watchtowers', color: 'bg-surface-muted text-text-muted' },
+  { level: 3, label: 'Unified Ramparts', color: 'bg-primary/10 text-primary' },
+  { level: 4, label: 'The War Room', color: 'bg-primary/20 text-primary-dark' },
+  { level: 5, label: 'Mastery & Dominion', color: 'bg-primary/30 text-primary-dark' },
 ]
 
 export default function OpportunitiesSlide() {
   return (
-    <div className="w-full h-full bg-neutral-50 flex flex-col items-center justify-center px-8 sm:px-14">
-      <h2 className="font-display text-3xl sm:text-4xl font-bold text-neutral-900 mb-8">
-        Core Opportunities
+    <div className="w-full h-full bg-surface flex flex-col items-center justify-center px-8 sm:px-14">
+      <h2 className="font-display text-3xl sm:text-4xl font-bold text-text-high mb-8">
+        Treasures Discovered
       </h2>
 
       <div className="grid grid-cols-2 gap-8 w-full max-w-3xl items-center">
@@ -28,15 +28,15 @@ export default function OpportunitiesSlide() {
           {bullets.map((b, i) => (
             <li key={i} className="flex items-start gap-2.5">
               <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
-              <span className="text-neutral-600 text-xs sm:text-sm leading-relaxed">{b}</span>
+              <span className="text-text-body font-serif text-xs sm:text-sm leading-relaxed">{b}</span>
             </li>
           ))}
         </ul>
 
         {/* Maturity Pyramid */}
         <div className="flex flex-col items-center gap-1.5">
-          <p className="text-xs text-neutral-400 font-medium tracking-widest uppercase mb-2">
-            Maturity Model
+          <p className="text-xs text-text-muted font-medium tracking-widest uppercase mb-2">
+            Path to Mastery
           </p>
           {[...pyramid].reverse().map((p) => {
             const widthPercent = 40 + (p.level - 1) * 15

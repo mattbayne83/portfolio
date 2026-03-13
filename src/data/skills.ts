@@ -37,7 +37,7 @@ export const skillCards: SkillCard[] = [
     domainLabel: 'Influencing',
     rank: 3,
     color: '#2E6B4A',
-    iconName: 'Users',
+    iconName: 'Magnet',
     tagline: 'Draws energy from meeting new people and winning them over.',
     flavorText:
       "Winning Others Over isn't a strategy — it's a reflex. The Magnetist walks into a room of strangers and feels a surge of energy where others feel dread. Every new face is an unread story, every introduction the opening line of a potential collaboration. This isn't shallow charm; it's genuine fascination with people.",

@@ -64,3 +64,45 @@
     transform: translateY(0) scale(1);
   }
 }
+
+/* Badge pill hover effects */
+.badge-pill {
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.badge-pill::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(222, 182, 104, 0.25) 50%,
+    transparent 100%
+  );
+  transition: none;
+}
+
+.badge-pill:hover {
+  border-color: rgba(200, 151, 62, 0.45);
+  box-shadow: 0 0 12px rgba(200, 151, 62, 0.15), inset 0 0 8px rgba(200, 151, 62, 0.06);
+  transform: scale(1.04);
+}
+
+.badge-pill:hover::before {
+  animation: glint 0.8s ease-out forwards;
+}
+
+@keyframes glint {
+  from {
+    left: -60%;
+  }
+  to {
+    left: 120%;
+  }
+}

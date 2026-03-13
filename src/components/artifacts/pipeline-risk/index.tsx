@@ -22,5 +22,5 @@ const slides = [
 ]
 
 export default function PipelineRiskArtifact() {
-  return <SlideViewer slides={slides} title="Pipeline Risk & Integrity" />
+  return <SlideViewer slides={slides} title="The Prophecy" />
 }

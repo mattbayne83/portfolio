@@ -1,65 +1,103 @@
-const headwinds = ['Visible Value', 'Entropy', 'M&A']
-const tailwinds = ['Accessibility of Technology', 'Competition', 'Regulations', 'Social Expectations']
+import { Shield, Swords } from 'lucide-react'
 
-function Chip({ label, variant }: { label: string; variant: 'headwind' | 'tailwind' }) {
-  const styles = variant === 'headwind'
-    ? 'bg-accent/10 text-accent border-accent/20'
-    : 'bg-primary/10 text-primary border-primary/20'
+const opposing = [
+  { name: 'The Fog of Visible Value', rank: 'Captain' },
+  { name: 'The Creep of Entropy', rank: 'Lieutenant' },
+  { name: 'The Upheaval of Mergers', rank: 'Sergeant' },
+]
+
+const allied = [
+  { name: 'The Spread of Artifice', rank: 'General' },
+  { name: 'The Fires of Competition', rank: 'Captain' },
+  { name: 'The Weight of Council Edicts', rank: 'Captain' },
+  { name: 'The Will of the People', rank: 'Lieutenant' },
+]
+
+function Banner({ label, variant, rank, index }: { label: string; variant: 'opposing' | 'allied'; rank: string; index: number }) {
+  const isOpposing = variant === 'opposing'
   return (
-    <span className={`inline-block px-3 py-1.5 rounded-lg border text-xs sm:text-sm font-medium ${styles}`}>
-      {label}
-    </span>
+    <div
+      className={`flex items-center gap-3 ${isOpposing ? 'flex-row' : 'flex-row-reverse'}`}
+      style={{ animationDelay: `${index * 80}ms` }}
+    >
+      {/* Shield/rank icon */}
+      <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${
+        isOpposing ? 'bg-error/15' : 'bg-primary/15'
+      }`}>
+        <Shield size={14} className={isOpposing ? 'text-error' : 'text-primary'} />
+      </div>
+      {/* Name + rank */}
+      <div className={isOpposing ? 'text-left' : 'text-right'}>
+        <p className={`text-xs sm:text-sm font-medium ${isOpposing ? 'text-error' : 'text-primary-dark'}`}>
+          {label}
+        </p>
+        <p className="text-[10px] text-text-muted font-mono uppercase tracking-wider">
+          {rank}
+        </p>
+      </div>
+    </div>
   )
 }
 
 export default function DynamicsSlide() {
   return (
-    <div className="w-full h-full bg-neutral-50 flex flex-col items-center justify-center px-8 sm:px-16">
-      <h2 className="font-display text-4xl sm:text-5xl font-bold text-neutral-900 mb-12">
-        Driving Dynamics
+    <div className="w-full h-full bg-surface flex flex-col items-center justify-center px-8 sm:px-14">
+      <h2 className="font-display text-4xl sm:text-5xl font-bold text-text-high mb-10">
+        Forces in the Balance
       </h2>
 
       <div className="w-full max-w-3xl">
-        {/* Labels */}
-        <div className="flex justify-between mb-6 px-4">
-          <span className="font-display text-sm font-semibold text-accent tracking-widest uppercase">
-            Headwinds
-          </span>
-          <span className="font-display text-sm font-semibold text-primary tracking-widest uppercase">
-            Tailwinds
-          </span>
-        </div>
-
-        {/* Balance beam */}
-        <div className="relative">
-          {/* Beam */}
-          <div className="h-px bg-neutral-300 w-full relative">
-            {/* Fulcrum */}
-            <div className="absolute left-1/2 -translate-x-1/2 -bottom-3">
-              <svg width="24" height="16" viewBox="0 0 24 16" fill="none">
-                <path d="M12 0L24 16H0L12 0Z" className="fill-neutral-300" />
-              </svg>
-            </div>
+        {/* Army headers */}
+        <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-4 mb-6">
+          <div className="text-left">
+            <span className="font-display text-sm font-semibold text-error tracking-widest uppercase">
+              Opposing Forces
+            </span>
+            <p className="text-[10px] text-text-muted font-mono mt-0.5">3 battalions</p>
           </div>
 
-          {/* Chip columns */}
-          <div className="flex justify-between mt-8">
-            <div className="flex flex-col gap-2 items-start">
-              {headwinds.map((h, i) => (
-                <Chip key={i} label={h} variant="headwind" />
-              ))}
-            </div>
-            <div className="flex flex-col gap-2 items-end">
-              {tailwinds.map((t, i) => (
-                <Chip key={i} label={t} variant="tailwind" />
-              ))}
-            </div>
+          {/* Center crossed swords */}
+          <div className="w-10 h-10 rounded-full bg-surface-muted border border-primary/20 flex items-center justify-center">
+            <Swords size={18} className="text-primary" />
+          </div>
+
+          <div className="text-right">
+            <span className="font-display text-sm font-semibold text-primary tracking-widest uppercase">
+              Allied Winds
+            </span>
+            <p className="text-[10px] text-text-muted font-mono mt-0.5">4 battalions</p>
+          </div>
+        </div>
+
+        {/* Battle line divider */}
+        <div className="h-px bg-gradient-to-r from-error/30 via-primary/40 to-primary/30 mb-6" />
+
+        {/* Two armies facing each other */}
+        <div className="grid grid-cols-[1fr_24px_1fr] gap-4 items-start">
+          {/* Left army — opposing */}
+          <div className="flex flex-col gap-3">
+            {opposing.map((f, i) => (
+              <Banner key={i} label={f.name} variant="opposing" rank={f.rank} index={i} />
+            ))}
+          </div>
+
+          {/* Center battle line */}
+          <div className="flex flex-col items-center h-full pt-2">
+            <div className="w-px h-full bg-gradient-to-b from-error/20 via-primary/30 to-primary/20" />
+          </div>
+
+          {/* Right army — allied */}
+          <div className="flex flex-col gap-3">
+            {allied.map((f, i) => (
+              <Banner key={i} label={f.name} variant="allied" rank={f.rank} index={i} />
+            ))}
           </div>
         </div>
 
         {/* Insight */}
-        <p className="text-center text-neutral-500 text-sm mt-10 max-w-md mx-auto">
-          Tailwinds outnumber headwinds — the industry is being pushed toward data-driven maturity
+        <div className="h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent mt-6 mb-4" />
+        <p className="text-center text-text-muted font-serif italic text-sm max-w-md mx-auto">
+          The allied winds outnumber the opposing forces — the realm marches inexorably toward data-driven mastery
         </p>
       </div>
     </div>

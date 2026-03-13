@@ -28,7 +28,7 @@ export default function ArtifactShell({ artifact, onBack, children }: ArtifactSh
       </header>
 
       {/* Content */}
-      <main className="max-w-6xl mx-auto px-6 py-8">
+      <main className="max-w-6xl mx-auto px-6 py-8" style={{ animation: 'var(--animate-fade-in)' }}>
         {children}
       </main>
     </div>

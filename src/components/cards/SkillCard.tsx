@@ -1,7 +1,7 @@
 import {
   Compass,
   Feather,
-  Users,
+  Magnet,
   Lightbulb,
   Gem,
 } from 'lucide-react'
@@ -10,7 +10,7 @@ import type { SkillCard as SkillCardType } from '../../types'
 const iconMap: Record<string, typeof Compass> = {
   Compass,
   Feather,
-  Users,
+  Magnet,
   Lightbulb,
   Gem,
 }
@@ -42,6 +42,7 @@ export default function SkillCard({
         perspective: '1000px',
         width: '200px',
         height: '280px',
+        animation: 'var(--animate-card-enter)',
         animationDelay: `${index * 80}ms`,
       }}
       onClick={onFlip}

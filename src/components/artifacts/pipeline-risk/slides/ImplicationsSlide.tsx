@@ -1,26 +1,81 @@
+import { Hammer, FlaskConical, ScrollText } from 'lucide-react'
+import type { ReactNode } from 'react'
+
 const bullets = [
   {
-    text: 'Data alone has no value if it doesn\'t tell us a story that drives action',
+    text: 'Data alone holds no power unless it weaves a story that compels the realm to act',
   },
   {
-    text: '"Value-added" must be quantified if we want to continue competing',
+    text: 'Our worth must be measured in coin and deed, not merely in words',
   },
   {
-    text: 'Cycle time to reach quality decisions must be decreased',
+    text: 'The time from question to confident answer must be forged ever shorter',
   },
 ]
 
-const segments = [
-  { label: 'Get it\ndone', color: '#4F46E5' },
-  { label: 'Synthesize\nit', color: '#818CF8' },
-  { label: 'Sell it', color: '#F43F5E' },
+const stages: { icon: ReactNode; title: string }[] = [
+  { icon: <Hammer size={18} />, title: 'Forge' },
+  { icon: <FlaskConical size={18} />, title: 'Distill' },
+  { icon: <ScrollText size={18} />, title: 'Proclaim' },
 ]
+
+// Triangle vertex centers within a 240×220 viewbox
+const vertices = [
+  { x: 120, y: 30 },  // Forge — top center
+  { x: 215, y: 180 }, // Distill — bottom right
+  { x: 25, y: 180 },  // Proclaim — bottom left
+]
+const R = 26 // medallion radius
+
+function CycleArrow({ from, to, controlOffset }: { from: { x: number; y: number }; to: { x: number; y: number }; controlOffset: { x: number; y: number } }) {
+  // Compute start/end on circle edges
+  const dx = to.x - from.x
+  const dy = to.y - from.y
+  const dist = Math.sqrt(dx * dx + dy * dy)
+  const nx = dx / dist
+  const ny = dy / dist
+
+  const sx = from.x + nx * R
+  const sy = from.y + ny * R
+  const ex = to.x - nx * R
+  const ey = to.y - ny * R
+
+  const cx = (sx + ex) / 2 + controlOffset.x
+  const cy = (sy + ey) / 2 + controlOffset.y
+
+  // Arrowhead at end — compute tangent direction
+  const t = 0.95
+  const tangentX = 2 * (1 - t) * (cx - sx) + 2 * t * (ex - cx)
+  const tangentY = 2 * (1 - t) * (cy - sy) + 2 * t * (ey - cy)
+  const tLen = Math.sqrt(tangentX * tangentX + tangentY * tangentY)
+  const tnx = tangentX / tLen
+  const tny = tangentY / tLen
+  const angle = Math.atan2(tny, tnx) * (180 / Math.PI)
+
+  return (
+    <g>
+      <path
+        d={`M${sx},${sy} Q${cx},${cy} ${ex},${ey}`}
+        fill="none"
+        stroke="#C8973E"
+        strokeWidth="1.5"
+        opacity="0.5"
+      />
+      <polygon
+        points="-4,-3 4,-3 0,4"
+        fill="#C8973E"
+        opacity="0.5"
+        transform={`translate(${ex},${ey}) rotate(${angle + 90})`}
+      />
+    </g>
+  )
+}
 
 export default function ImplicationsSlide() {
   return (
-    <div className="w-full h-full bg-neutral-50 flex flex-col items-center justify-center px-8 sm:px-16">
-      <h2 className="font-display text-4xl sm:text-5xl font-bold text-neutral-900 mb-10">
-        Implications
+    <div className="w-full h-full bg-surface flex flex-col items-center justify-center px-8 sm:px-16">
+      <h2 className="font-display text-4xl sm:text-5xl font-bold text-text-high mb-10">
+        The Seer&rsquo;s Charge
       </h2>
 
       <div className="grid grid-cols-2 gap-10 w-full max-w-3xl items-center">
@@ -31,72 +86,54 @@ export default function ImplicationsSlide() {
               <span className="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
                 <span className="text-primary font-mono text-xs font-bold">{i + 1}</span>
               </span>
-              <span className="text-neutral-600 text-sm leading-relaxed">{b.text}</span>
+              <span className="text-text-body font-serif text-sm leading-relaxed">{b.text}</span>
             </li>
           ))}
         </ul>
 
-        {/* Cycle Diagram */}
-        <div className="flex items-center justify-center">
-          <svg viewBox="0 0 200 200" className="w-48 h-48 sm:w-56 sm:h-56">
-            {segments.map((seg, i) => {
-              const angle = (i * 120 - 90) * (Math.PI / 180)
-              const endAngle = ((i + 1) * 120 - 90) * (Math.PI / 180)
-              const r = 75
-              const cx = 100
-              const cy = 100
-              const x1 = cx + r * Math.cos(angle)
-              const y1 = cy + r * Math.sin(angle)
-              const x2 = cx + r * Math.cos(endAngle)
-              const y2 = cy + r * Math.sin(endAngle)
-              const textAngle = ((i * 120 + 60) - 90) * (Math.PI / 180)
-              const tx = cx + r * 0.6 * Math.cos(textAngle)
-              const ty = cy + r * 0.6 * Math.sin(textAngle)
-
-              return (
-                <g key={i}>
-                  <path
-                    d={`M${cx},${cy} L${x1},${y1} A${r},${r} 0 0,1 ${x2},${y2} Z`}
-                    fill={seg.color}
-                    opacity={0.85}
-                    stroke="white"
-                    strokeWidth="2"
-                  />
-                  {seg.label.split('\n').map((line, li) => (
-                    <text
-                      key={li}
-                      x={tx}
-                      y={ty + li * 12 - (seg.label.includes('\n') ? 4 : 0)}
-                      textAnchor="middle"
-                      fill="white"
-                      fontSize="10"
-                      fontWeight="600"
-                      fontFamily="'Space Grotesk', sans-serif"
-                    >
-                      {line}
-                    </text>
-                  ))}
-                </g>
-              )
-            })}
-            {/* Center circle */}
-            <circle cx="100" cy="100" r="22" fill="white" />
-            {/* Arrows */}
-            {[0, 1, 2].map((i) => {
-              const angle = (i * 120 + 50 - 90) * (Math.PI / 180)
-              const ax = 100 + 82 * Math.cos(angle)
-              const ay = 100 + 82 * Math.sin(angle)
-              const rot = i * 120 + 50
-              return (
-                <polygon
-                  key={i}
-                  points="-4,-3 4,-3 0,4"
-                  fill="white"
-                  transform={`translate(${ax},${ay}) rotate(${rot})`}
-                />
-              )
-            })}
+        {/* Triangle cycle diagram */}
+        <div className="relative w-[240px] h-[240px] mx-auto">
+          {/* SVG curved arrows */}
+          <svg viewBox="0 0 240 220" className="absolute inset-0 w-full h-full" fill="none">
+            {/* Forge → Distill (right side, curve outward right) */}
+            <CycleArrow from={vertices[0]} to={vertices[1]} controlOffset={{ x: 30, y: -10 }} />
+            {/* Distill → Proclaim (bottom, curve outward down) */}
+            <CycleArrow from={vertices[1]} to={vertices[2]} controlOffset={{ x: 0, y: 30 }} />
+            {/* Proclaim → Forge (left side, curve outward left) */}
+            <CycleArrow from={vertices[2]} to={vertices[0]} controlOffset={{ x: -30, y: -10 }} />
           </svg>
+
+          {/* Medallions */}
+          {stages.map((stage, i) => {
+            const v = vertices[i]
+            return (
+              <div
+                key={i}
+                className="absolute flex flex-col items-center"
+                style={{
+                  left: v.x,
+                  top: v.y,
+                  transform: 'translate(-50%, -50%)',
+                }}
+              >
+                {/* Gold ring medallion */}
+                <div
+                  className="w-[52px] h-[52px] rounded-full flex items-center justify-center"
+                  style={{
+                    padding: '2px',
+                    background: 'linear-gradient(135deg, #C8973E 0%, #DEB668 50%, #8B6914 100%)',
+                  }}
+                >
+                  <div className="w-full h-full rounded-full bg-surface flex items-center justify-center">
+                    <span className="text-primary">{stage.icon}</span>
+                  </div>
+                </div>
+                <span className="font-display text-xs font-bold text-text-high mt-1">
+                  {stage.title}
+                </span>
+              </div>
+            )
+          })}
         </div>
       </div>
     </div>

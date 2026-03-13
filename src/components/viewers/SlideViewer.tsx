@@ -43,13 +43,22 @@ export default function SlideViewer({ slides, title }: SlideViewerProps) {
   }, [next, prev, total])
 
   return (
-    <div className="min-h-screen bg-neutral-950 flex flex-col items-center justify-center p-4 sm:p-8 font-sans">
+    <div
+      className="min-h-screen flex flex-col items-center justify-center p-4 sm:p-8 font-sans"
+      style={{
+        backgroundColor: '#1A1410',
+        backgroundImage: [
+          'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,0.008) 2px, rgba(255,255,255,0.008) 4px)',
+          'radial-gradient(ellipse at 50% 30%, rgba(42,32,24,0.4) 0%, transparent 70%)',
+        ].join(', '),
+      }}
+    >
       {title && (
         <div className="w-full max-w-5xl mb-4 flex items-center justify-between">
-          <h1 className="font-display text-sm font-semibold text-neutral-400 tracking-widest uppercase">
+          <h1 className="font-display text-sm font-semibold text-text-on-dark-muted tracking-widest uppercase">
             {title}
           </h1>
-          <span className="text-xs text-neutral-500 font-mono">
+          <span className="text-xs text-text-on-dark-muted font-mono">
             {current + 1} / {total}
           </span>
         </div>
@@ -58,7 +67,7 @@ export default function SlideViewer({ slides, title }: SlideViewerProps) {
       {/* Slide Area */}
       <div
         ref={containerRef}
-        className="w-full max-w-5xl aspect-video relative overflow-hidden rounded-xl shadow-lg ring-1 ring-white/5"
+        className="w-full max-w-5xl aspect-video relative overflow-hidden rounded-xl shadow-lg ring-1 ring-primary/10"
       >
         {slides.map((slide, i) => (
           <div
@@ -95,7 +104,7 @@ export default function SlideViewer({ slides, title }: SlideViewerProps) {
               className={`h-1.5 rounded-full transition-all duration-300 ${
                 i === current
                   ? 'w-8 bg-primary'
-                  : 'w-1.5 bg-neutral-700 hover:bg-neutral-500'
+                  : 'w-1.5 bg-text-on-dark-muted/30 hover:bg-text-on-dark-muted/60'
               }`}
             />
           ))}
@@ -106,14 +115,14 @@ export default function SlideViewer({ slides, title }: SlideViewerProps) {
           <button
             onClick={prev}
             disabled={current === 0}
-            className="p-2 rounded-lg text-neutral-400 hover:text-white hover:bg-white/5 transition-colors disabled:opacity-20 disabled:cursor-not-allowed"
+            className="p-2 rounded-lg text-text-on-dark-muted hover:text-primary-light hover:bg-primary/10 transition-colors disabled:opacity-20 disabled:cursor-not-allowed"
           >
             <ChevronLeft size={20} />
           </button>
           <button
             onClick={next}
             disabled={current === total - 1}
-            className="p-2 rounded-lg text-neutral-400 hover:text-white hover:bg-white/5 transition-colors disabled:opacity-20 disabled:cursor-not-allowed"
+            className="p-2 rounded-lg text-text-on-dark-muted hover:text-primary-light hover:bg-primary/10 transition-colors disabled:opacity-20 disabled:cursor-not-allowed"
           >
             <ChevronRight size={20} />
           </button>

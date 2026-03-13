@@ -1,17 +1,16 @@
 import type { ArtifactMeta } from '../../types'
 import CategoryBadge from './CategoryBadge'
 import QuestTypeBadge from './QuestTypeBadge'
-import SkillBadge from './SkillBadge'
+
 import DifficultyPips from './DifficultyPips'
 import GoldFiligree from '../shared/GoldFiligree'
 
 interface QuestCardProps {
   artifact: ArtifactMeta
   onClick: () => void
-  index: number
 }
 
-export default function QuestCard({ artifact, onClick, index }: QuestCardProps) {
+export default function QuestCard({ artifact, onClick }: QuestCardProps) {
   const isMain = artifact.questType === 'main'
 
   return (
@@ -22,10 +21,8 @@ export default function QuestCard({ artifact, onClick, index }: QuestCardProps) 
         padding: isMain ? '2px' : '1.5px',
         background:
           'linear-gradient(135deg, #C8973E 0%, #DEB668 25%, #C8973E 50%, #8B6914 75%, #C8973E 100%)',
-        opacity: 1,
         boxShadow:
           '0 1px 2px rgba(26, 20, 16, 0.3), 0 4px 8px rgba(26, 20, 16, 0.15), 0 12px 24px rgba(26, 20, 16, 0.1)',
-        animationDelay: `${index * 80}ms`,
       }}
     >
       <div className="rounded-[10px] bg-surface h-full p-5 sm:p-6 relative overflow-hidden group-hover:shadow-[0_0_30px_rgba(200,151,62,0.1)]">
@@ -56,13 +53,6 @@ export default function QuestCard({ artifact, onClick, index }: QuestCardProps) 
         <p className="font-serif italic text-sm text-text-body leading-relaxed mb-4">
           &ldquo;{artifact.flavorText}&rdquo;
         </p>
-
-        {/* Skills used */}
-        <div className="flex flex-wrap gap-3 mb-4">
-          {artifact.skillsUsed.map((skillId) => (
-            <SkillBadge key={skillId} skillId={skillId} />
-          ))}
-        </div>
 
         {/* Footer divider */}
         <div className="h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent mb-3" />

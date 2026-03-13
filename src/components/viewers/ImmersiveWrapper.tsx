@@ -13,7 +13,7 @@ export default function ImmersiveWrapper({ onClose, title, children }: Immersive
   useEscapeKey(handleClose)
 
   return (
-    <div className="fixed inset-0 z-40 bg-bg">
+    <div className="fixed inset-0 z-40 bg-bg" style={{ animation: 'var(--animate-fade-in)' }}>
       {children}
 
       {/* Floating close button */}

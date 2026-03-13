@@ -63,12 +63,15 @@ export default function QuestBoard() {
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {mainQuests.map((artifact, i) => (
-                <QuestCard
+                <div
                   key={artifact.id}
-                  artifact={artifact}
-                  onClick={() => openArtifact(artifact.id)}
-                  index={i}
-                />
+                  style={{ animation: 'var(--animate-card-enter)', animationDelay: `${i * 80}ms` }}
+                >
+                  <QuestCard
+                    artifact={artifact}
+                    onClick={() => openArtifact(artifact.id)}
+                  />
+                </div>
               ))}
             </div>
           </div>
@@ -82,12 +85,15 @@ export default function QuestBoard() {
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {sideQuests.map((artifact, i) => (
-                <QuestCard
+                <div
                   key={artifact.id}
-                  artifact={artifact}
-                  onClick={() => openArtifact(artifact.id)}
-                  index={i}
-                />
+                  style={{ animation: 'var(--animate-card-enter)', animationDelay: `${(mainQuests.length + i) * 80}ms` }}
+                >
+                  <QuestCard
+                    artifact={artifact}
+                    onClick={() => openArtifact(artifact.id)}
+                  />
+                </div>
               ))}
             </div>
           </div>

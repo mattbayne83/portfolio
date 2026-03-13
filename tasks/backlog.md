@@ -11,15 +11,17 @@
 - [x] **Quest board cleanup** — removed "Coming Soon" placeholders, fixed grid for 4 main quests
 - [x] **Deploy to GitHub Pages** — GitHub Actions workflow, custom domain mattbayne.dev
 - [x] **Mobile responsive fixes** — skill card scale clipping (py-8 padding), slide deck scaling (960×540 design resolution + CSS transform)
+- [x] **Woo card icon** — swapped Users → Magnet to match "The Magnetist" theme
+- [x] **Character sheet pills** — simplified from 5 to 3: Builder, Engineer, Storyteller
 
 ---
 
-## P1 — Polish & Deploy
+## P1 — Polish & Deploy ✓
 
-- [ ] **Responsive audit** — verify all 4 artifact pages at mobile/tablet/desktop breakpoints
-- [ ] **Entrance animations** — staggered card-enter on quest cards, fade-in on artifact pages
-- [ ] **OG meta tags** — title, description, image for link previews (LinkedIn, Slack, etc.)
-- [ ] **Favicon** — custom "MB" monogram favicon to match the seal
+- [x] **Responsive audit** — all 4 artifact pages verified with sm:/lg: breakpoints
+- [x] **Entrance animations** — staggered card-enter on quest cards + skill cards, fade-in on artifact pages
+- [x] **OG meta tags** — og:title, og:description, og:image + Twitter Card tags (awaiting og-image.png in public/)
+- [x] **Favicon** — custom "B" monogram SVG favicon
 
 ## P2 — Content Refinement
 

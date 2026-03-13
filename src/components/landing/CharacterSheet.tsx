@@ -1,7 +1,30 @@
+import { useState, useCallback } from 'react'
 import SkillCardSpread from '../cards/SkillCardSpread'
 import GoldDivider from '../shared/GoldDivider'
 
+/** Shared inline style for centering both coin face letters */
+const letterBase: React.CSSProperties = {
+  fontFamily: "'Cinzel', serif",
+  fontSize: '32px',
+  fontWeight: 600,
+  letterSpacing: '0.1em',
+  lineHeight: 1,
+  display: 'block',
+  paddingTop: '2px', // optical nudge — Cinzel caps sit high
+}
+
 export default function CharacterSheet() {
+  const [rotation, setRotation] = useState(0)
+  const [isSpinning, setIsSpinning] = useState(false)
+
+  const handleHover = useCallback(() => {
+    if (isSpinning) return
+    setIsSpinning(true)
+    // 1260deg = 3.5 full turns — lands on opposite side each hover
+    setRotation(prev => prev + 1260)
+    setTimeout(() => setIsSpinning(false), 2500)
+  }, [isSpinning])
+
   return (
     <section className="pt-16 sm:pt-24 pb-8 px-6">
       <div className="max-w-5xl mx-auto">
@@ -10,11 +33,15 @@ export default function CharacterSheet() {
 
         {/* Character header */}
         <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8 mb-12">
-          {/* Monogram seal */}
-          <div className="shrink-0 relative" style={{ width: '96px', height: '96px' }}>
-            {/* Outer decorative ring */}
+          {/* Monogram seal — 3D coin spin on hover */}
+          <div
+            className="shrink-0 relative cursor-pointer"
+            style={{ width: '96px', height: '96px', perspective: '600px' }}
+            onMouseEnter={handleHover}
+          >
+            {/* Outer decorative ring (stays static) */}
             <svg
-              className="absolute inset-0 w-full h-full"
+              className="absolute inset-0 w-full h-full pointer-events-none"
               viewBox="0 0 96 96"
               fill="none"
             >
@@ -37,38 +64,78 @@ export default function CharacterSheet() {
                 </linearGradient>
               </defs>
             </svg>
-            {/* Inner emblem */}
+            {/* Coin flipper — cumulative rotation with deceleration easing */}
             <div
-              className="absolute rounded-full flex items-center justify-center"
               style={{
+                position: 'absolute',
                 inset: '8px',
-                padding: '2.5px',
-                background:
-                  'linear-gradient(135deg, #C8973E 0%, #DEB668 40%, #8B6914 100%)',
+                transformStyle: 'preserve-3d',
+                transform: `rotateY(${rotation}deg)`,
+                transition: 'transform 2.5s cubic-bezier(0.12, 0.85, 0.15, 1)',
               }}
             >
+              {/* Front face — M (dark coin, gold letter) */}
               <div
-                className="w-full h-full rounded-full flex items-center justify-center"
+                className="absolute inset-0 rounded-full flex items-center justify-center"
                 style={{
+                  backfaceVisibility: 'hidden',
+                  padding: '2.5px',
                   background:
-                    'radial-gradient(ellipse at 40% 35%, #2E2820 0%, #1A1410 70%)',
-                  boxShadow:
-                    'inset 0 2px 8px rgba(0,0,0,0.5), inset 0 -1px 4px rgba(200,151,62,0.08)',
+                    'linear-gradient(135deg, #C8973E 0%, #DEB668 40%, #8B6914 100%)',
                 }}
               >
-                <span
-                  className="text-2xl font-semibold"
+                <div
+                  className="w-full h-full rounded-full flex items-center justify-center"
                   style={{
-                    fontFamily: "'Cinzel', serif",
                     background:
-                      'linear-gradient(180deg, #DEB668 0%, #C8973E 50%, #8B6914 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    letterSpacing: '0.1em',
+                      'radial-gradient(ellipse at 40% 35%, #2E2820 0%, #1A1410 70%)',
+                    boxShadow:
+                      'inset 0 2px 8px rgba(0,0,0,0.5), inset 0 -1px 4px rgba(200,151,62,0.08)',
                   }}
                 >
-                  MB
-                </span>
+                  <span
+                    style={{
+                      ...letterBase,
+                      background:
+                        'linear-gradient(180deg, #DEB668 0%, #C8973E 50%, #8B6914 100%)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                    }}
+                  >
+                    M
+                  </span>
+                </div>
+              </div>
+              {/* Back face — B (gold coin, dark letter — inverted) */}
+              <div
+                className="absolute inset-0 rounded-full flex items-center justify-center"
+                style={{
+                  backfaceVisibility: 'hidden',
+                  transform: 'rotateY(180deg)',
+                  padding: '2.5px',
+                  background:
+                    'linear-gradient(135deg, #C8973E 0%, #DEB668 40%, #8B6914 100%)',
+                }}
+              >
+                <div
+                  className="w-full h-full rounded-full flex items-center justify-center"
+                  style={{
+                    background:
+                      'radial-gradient(ellipse at 40% 35%, #DEB668 0%, #C8973E 70%)',
+                    boxShadow:
+                      'inset 0 2px 8px rgba(139,105,20,0.4), inset 0 -1px 4px rgba(255,255,255,0.1)',
+                  }}
+                >
+                  <span
+                    style={{
+                      ...letterBase,
+                      color: '#1A1410',
+                      textShadow: '0 1px 2px rgba(0,0,0,0.15)',
+                    }}
+                  >
+                    B
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -94,10 +161,10 @@ export default function CharacterSheet() {
               Still builds furniture on weekends.
             </p>
             <div className="flex flex-wrap gap-2 mt-4">
-              {['Engineer', 'Builder', 'Podcast Host', 'Woodworker', 'F3 Tulsa'].map((badge) => (
+              {['Builder', 'Engineer', 'Storyteller'].map((badge) => (
                 <span
                   key={badge}
-                  className="font-display text-[11px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-full border border-primary/20 text-text-on-dark-muted/70 bg-primary/5"
+                  className="badge-pill font-display text-[11px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-full border border-primary/20 text-text-on-dark-muted/70 bg-primary/5 cursor-default"
                 >
                   {badge}
                 </span>
