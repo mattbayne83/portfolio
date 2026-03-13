@@ -32,26 +32,26 @@ export default function TitleSlide() {
       {/* Content */}
       <div className="relative z-10 px-12 sm:px-16 lg:px-20 max-w-[70%]">
         <p className="text-primary-light font-display text-sm sm:text-base font-semibold tracking-widest uppercase mb-4">
-          A Vision Foretold
+          Pipeline
         </p>
         <h1 className="font-display text-text-on-dark leading-none">
           <span className="block text-4xl sm:text-5xl lg:text-6xl font-medium text-text-on-dark-muted font-serif italic mb-1">
-            The
+            Risk &amp;
           </span>
           <span className="block text-5xl sm:text-6xl lg:text-7xl font-bold">
-            Prophecy
+            Integrity
           </span>
         </h1>
         <div className="mt-6 flex items-baseline gap-3">
           <span className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold italic text-text-on-dark-muted">
-            Scribed in the year
+            in the year
           </span>
           <span className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-primary">
-            2020
+            2025
           </span>
         </div>
         <p className="mt-8 text-text-on-dark-muted text-sm sm:text-base max-w-md font-serif italic">
-          A vision of what pipeline safety would become when data replaces intuition and models replace spreadsheets
+          A look into the future of pipeline safety
         </p>
       </div>
     </div>

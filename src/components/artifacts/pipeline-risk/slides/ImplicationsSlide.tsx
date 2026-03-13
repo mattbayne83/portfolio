@@ -3,20 +3,20 @@ import type { ReactNode } from 'react'
 
 const bullets = [
   {
-    text: 'Data alone holds no power unless it weaves a story that compels the realm to act',
+    text: 'Data alone has no value if it doesn\u2019t tell us a story that drives action',
   },
   {
-    text: 'Our worth must be measured in coin and deed, not merely in words',
+    text: '\u201CValue-added\u201D must be quantified if we want to continue competing',
   },
   {
-    text: 'The time from question to confident answer must be forged ever shorter',
+    text: 'Cycle time to reach quality decisions must be decreased',
   },
 ]
 
 const stages: { icon: ReactNode; title: string }[] = [
-  { icon: <Hammer size={18} />, title: 'Forge' },
-  { icon: <FlaskConical size={18} />, title: 'Distill' },
-  { icon: <ScrollText size={18} />, title: 'Proclaim' },
+  { icon: <Hammer size={18} />, title: 'Get it done' },
+  { icon: <FlaskConical size={18} />, title: 'Synthesize it' },
+  { icon: <ScrollText size={18} />, title: 'Sell it' },
 ]
 
 // Triangle vertex centers within a 240×220 viewbox
@@ -75,7 +75,7 @@ export default function ImplicationsSlide() {
   return (
     <div className="w-full h-full bg-surface flex flex-col items-center justify-center px-8 sm:px-16">
       <h2 className="font-display text-4xl sm:text-5xl font-bold text-text-high mb-10">
-        The Seer&rsquo;s Charge
+        Implications
       </h2>
 
       <div className="grid grid-cols-2 gap-10 w-full max-w-3xl items-center">

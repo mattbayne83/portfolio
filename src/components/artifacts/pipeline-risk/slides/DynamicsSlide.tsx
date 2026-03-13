@@ -1,16 +1,16 @@
 import { Shield, Swords } from 'lucide-react'
 
 const opposing = [
-  { name: 'The Fog of Visible Value', rank: 'Captain' },
-  { name: 'The Creep of Entropy', rank: 'Lieutenant' },
-  { name: 'The Upheaval of Mergers', rank: 'Sergeant' },
+  { name: 'Visible Value', rank: 'Headwind' },
+  { name: 'Entropy', rank: 'Headwind' },
+  { name: 'M&A', rank: 'Headwind' },
 ]
 
 const allied = [
-  { name: 'The Spread of Artifice', rank: 'General' },
-  { name: 'The Fires of Competition', rank: 'Captain' },
-  { name: 'The Weight of Council Edicts', rank: 'Captain' },
-  { name: 'The Will of the People', rank: 'Lieutenant' },
+  { name: 'Accessibility of Technology', rank: 'Tailwind' },
+  { name: 'Competition', rank: 'Tailwind' },
+  { name: 'Regulations', rank: 'Tailwind' },
+  { name: 'Social Expectations', rank: 'Tailwind' },
 ]
 
 function Banner({ label, variant, rank, index }: { label: string; variant: 'opposing' | 'allied'; rank: string; index: number }) {
@@ -43,7 +43,7 @@ export default function DynamicsSlide() {
   return (
     <div className="w-full h-full bg-surface flex flex-col items-center justify-center px-8 sm:px-14">
       <h2 className="font-display text-4xl sm:text-5xl font-bold text-text-high mb-10">
-        Forces in the Balance
+        Driving Dynamics
       </h2>
 
       <div className="w-full max-w-3xl">
@@ -51,9 +51,9 @@ export default function DynamicsSlide() {
         <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-4 mb-6">
           <div className="text-left">
             <span className="font-display text-sm font-semibold text-error tracking-widest uppercase">
-              Opposing Forces
+              Headwinds
             </span>
-            <p className="text-[10px] text-text-muted font-mono mt-0.5">3 battalions</p>
+            <p className="text-[10px] text-text-muted font-mono mt-0.5">3 factors</p>
           </div>
 
           {/* Center crossed swords */}
@@ -63,9 +63,9 @@ export default function DynamicsSlide() {
 
           <div className="text-right">
             <span className="font-display text-sm font-semibold text-primary tracking-widest uppercase">
-              Allied Winds
+              Tailwinds
             </span>
-            <p className="text-[10px] text-text-muted font-mono mt-0.5">4 battalions</p>
+            <p className="text-[10px] text-text-muted font-mono mt-0.5">4 factors</p>
           </div>
         </div>
 
@@ -97,7 +97,7 @@ export default function DynamicsSlide() {
         {/* Insight */}
         <div className="h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent mt-6 mb-4" />
         <p className="text-center text-text-muted font-serif italic text-sm max-w-md mx-auto">
-          The allied winds outnumber the opposing forces — the realm marches inexorably toward data-driven mastery
+          The tailwinds outnumber the headwinds — the industry is moving inexorably toward data-driven integrity
         </p>
       </div>
     </div>

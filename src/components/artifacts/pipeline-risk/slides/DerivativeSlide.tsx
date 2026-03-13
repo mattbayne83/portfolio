@@ -1,35 +1,35 @@
 const opportunities = [
   {
-    title: 'Alliance Counsel',
-    quote: 'How does this risk reshape our holdings and alliances?',
+    title: 'M&A Support',
+    quote: 'How does this risk fit within my current & desired portfolio?',
   },
   {
-    title: 'The Binding Scrolls',
-    quote: 'Which contractual bonds can the realm endure \u2014 and which must be severed?',
+    title: 'Contract Risk',
+    quote: 'What clauses can I live with / live without?',
   },
   {
-    title: 'The Royal Seals',
-    quote: 'What threatens the granting or keeping of the realm\u2019s permits?',
+    title: 'Permitting Risk',
+    quote: 'What are the biggest risks to getting / maintaining my permit?',
   },
   {
-    title: 'Treasury Stewardship',
-    quote: 'How shall a vast portfolio of potential ventures be managed?',
+    title: 'Investment Management',
+    quote: 'How can I manage a large portfolio of potential investments?',
   },
   {
-    title: 'The Great Conversion',
-    quote: 'Repurposing existing routes as new construction grows ever harder.',
+    title: 'Conversion of Service',
+    quote: 'Support as new pipelines become more difficult to construct.',
   },
   {
-    title: 'The Grand Ledger',
-    quote: 'Enterprise-wide risk consolidated into a single tome of truth.',
+    title: 'Risk Aggregation & ERM',
+    quote: 'Enterprise-wide risk aggregation and enterprise risk management.',
   },
   {
-    title: "The Automaton's Aid",
-    quote: 'How might we delegate the routine questions to tireless machines?',
+    title: 'Robotic Process Automation',
+    quote: 'How can I automate common integrity questions & processes?',
   },
   {
-    title: 'The Measure of Worth',
-    quote: 'Risk tolerance and fitness for service \u2014 toward mature, measurable guardianship.',
+    title: 'Risk Maturity',
+    quote: 'Performance-based integrity management (ex: risk tolerance & ALARP).',
   },
 ]
 
@@ -37,7 +37,7 @@ export default function DerivativeSlide() {
   return (
     <div className="w-full h-full bg-surface flex flex-col items-center justify-center px-8 sm:px-14">
       <h2 className="font-display text-3xl sm:text-4xl font-bold text-text-high mb-8">
-        Paths Yet Untrodden
+        Derivative Opportunities
       </h2>
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 w-full max-w-3xl">

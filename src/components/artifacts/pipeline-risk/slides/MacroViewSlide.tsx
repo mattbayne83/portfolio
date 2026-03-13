@@ -3,21 +3,21 @@ import type { ReactNode } from 'react'
 import GoldDivider from '../../../shared/GoldDivider'
 
 const items: { icon: ReactNode; label: string; color: string }[] = [
-  { icon: <Globe size={20} />, label: 'The World to Come', color: 'text-primary' },
-  { icon: <TrendingUp size={20} />, label: 'Forces in the Balance', color: 'text-primary-dark' },
-  { icon: <Lightbulb size={20} />, label: 'Treasures Discovered', color: 'text-primary-light' },
-  { icon: <GitBranch size={20} />, label: 'Paths Yet Untrodden', color: 'text-primary' },
-  { icon: <Target size={20} />, label: 'The Prophecy Fulfilled', color: 'text-primary' },
+  { icon: <Globe size={20} />, label: 'Our world in 2025', color: 'text-primary' },
+  { icon: <TrendingUp size={20} />, label: 'Dynamics driving these changes', color: 'text-primary-dark' },
+  { icon: <Lightbulb size={20} />, label: 'Core opportunities created', color: 'text-primary-light' },
+  { icon: <GitBranch size={20} />, label: 'Derivative opportunities', color: 'text-primary' },
+  { icon: <Target size={20} />, label: 'What this means for us', color: 'text-primary' },
 ]
 
 export default function MacroViewSlide() {
   return (
     <div className="w-full h-full bg-surface flex flex-col items-center justify-center px-12 sm:px-20">
       <h2 className="font-display text-4xl sm:text-5xl font-bold text-text-high mb-2">
-        The Chapters of Revelation
+        Macro View
       </h2>
       <p className="font-serif italic text-text-muted text-sm mb-6 text-center">
-        Five revelations, each building upon the last
+        Five perspectives on the future of pipeline risk &amp; integrity
       </p>
       <GoldDivider className="w-48 mx-auto mb-8" />
       <div className="space-y-4 w-full max-w-lg">

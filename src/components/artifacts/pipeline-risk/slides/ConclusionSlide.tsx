@@ -2,11 +2,11 @@ import GoldFiligree from '../../../shared/GoldFiligree'
 import GoldDivider from '../../../shared/GoldDivider'
 
 const points = [
-  { topic: 'The World to Come', emphasis: 'Holistic data reigns supreme' },
-  { topic: 'Forces in the Balance', emphasis: 'Social will and competitive fire' },
-  { topic: 'Treasures Discovered', emphasis: 'Integration, absolute truth, earned confidence' },
-  { topic: 'Paths Yet Untrodden', emphasis: 'Alliance counsel, royal seals, the grand ledger' },
-  { topic: "The Seer's Charge", emphasis: 'Demonstrate worth, accelerate insight, prioritize campaigns' },
+  { topic: 'Our world in 2025', emphasis: 'Holistic Data is King' },
+  { topic: 'Dynamics driving these changes', emphasis: 'Social expectations, competition' },
+  { topic: 'Core opportunities created', emphasis: 'Integration, Absolute results, Confidence' },
+  { topic: 'Derivative opportunities', emphasis: 'Transaction support, Permitting risk, ERM' },
+  { topic: 'What this means for us', emphasis: 'Demonstrate Value, Cycle Time, Prioritization' },
 ]
 
 export default function ConclusionSlide() {
@@ -30,7 +30,7 @@ export default function ConclusionSlide() {
 
       <div className="relative z-10 w-full max-w-2xl">
         <h2 className="font-display text-4xl sm:text-5xl font-bold text-text-on-dark mb-4 text-center">
-          The Prophecy Fulfilled
+          Conclusion
         </h2>
 
         <GoldDivider className="w-64 mx-auto mb-8" />
@@ -50,7 +50,7 @@ export default function ConclusionSlide() {
         </div>
 
         <p className="text-center font-serif italic text-text-on-dark-muted text-sm mt-10 max-w-lg mx-auto">
-          Written in 2020, these prophecies have largely come to pass. The realm now lives in the world this document foretold.
+          Written in 2020, these predictions have largely come to pass. The industry now lives in the world this presentation foretold.
         </p>
       </div>
     </div>

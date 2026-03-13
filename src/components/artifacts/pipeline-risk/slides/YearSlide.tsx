@@ -1,27 +1,27 @@
 import { TrendingUp, TrendingDown } from 'lucide-react'
 
 const rising = [
-  'Data shall be recognized as a kingdom\u2019s greatest asset',
-  'Meaningful metrics shall drive transformation',
-  'The tools of artificers shall become accessible to all',
-  'Competition for master craftsmen shall intensify',
-  'Swift, iterative methods shall prevail',
-  'The governing councils shall demand maturity of models',
+  'Data recognized as an asset',
+  'Meaningful metrics driving change',
+  'Accessibility to AI / machine learning',
+  'Competition for SME people resources',
+  'Agile / iterative',
+  'Regulators driving maturity of models',
 ]
 
 const ebbing = [
-  'The realm\u2019s tolerance for incidents shall wane',
-  'Patience for slow campaign cycles shall vanish',
-  'The ability to defend with words alone shall fail',
-  'Council tolerance for laggards shall expire',
-  'Appetite for isolated knowledge hoards shall perish',
+  'Public tolerance for incidents',
+  'Business tolerance for long cycle times',
+  'Ability to defend qualitatively',
+  'Regulator tolerance for our industry to continue lagging (ex: grandfathering)',
+  'Appetite for siloed data that doesn\u2019t aggregate',
 ]
 
 export default function YearSlide() {
   return (
     <div className="w-full h-full bg-surface flex flex-col items-center justify-center px-8 sm:px-16">
       <h2 className="font-display text-4xl sm:text-5xl font-bold text-text-high mb-10">
-        The World to Come
+        2025
       </h2>
 
       <div className="grid grid-cols-2 gap-6 w-full max-w-3xl">
@@ -31,7 +31,7 @@ export default function YearSlide() {
             <div className="w-8 h-8 rounded-lg bg-success/15 flex items-center justify-center">
               <TrendingUp size={16} className="text-success" />
             </div>
-            <h3 className="font-display text-lg sm:text-xl font-bold text-success">Rising Tides</h3>
+            <h3 className="font-display text-lg sm:text-xl font-bold text-success">+ More</h3>
           </div>
           <ul className="space-y-2">
             {rising.map((item, i) => (
@@ -49,7 +49,7 @@ export default function YearSlide() {
             <div className="w-8 h-8 rounded-lg bg-error/15 flex items-center justify-center">
               <TrendingDown size={16} className="text-error" />
             </div>
-            <h3 className="font-display text-lg sm:text-xl font-bold text-error">Ebbing Waters</h3>
+            <h3 className="font-display text-lg sm:text-xl font-bold text-error">- Less</h3>
           </div>
           <ul className="space-y-2">
             {ebbing.map((item, i) => (
