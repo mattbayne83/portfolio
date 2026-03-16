@@ -78,6 +78,25 @@ export const artifacts: ArtifactMeta[] = [
     flavorText:
       'Built for the workshop, not the office. Because measuring twice means cutting plywood once.',
   },
+  {
+    id: 'glimpse',
+    title: 'The Scrying Glass',
+    description:
+      'Privacy-first exploratory data analysis. Upload CSV files and glimpse the truth in your data — all processed locally in your browser using Python.',
+    type: 'demo',
+    category: 'artifact',
+    categoryLabel: 'Artifact',
+    tags: ['data', 'privacy', 'analytics', 'python', 'webassembly'],
+    date: '2026-03-15',
+    featured: false,
+    immersive: false,
+    component: lazy(() => import('../components/artifacts/glimpse')),
+    questType: 'main',
+    difficulty: 5,
+    skillsUsed: ['maximizer', 'ideation', 'belief'],
+    flavorText:
+      "What if data analysis didn't require sending your data to strangers? Pyodide brings Python to the browser. Privacy stays with you.",
+  },
 ]
 
 export const allTags = [...new Set(artifacts.flatMap((a) => a.tags))]

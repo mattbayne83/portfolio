@@ -122,7 +122,7 @@ export default function SkillCard({
               'linear-gradient(135deg, #C8973E 0%, #DEB668 25%, #C8973E 50%, #8B6914 75%, #C8973E 100%)',
           }}
         >
-          <div className="rounded-[10px] bg-surface h-full flex flex-col px-3 py-3 relative overflow-hidden">
+          <div className="rounded-[10px] bg-surface h-full flex flex-col justify-center px-4 py-3 relative overflow-hidden">
             {/* Accent bar */}
             <div
               className="absolute top-0 left-0 right-0 h-1"
@@ -130,29 +130,14 @@ export default function SkillCard({
             />
 
             {/* Name */}
-            <h4 className="font-display text-xs font-semibold text-text-high text-center mt-1 mb-2">
+            <h4 className="font-display text-sm font-semibold text-text-high text-center mb-4">
               {skill.name}
             </h4>
 
             {/* Flavor text */}
-            <p className="font-serif italic text-[11px] text-text-body leading-relaxed flex-1">
+            <p className="font-serif italic text-xs text-text-body leading-relaxed text-center">
               {skill.flavorText}
             </p>
-
-            {/* Divider */}
-            <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent my-2" />
-
-            {/* Related traits */}
-            <div className="flex flex-wrap gap-1.5 justify-center">
-              {skill.relatedTraits.map((trait) => (
-                <span
-                  key={trait}
-                  className="font-mono text-[11px] text-text-muted/60 bg-surface-muted px-1.5 py-0.5 rounded"
-                >
-                  {trait}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
       </div>
