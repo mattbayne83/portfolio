@@ -2,6 +2,12 @@
 
 ## Completed
 
+- [x] **Maker's Mark footer** — contact CTA + LinkedIn/GitHub/Résumé links; signature, not a link hub (2026-06-28)
+- [x] **Quest card dual-labels** — lead with plain subject, themed name as kicker, plain descriptor line (2026-06-28)
+- [x] **Hero role line** — "Senior Product Manager · Energy & Enterprise" for instant role clarity (2026-06-28)
+- [x] **WCAG AA contrast pass** — darkened muted-on-parchment text token to ≈5.2:1 (2026-06-28)
+- [x] **SWIFT case-study closing CTA** — "Want the full story?" contact prompt (2026-06-28)
+- [x] **Glimpse** — "The Scrying Glass" privacy-first EDA artifact (Pyodide/WASM)
 - [x] **Gaming Table foundation** — palette revolution, skill cards, quest board, character sheet
 - [x] **Pipeline Risk & Integrity** — immersive slide deck (8 slides), Main Quest
 - [x] **Shape Matters** — shell-mode project showcase, "Enter the Lab" CTA to live app
@@ -50,6 +56,9 @@
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-06-28 | Dual-label quest cards (subject + kicker) | Themed names buried what the work *is*; recruiters scan for substance in seconds |
+| 2026-06-28 | Footer is a signature, not a link hub | One primary contact CTA + quiet LinkedIn/GitHub/Résumé; the site is the proof, links are the escape hatch |
+| 2026-06-28 | Darken muted text token globally | Single-token fix lifts all muted-on-parchment text past WCAG AA at once |
 | 2026-03-11 | 4 main quests, no side quests | /elon analysis: 4 strong > 8 thin. Side quests when real content exists |
 | 2026-03-11 | F3 + woodworking as character sheet badges | Not enough standalone content for dedicated artifacts yet |
 | 2026-03-11 | All artifacts are Main Quest | No side quests until category variety warrants the split |

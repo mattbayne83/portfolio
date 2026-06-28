@@ -3,7 +3,7 @@
 ## Tech Stack
 - React 19, TypeScript 5.9, Vite 7
 - Tailwind CSS 4, Zustand 5 (persist), Lucide React
-- Fonts: Space Grotesk (display), Inter (body), Crimson Pro (flavor/serif), JetBrains Mono (stats)
+- Fonts: Cormorant Garamond (display, set in `@theme`), Inter (body/sans), Crimson Pro (flavor/serif), JetBrains Mono (stats), Cinzel (monogram seal only)
 
 ## Product
 Premium tabletop game-inspired personal portfolio. Character sheet hero with 5 Clifton Strengths skill cards, quest board with portfolio artifacts as quests. Audience: external (employers/clients).
@@ -32,14 +32,16 @@ Premium tabletop game-inspired personal portfolio. Character sheet hero with 5 C
 - `src/index.css` — Tailwind @theme tokens (full palette + animations)
 - `src/types/index.ts` — SkillCard, ArtifactMeta, QuestType, ArtifactCategory, DifficultyLevel
 - `src/data/skills.ts` — 5 skill card objects with flavor text from Clifton Strengths assessment
-- `src/data/artifacts.ts` — Artifact registry (quest metadata: difficulty, skillsUsed, flavorText)
+- `src/data/artifacts.ts` — Artifact registry (quest metadata: subject, subtitle, difficulty, skillsUsed, flavorText)
 - `src/data/categories.ts` — Category config (lore/scroll/artifact/map)
 - `src/store/useAppStore.ts` — activeArtifactId, filterCategory, currentSlide (partialize persists nav + slide only)
+- `src/components/landing/MakersMark.tsx` — Footer: contact CTA + LinkedIn/GitHub/Résumé. Edit the `LINKS` array to change destinations; empty `href` hides a link
+- `src/components/shared/ContactButton.tsx` — Shared gold mailto button + `CONTACT_EMAIL` constant (used by footer and the SWIFT article CTA)
 
 ## Directories
-- `src/components/landing/` — CharacterSheet, QuestBoard, LandingPage
+- `src/components/landing/` — CharacterSheet, QuestBoard, LandingPage, MakersMark
 - `src/components/cards/` — SkillCard, SkillCardSpread, QuestCard, SkillBadge, DifficultyPips, QuestTypeBadge, CategoryBadge
-- `src/components/shared/` — GoldBorder, GoldDivider, GoldFiligree
+- `src/components/shared/` — GoldBorder, GoldDivider, GoldFiligree, ContactButton
 - `src/components/viewers/` — SlideViewer, ImmersiveWrapper, ArtifactShell
 - `src/components/artifacts/` — Self-contained artifact content (one subfolder per artifact)
 - `src/hooks/` — useHashSync, useEscapeKey, useCardFlip
@@ -47,7 +49,7 @@ Premium tabletop game-inspired personal portfolio. Character sheet hero with 5 C
 
 ## Adding a New Artifact
 1. Create `src/components/artifacts/<id>/index.tsx` (default export component)
-2. Add one entry to `src/data/artifacts.ts` with quest metadata
+2. Add one entry to `src/data/artifacts.ts` with quest metadata — including `subject` (plain scannable headline) and `subtitle` (one-line descriptor); `title` is the themed kicker
 3. Done — no other files need to change
 
 ## Gotchas
@@ -59,3 +61,7 @@ Premium tabletop game-inspired personal portfolio. Character sheet hero with 5 C
 - 3D flip: `backface-visibility: hidden` required on BOTH faces, `transform-style: preserve-3d` on inner container
 - **`overflow-x-auto` forces `overflow-y: auto`** (CSS spec) — scroll containers need extra padding to accommodate `scale()` transforms on children
 - Category filter bar only renders when `allCategories.length > 1`
+- QuestCard leads with `subject` (the real headline); `title` is a small gold kicker above it — don't swap them back
+- `.scrollbar-hide` is a custom utility defined in `index.css` (not a Tailwind default) — the mobile skill carousel depends on it
+- lucide's brand icons (LinkedIn/GitHub) are deprecated; `MakersMark.tsx` uses inline SVG brand marks instead
+- Muted-on-parchment text uses `--color-text-muted: #6B5F4F` (darkened to clear WCAG AA ≈5.2:1) — don't lighten it back

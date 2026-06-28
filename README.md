@@ -4,7 +4,7 @@ A premium tabletop game-inspired personal portfolio where career artifacts are q
 
 ## Live Demo
 
-> *Deployment URL coming soon*
+**[mattbayne.dev](https://mattbayne.dev)** — deployed via GitHub Actions on push to `main`.
 
 ## What Is This?
 
@@ -14,6 +14,9 @@ A single-page React app that presents Matt Bayne's professional work as an inter
 - **Skill Cards** — Clifton Strengths (Belief, Communication, Woo, Ideation, Maximizer) as flippable playing cards with 3D CSS animations
 - **Quest Board** — portfolio artifacts presented as main quests with difficulty ratings, skill badges, and flavor text
 - **Artifact Pages** — each quest opens into either a full-screen immersive experience (slide decks) or a shell-mode page (case studies, project showcases)
+- **Maker's Mark footer** — a single signature seal closing the page: one primary contact action plus quiet links to LinkedIn, GitHub, and résumé (deliberately a signature, not a link hub)
+
+Each quest card leads with the **plain subject** of the work (e.g. "Pipeline Risk & Integrity"), with the themed name ("The Prophecy") demoted to a small kicker — so the work is scannable in seconds while the theme stays as flavor.
 
 ## Current Quests
 
@@ -23,13 +26,14 @@ A single-page React app that presents Matt Bayne's professional work as an inter
 | SWIFT Product Leadership | Lore | Case Study | Transforming a $1.5B platform from 3rd to 50th percentile |
 | Shape Matters | Artifact | Project Showcase | Interactive research tool: org depth and signal decay |
 | Plyplan | Artifact | Project Showcase | AI-powered plywood cut optimizer for woodworkers |
+| Glimpse | Artifact | Project Showcase | Privacy-first EDA — Python in the browser via Pyodide/WASM |
 
 ## Design System
 
 **"The Gaming Table"** — inspired by premium tabletop games like Brass Birmingham and Gloomhaven.
 
 - **Palette**: Dark walnut background, parchment card surfaces, burnished gold accents
-- **Typography**: Space Grotesk (headings), Inter (body), Crimson Pro (flavor text), JetBrains Mono (stats)
+- **Typography**: Cormorant Garamond (display/headings), Inter (body), Crimson Pro (flavor text), JetBrains Mono (stats), Cinzel (monogram seal)
 - **Textures**: All CSS/SVG — wood grain gradients, linen weave parchment, gold gradient borders
 - **Cards**: 3D flip animations, gold gradient borders via padding trick, layered box-shadows
 
@@ -62,7 +66,7 @@ src/
   components/
     landing/       Character sheet, quest board, landing page
     cards/         Skill cards, quest cards, badges, pips
-    shared/        Gold border, divider, filigree components
+    shared/        Gold border, divider, filigree, contact button
     viewers/       Slide viewer, immersive wrapper, artifact shell
     artifacts/     One subfolder per quest (self-contained)
   data/            Skills, artifacts, categories
