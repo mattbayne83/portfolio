@@ -32,7 +32,7 @@ function GitHubMark({ size = 16, ...props }: IconProps) {
 const LINKS: { label: string; href: string; Icon: ComponentType<IconProps> }[] = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/matt-bayne/', Icon: LinkedInMark },
   { label: 'GitHub', href: 'https://github.com/mattbayne83', Icon: GitHubMark },
-  { label: 'Résumé', href: '', Icon: FileText }, // ← add a path to your résumé PDF (e.g. /matt-bayne-resume.pdf)
+  { label: 'Résumé', href: '/Matt_Bayne_Resume.pdf', Icon: FileText },
 ]
 
 export default function MakersMark() {
@@ -56,12 +56,13 @@ export default function MakersMark() {
           {links.length > 0 && (
             <nav className="flex items-center gap-6">
               {links.map(({ label, href, Icon }) => {
-                const external = href.startsWith('http')
+                // Open external profiles and the résumé PDF in a new tab
+                const newTab = href.startsWith('http') || href.endsWith('.pdf')
                 return (
                   <a
                     key={label}
                     href={href}
-                    {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                    {...(newTab ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                     className="group inline-flex items-center gap-1.5 text-text-on-dark-muted hover:text-primary transition-colors focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:outline-none rounded"
                   >
                     <Icon size={16} className="opacity-80 group-hover:opacity-100" />
