@@ -151,6 +151,9 @@ export default function CharacterSheet() {
             <p className="font-serif italic text-xl sm:text-2xl text-primary mt-2">
               The Synthesizer
             </p>
+            <p className="font-display text-sm sm:text-base font-semibold tracking-[0.12em] uppercase text-text-on-dark mt-1">
+              Senior Product Manager · Energy &amp; Enterprise
+            </p>
             <p className="font-serif text-base sm:text-lg text-text-on-dark-muted mt-4 max-w-lg leading-relaxed">
               Strategist, pattern finder, and relentless refiner. Takes vast
               information, sees themes and connections, and builds things that are

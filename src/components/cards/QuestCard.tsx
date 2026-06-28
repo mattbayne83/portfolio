@@ -40,14 +40,24 @@ export default function QuestCard({ artifact, onClick }: QuestCardProps) {
           <QuestTypeBadge questType={artifact.questType} />
         </div>
 
-        {/* Title */}
+        {/* Themed name — small kicker above the real subject */}
+        <p className="font-display text-[11px] font-semibold tracking-[0.18em] uppercase text-primary-dark mb-1">
+          {artifact.title}
+        </p>
+
+        {/* Subject — the scannable headline */}
         <h3
-          className={`font-display font-bold text-text-high mb-2 ${
-            isMain ? 'text-xl' : 'text-base'
+          className={`font-display font-bold text-text-high leading-tight ${
+            isMain ? 'text-2xl' : 'text-lg'
           }`}
         >
-          {artifact.title}
+          {artifact.subject}
         </h3>
+
+        {/* Plain descriptor */}
+        <p className="font-sans text-xs text-text-muted mt-1 mb-3">
+          {artifact.subtitle}
+        </p>
 
         {/* Flavor text */}
         <p className="font-serif italic text-sm text-text-body leading-relaxed mb-4">

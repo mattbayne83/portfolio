@@ -1,5 +1,6 @@
 import CharacterSheet from './CharacterSheet'
 import QuestBoard from './QuestBoard'
+import MakersMark from './MakersMark'
 
 export default function LandingPage() {
   return (
@@ -17,6 +18,7 @@ export default function LandingPage() {
     >
       <CharacterSheet />
       <QuestBoard />
+      <MakersMark />
     </div>
   )
 }

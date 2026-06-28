@@ -5,6 +5,8 @@ export const artifacts: ArtifactMeta[] = [
   {
     id: 'pipeline-risk-integrity',
     title: 'The Prophecy',
+    subject: 'Pipeline Risk & Integrity',
+    subtitle: 'Executive deck · risk maturity models',
     description:
       'Executive presentation on the future of pipeline safety, risk maturity models, and data-driven integrity programs.',
     type: 'deck',
@@ -24,6 +26,8 @@ export const artifacts: ArtifactMeta[] = [
   {
     id: 'swift-leadership',
     title: 'Rags to Riches',
+    subject: 'SWIFT Product Turnaround',
+    subtitle: 'Case study · enterprise product leadership',
     description:
       'Transformed a legacy authorization platform into a modern product serving 100+ companies and protecting $1.5B in revenue.',
     type: 'article',
@@ -43,6 +47,8 @@ export const artifacts: ArtifactMeta[] = [
   {
     id: 'shape-matters',
     title: 'Shape Shifter',
+    subject: 'Org Shape & Signal Decay',
+    subtitle: 'Interactive research tool',
     description:
       'Interactive research tool exploring how organizational depth drives signal decay and shapes institutional behavior.',
     type: 'demo',
@@ -62,6 +68,8 @@ export const artifacts: ArtifactMeta[] = [
   {
     id: 'plyplan',
     title: 'Pocket Sage',
+    subject: 'Plywood Cut Optimizer',
+    subtitle: 'Mobile app · AI photo extraction',
     description:
       'Know how many sheets to buy before you get in the truck. A phone-first plywood cut optimizer with AI-powered photo extraction.',
     type: 'demo',
@@ -81,6 +89,8 @@ export const artifacts: ArtifactMeta[] = [
   {
     id: 'glimpse',
     title: 'The Scrying Glass',
+    subject: 'Private Data Explorer',
+    subtitle: 'Browser EDA · Python / WebAssembly',
     description:
       'Privacy-first exploratory data analysis. Upload CSV files and glimpse the truth in your data — all processed locally in your browser using Python.',
     type: 'demo',
