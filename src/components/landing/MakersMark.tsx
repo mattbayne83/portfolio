@@ -30,7 +30,7 @@ function GitHubMark({ size = 16, ...props }: IconProps) {
 }
 
 const LINKS: { label: string; href: string; Icon: ComponentType<IconProps> }[] = [
-  { label: 'LinkedIn', href: '', Icon: LinkedInMark }, // ← add your LinkedIn profile URL
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/matt-bayne/', Icon: LinkedInMark },
   { label: 'GitHub', href: 'https://github.com/mattbayne83', Icon: GitHubMark },
   { label: 'Résumé', href: '', Icon: FileText }, // ← add a path to your résumé PDF (e.g. /matt-bayne-resume.pdf)
 ]
