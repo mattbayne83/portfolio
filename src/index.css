@@ -1,9 +1,22 @@
 @import "tailwindcss";
 
+/* Metrics-adjusted fallback for the display face — keeps the hero headline from
+   shifting when Cormorant Garamond swaps in (display=swap). Overrides are
+   approximate (tuned against Georgia); fine-tune with measured metrics if CLS
+   still shows. */
+@font-face {
+  font-family: 'Cormorant Fallback';
+  src: local('Georgia'), local('Times New Roman'), local('serif');
+  ascent-override: 84%;
+  descent-override: 27%;
+  line-gap-override: 0%;
+  size-adjust: 107%;
+}
+
 @theme {
   /* Typography */
   --font-sans: 'Inter', sans-serif;
-  --font-display: 'Cormorant Garamond', serif;
+  --font-display: 'Cormorant Garamond', 'Cormorant Fallback', Georgia, serif;
   --font-mono: 'JetBrains Mono', monospace;
   --font-serif: 'Crimson Pro', Georgia, serif;
 

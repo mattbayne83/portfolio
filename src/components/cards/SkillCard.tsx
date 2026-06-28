@@ -122,7 +122,7 @@ export default function SkillCard({
             </p>
 
             {/* Rank */}
-            <span className="mt-2 font-mono text-[11px] text-text-muted/50">
+            <span className="mt-2 font-mono text-[11px] text-text-muted">
               #{skill.rank}
             </span>
           </div>

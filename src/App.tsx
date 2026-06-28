@@ -11,7 +11,7 @@ function LoadingScreen() {
   return (
     <div
       className="min-h-screen flex items-center justify-center"
-      style={{ backgroundColor: '#1A1410' }}
+      style={{ backgroundColor: 'var(--color-bg)' }}
     >
       <div className="w-6 h-6 border-2 border-primary/30 border-t-primary rounded-full animate-spin" />
     </div>

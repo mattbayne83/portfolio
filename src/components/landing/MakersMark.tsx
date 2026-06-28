@@ -74,7 +74,7 @@ export default function MakersMark() {
           )}
 
           {/* Colophon */}
-          <p className="font-mono text-[10px] tracking-wider uppercase text-text-on-dark-muted/50 mt-2">
+          <p className="font-mono text-[10px] tracking-wider uppercase text-text-on-dark-muted/70 mt-2">
             Designed &amp; built by Matt Bayne
           </p>
         </div>

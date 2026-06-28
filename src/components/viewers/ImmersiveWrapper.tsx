@@ -19,8 +19,9 @@ export default function ImmersiveWrapper({ onClose, title, children }: Immersive
       {/* Floating close button */}
       <button
         onClick={handleClose}
+        aria-label={`Close ${title}`}
         title={`Close ${title}`}
-        className="fixed top-4 left-4 z-50 p-2.5 rounded-lg bg-primary/10 backdrop-blur-sm text-primary-light/60 hover:text-primary-light hover:bg-primary/20 transition-all duration-200 cursor-pointer"
+        className="fixed top-4 right-4 z-50 p-2.5 rounded-lg bg-primary/15 text-primary-light/80 hover:text-primary-light hover:bg-primary/25 transition-all duration-200 cursor-pointer focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:outline-none"
       >
         <X size={18} />
       </button>

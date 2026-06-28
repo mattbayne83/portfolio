@@ -7,7 +7,7 @@ export default function LandingPage() {
     <div
       className="min-h-screen font-sans"
       style={{
-        backgroundColor: '#1A1410',
+        backgroundColor: 'var(--color-bg)',
         backgroundImage: [
           // Subtle wood grain
           'repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,0.008) 2px, rgba(255,255,255,0.008) 4px)',
