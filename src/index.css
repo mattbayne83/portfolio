@@ -21,7 +21,8 @@
   /* Text */
   --color-text-high: #2A2018;
   --color-text-body: #4A3F32;
-  --color-text-muted: #8A7E6E;
+  /* Darkened from #8A7E6E to clear WCAG AA (≈5.2:1) on parchment surfaces */
+  --color-text-muted: #6B5F4F;
   --color-text-on-dark: #D4C8B0;
   --color-text-on-dark-muted: #9E9282;
 
@@ -63,6 +64,15 @@
     opacity: 1;
     transform: translateY(0) scale(1);
   }
+}
+
+/* Hide scrollbar on the mobile skill-card carousel (cross-browser) */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE/old Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
 }
 
 /* Badge pill hover effects */

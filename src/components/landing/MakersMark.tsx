@@ -1,5 +1,6 @@
 import type { ComponentType, SVGProps } from 'react'
 import { Mail, FileText } from 'lucide-react'
+import ContactButton from '../shared/ContactButton'
 
 /**
  * The "Maker's Mark" — a single signature seal closing the page.
@@ -9,8 +10,6 @@ import { Mail, FileText } from 'lucide-react'
  * To finish the footer, fill in the two empty URLs below. Links with an
  * empty `href` are automatically hidden, so nothing ever 404s.
  */
-const CONTACT_EMAIL = 'mattbayne@gmail.com'
-
 type IconProps = SVGProps<SVGSVGElement> & { size?: number }
 
 // Brand marks are inline SVG — lucide deprecated its brand icons (trademark).
@@ -51,17 +50,7 @@ export default function MakersMark() {
           </p>
 
           {/* Primary action — the only solid-gold button on the page */}
-          <a
-            href={`mailto:${CONTACT_EMAIL}`}
-            className="inline-flex items-center gap-2 font-display text-sm font-semibold tracking-wide px-6 py-3 rounded-full text-bg transition-transform duration-200 hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-bg focus-visible:outline-none"
-            style={{
-              background: 'linear-gradient(135deg, #DEB668 0%, #C8973E 50%, #8B6914 100%)',
-              boxShadow: '0 2px 8px rgba(200,151,62,0.25)',
-            }}
-          >
-            <Mail size={16} strokeWidth={2.25} />
-            Get in touch
-          </a>
+          <ContactButton label="Get in touch" icon={<Mail size={16} strokeWidth={2.25} />} />
 
           {/* Quiet secondary links */}
           {links.length > 0 && (

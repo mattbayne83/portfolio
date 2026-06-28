@@ -1,5 +1,6 @@
 import GoldDivider from '../../shared/GoldDivider'
 import SkillBadge from '../../cards/SkillBadge'
+import ContactButton from '../../shared/ContactButton'
 
 const metrics = [
   { value: '3rd → 50th', label: 'Usability Percentile' },
@@ -111,6 +112,15 @@ export default function SwiftLeadershipArtifact() {
             <SkillBadge key={id} skillId={id} />
           ))}
         </div>
+      </div>
+
+      {/* Closing CTA — catch intent at its peak */}
+      <GoldDivider className="my-8" />
+      <div className="text-center">
+        <p className="font-serif italic text-text-on-dark-muted mb-4">
+          Want the full story behind these numbers?
+        </p>
+        <ContactButton label="Let&rsquo;s talk" subject="SWIFT — let's talk" />
       </div>
     </div>
   )
