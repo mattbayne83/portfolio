@@ -63,7 +63,7 @@ export default function MakersMark() {
                     key={label}
                     href={href}
                     {...(newTab ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                    className="group inline-flex items-center gap-1.5 text-text-on-dark-muted hover:text-primary transition-colors focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:outline-none rounded"
+                    className="group inline-flex items-center gap-1.5 py-2 px-1 text-text-on-dark-muted hover:text-primary transition-colors focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:outline-none rounded"
                   >
                     <Icon size={16} className="opacity-80 group-hover:opacity-100" />
                     <span className="font-display text-xs font-medium tracking-wide">{label}</span>

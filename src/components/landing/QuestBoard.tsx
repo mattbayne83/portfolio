@@ -29,7 +29,7 @@ export default function QuestBoard() {
           <div className="flex gap-2 mb-8">
             <button
               onClick={() => setFilterCategory(null)}
-              className={`px-3.5 py-1.5 rounded-full text-sm font-display font-semibold transition-colors cursor-pointer border focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:outline-none ${
+              className={`inline-flex items-center min-h-[40px] px-4 py-2 rounded-full text-sm font-display font-semibold transition-colors cursor-pointer border focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:outline-none ${
                 filterCategory === null
                   ? 'bg-primary/15 text-primary border-primary/30'
                   : 'bg-transparent text-text-on-dark-muted border-text-on-dark-muted/20 hover:border-primary/30 hover:text-primary'
@@ -43,7 +43,7 @@ export default function QuestBoard() {
                 onClick={() =>
                   setFilterCategory(filterCategory === cat ? null : (cat as ArtifactCategory))
                 }
-                className={`px-3.5 py-1.5 rounded-full text-sm font-display font-semibold transition-colors cursor-pointer border focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:outline-none ${
+                className={`inline-flex items-center min-h-[40px] px-4 py-2 rounded-full text-sm font-display font-semibold transition-colors cursor-pointer border focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:outline-none ${
                   filterCategory === cat
                     ? 'bg-primary/15 text-primary border-primary/30'
                     : 'bg-transparent text-text-on-dark-muted border-text-on-dark-muted/20 hover:border-primary/30 hover:text-primary'

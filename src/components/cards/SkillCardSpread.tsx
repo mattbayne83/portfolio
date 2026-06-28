@@ -42,6 +42,7 @@ export default function SkillCardSpread() {
                 onFlip={() => flip(skill.id)}
                 rotation={0}
                 index={i}
+                flipScale={1}
               />
             </div>
           ))}

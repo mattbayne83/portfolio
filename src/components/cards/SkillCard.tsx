@@ -22,6 +22,8 @@ interface SkillCardProps {
   onFlip: () => void
   rotation?: number
   index?: number
+  /** Scale applied on flip. <=1 avoids clipping inside the mobile scroll carousel. */
+  flipScale?: number
 }
 
 export default function SkillCard({
@@ -30,6 +32,7 @@ export default function SkillCard({
   onFlip,
   rotation = 0,
   index = 0,
+  flipScale = 1.2,
 }: SkillCardProps) {
   const Icon = iconMap[skill.iconName] ?? Gem
 
@@ -59,7 +62,7 @@ export default function SkillCard({
         style={{
           transformStyle: 'preserve-3d',
           transform: isFlipped
-            ? 'rotateY(180deg) scale(1.2)'
+            ? `rotateY(180deg) scale(${flipScale})`
             : `rotate(${rotation}deg) translateY(0px)`,
         }}
       >
