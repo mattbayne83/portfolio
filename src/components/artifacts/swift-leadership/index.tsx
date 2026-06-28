@@ -1,4 +1,5 @@
 import GoldDivider from '../../shared/GoldDivider'
+import MetricGrid from '../../shared/MetricGrid'
 import SkillBadge from '../../cards/SkillBadge'
 import ContactButton from '../../shared/ContactButton'
 
@@ -85,21 +86,7 @@ export default function SwiftLeadershipArtifact() {
         <h3 className="font-display text-sm font-semibold tracking-widest uppercase text-primary mb-4">
           The Results
         </h3>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-          {metrics.map((metric) => (
-            <div
-              key={metric.label}
-              className="bg-bg-elevated rounded-lg p-5 border-l-2 border-primary/40"
-            >
-              <div className="font-mono text-xl sm:text-2xl text-primary mb-1">
-                {metric.value}
-              </div>
-              <div className="text-xs sm:text-sm text-text-on-dark-muted">
-                {metric.label}
-              </div>
-            </div>
-          ))}
-        </div>
+        <MetricGrid metrics={metrics} />
       </div>
 
       {/* Skills used */}

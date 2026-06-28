@@ -12,7 +12,7 @@ export default function ArtifactShell({ artifact, onBack, children }: ArtifactSh
   return (
     <div className="min-h-screen bg-bg font-sans">
       {/* Header */}
-      <header className="sticky top-0 z-30 bg-bg-elevated/90 backdrop-blur-sm border-b border-primary/10">
+      <header className="sticky top-0 z-30 bg-bg-elevated border-b border-primary/20">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
           <button
             onClick={onBack}

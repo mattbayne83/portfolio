@@ -1,5 +1,6 @@
 import { ExternalLink } from 'lucide-react'
 import GoldDivider from '../../shared/GoldDivider'
+import MetricGrid from '../../shared/MetricGrid'
 import SkillBadge from '../../cards/SkillBadge'
 
 const stats = [
@@ -37,17 +38,7 @@ export default function ShapeMattersArtifact() {
       <GoldDivider className="my-8" />
 
       {/* Stats */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-        {stats.map((stat) => (
-          <div
-            key={stat.label}
-            className="bg-bg-elevated rounded-lg p-5 border-t-2 border-primary/30"
-          >
-            <div className="font-mono text-2xl text-primary mb-1">{stat.value}</div>
-            <div className="text-sm text-text-on-dark-muted">{stat.label}</div>
-          </div>
-        ))}
-      </div>
+      <MetricGrid metrics={stats} className="mb-8" />
 
       {/* Tech stack */}
       <div className="mb-8">
