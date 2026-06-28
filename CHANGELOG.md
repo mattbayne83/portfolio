@@ -12,14 +12,35 @@ Format follows [Keep a Changelog](https://keepachangelog.com/); this project is 
 - **Hero role line** — explicit "Senior Product Manager · Energy & Enterprise" under the "The Synthesizer" class line.
 - **Closing CTA on the SWIFT case study** — "Want the full story behind these numbers?" → contact button.
 - **Résumé PDF** — `public/Matt_Bayne_Resume.pdf`, linked from the footer.
+- **`MetricGrid`** (`MetricGrid.tsx`) — shared result/stat callouts as gold gradient-border parchment cards with Cormorant numerals; used across all four content artifacts.
+- **`ArtifactErrorBoundary`** (`ArtifactErrorBoundary.tsx`) — catches a failed lazy-artifact import and shows a "back to the board" recovery card instead of an infinite spinner.
+- **Gold gradient tokens** — `--gradient-gold-edge` / `--gradient-gold-fill` in `index.css`; one source of truth replacing ~6 inline literals.
+- **`prefers-reduced-motion` support** — global reduce block collapsing the coin spin, card-enter stagger, 3D flip, and hover motion.
+- **Skill-card flip affordance** — persistent `RotateCw` glyph + `aria-pressed`/`aria-label` so the hidden back face is discoverable.
+- **`Cormorant Fallback` @font-face** — metric-adjusted fallback to reduce hero-headline CLS on font swap (overrides approximate, tunable).
+- **Design docs** — `.impeccable.md` (aesthetic intent / design context) and `design-system.md` (component + token catalog).
 
 ### Changed
 - Quest card hierarchy reordered: kicker → subject → descriptor → flavor quote.
+- Artifact result metrics now render via `MetricGrid` (parchment + gold) instead of flat `bg-bg-elevated` cards with accent stripes.
+- De-glassed the `ArtifactShell` sticky header (removed `backdrop-blur`).
+- Hero copy distilled — merged the two bio paragraphs into one proof-first line.
+- `SlideViewer` floors the fit scale at 0.6 and pans/scrolls on phones instead of shrinking slide text away; resize listener rAF-throttled.
+- Immersive close button moved top-left → top-right with an `aria-label` and focus ring.
+- Tokenized flat `#1A1410` backgrounds to `var(--color-bg)`.
 
 ### Fixed
 - **WCAG AA contrast** — darkened `--color-text-muted` (#8A7E6E → #6B5F4F) so muted text on parchment surfaces clears AA (≈5.2:1).
 - **Defined the `.scrollbar-hide` utility** in `index.css` — it was referenced by the mobile skill carousel but never declared, so a raw scrollbar was showing.
 - Regenerated `package-lock.json` to resolve an esbuild native-binary (darwin-arm64) mismatch that blocked the dev server.
+- **A11y** — difficulty pips use shape (◆/◇) not color alone, with `role=img`/`aria-label`; filter pills and footer links enlarged to ~40px+ tap targets; slide-viewer arrows/dots got `aria-label`s and focus-visible rings; colophon and skill-card-rank contrast lifted.
+- **Mobile skill-card flip** no longer clips inside the scroll carousel (new `flipScale` prop; mobile passes `1`).
+
+### Removed
+
+- Stale `design-system.md` (the superseded "Bold Editorial" indigo direction) — replaced by `.impeccable.md` + a regenerated `design-system.md` catalog.
+- `.badge-pill` hover glint/scale and the dead `glint` keyframe — implied clickability on static hero badges.
+- Border-left/-top accent stripes on artifact metric cards (an AI-slop tell).
 
 ## Baseline
 
