@@ -155,13 +155,9 @@ export default function CharacterSheet() {
               Senior Product Manager · Energy &amp; Enterprise
             </p>
             <p className="font-serif text-base sm:text-lg text-text-on-dark-muted mt-4 max-w-lg leading-relaxed">
-              Strategist, pattern finder, and relentless refiner. Takes vast
-              information, sees themes and connections, and builds things that are
-              beautiful, functional, and enduring.
-            </p>
-            <p className="font-serif italic text-sm text-text-on-dark-muted/80 mt-3 max-w-lg">
-              Started in the field. Built risk models. Now ships product.
-              Still builds furniture on weekends.
+              Started in the field. Built risk models. Now ships product. Still
+              builds furniture on weekends &mdash; a strategist and relentless
+              refiner who turns vast information into things that endure.
             </p>
             <div className="flex flex-wrap gap-2 mt-4">
               {['Builder', 'Engineer', 'Storyteller'].map((badge) => (

@@ -5,6 +5,7 @@ import { artifacts } from './data/artifacts'
 import LandingPage from './components/landing/LandingPage'
 import ArtifactShell from './components/viewers/ArtifactShell'
 import ImmersiveWrapper from './components/viewers/ImmersiveWrapper'
+import ArtifactErrorBoundary from './components/shared/ArtifactErrorBoundary'
 
 function LoadingScreen() {
   return (
@@ -37,20 +38,24 @@ function App() {
 
   if (artifact.immersive) {
     return (
-      <Suspense fallback={<LoadingScreen />}>
-        <ImmersiveWrapper onClose={closeArtifact} title={artifact.title}>
-          <ArtifactComponent />
-        </ImmersiveWrapper>
-      </Suspense>
+      <ArtifactErrorBoundary onBack={closeArtifact}>
+        <Suspense fallback={<LoadingScreen />}>
+          <ImmersiveWrapper onClose={closeArtifact} title={artifact.title}>
+            <ArtifactComponent />
+          </ImmersiveWrapper>
+        </Suspense>
+      </ArtifactErrorBoundary>
     )
   }
 
   return (
-    <Suspense fallback={<LoadingScreen />}>
-      <ArtifactShell artifact={artifact} onBack={closeArtifact}>
-        <ArtifactComponent />
-      </ArtifactShell>
-    </Suspense>
+    <ArtifactErrorBoundary onBack={closeArtifact}>
+      <Suspense fallback={<LoadingScreen />}>
+        <ArtifactShell artifact={artifact} onBack={closeArtifact}>
+          <ArtifactComponent />
+        </ArtifactShell>
+      </Suspense>
+    </ArtifactErrorBoundary>
   )
 }
 
