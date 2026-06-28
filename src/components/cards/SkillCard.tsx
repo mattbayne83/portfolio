@@ -4,6 +4,7 @@ import {
   Magnet,
   Lightbulb,
   Gem,
+  RotateCw,
 } from 'lucide-react'
 import type { SkillCard as SkillCardType } from '../../types'
 
@@ -37,6 +38,12 @@ export default function SkillCard({
       className="group cursor-pointer select-none rounded-xl focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-bg focus-visible:outline-none"
       tabIndex={0}
       role="button"
+      aria-pressed={isFlipped}
+      aria-label={
+        isFlipped
+          ? `${skill.name} — showing details. Activate to flip back.`
+          : `${skill.name}, ${skill.thematicTitle}. Activate to flip the card and read more.`
+      }
       onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onFlip() } }}
       style={{
         perspective: '1000px',
@@ -72,6 +79,14 @@ export default function SkillCard({
               className="absolute top-0 left-0 right-0 h-1"
               style={{ backgroundColor: skill.color }}
             />
+
+            {/* Flip affordance — signals the card has a back face */}
+            <span
+              className="absolute top-2.5 right-2.5 text-text-muted/40 group-hover:text-primary group-focus-visible:text-primary transition-colors"
+              aria-hidden="true"
+            >
+              <RotateCw size={13} strokeWidth={2} />
+            </span>
 
             {/* Icon */}
             <div className="mt-4 mb-3">

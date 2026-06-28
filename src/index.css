@@ -116,3 +116,17 @@
     left: 120%;
   }
 }
+
+/* Honor the OS "reduce motion" setting — a stated brand principle.
+   Collapses the coin spin, card-enter stagger, 3D flip, hover lifts, and
+   glint to near-instant while keeping every state change functional. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
