@@ -72,8 +72,7 @@ export default function SkillCard({
           style={{
             backfaceVisibility: 'hidden',
             padding: '2px',
-            background:
-              'linear-gradient(135deg, #C8973E 0%, #DEB668 25%, #C8973E 50%, #8B6914 75%, #C8973E 100%)',
+            background: 'var(--gradient-gold-edge)',
           }}
         >
           <div className="rounded-[10px] bg-surface h-full flex flex-col items-center px-4 py-5 relative overflow-hidden">
@@ -136,8 +135,7 @@ export default function SkillCard({
             backfaceVisibility: 'hidden',
             transform: 'rotateY(180deg)',
             padding: '2px',
-            background:
-              'linear-gradient(135deg, #C8973E 0%, #DEB668 25%, #C8973E 50%, #8B6914 75%, #C8973E 100%)',
+            background: 'var(--gradient-gold-edge)',
           }}
         >
           <div className="rounded-[10px] bg-surface h-full flex flex-col justify-center px-4 py-3 relative overflow-hidden">

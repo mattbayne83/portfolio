@@ -163,7 +163,7 @@ export default function CharacterSheet() {
               {['Builder', 'Engineer', 'Storyteller'].map((badge) => (
                 <span
                   key={badge}
-                  className="badge-pill font-display text-[11px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-full border border-primary/20 text-text-on-dark-muted/70 bg-primary/5 cursor-default"
+                  className="font-display text-[11px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-full border border-primary/20 text-text-on-dark-muted/70 bg-primary/5"
                 >
                   {badge}
                 </span>

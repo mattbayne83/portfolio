@@ -18,7 +18,7 @@ export default function GoldBorder({
       className={`rounded-xl ${className}`}
       style={{
         padding: `${thickness}px`,
-        background: `linear-gradient(135deg, #C8973E 0%, #DEB668 25%, #C8973E 50%, #8B6914 75%, #C8973E 100%)`,
+        background: 'var(--gradient-gold-edge)',
         opacity,
       }}
     >

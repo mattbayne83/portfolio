@@ -19,8 +19,7 @@ export default function QuestCard({ artifact, onClick }: QuestCardProps) {
       className="group text-left w-full cursor-pointer rounded-xl transition-all duration-300 hover:-translate-y-1 will-change-transform focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-bg focus-visible:outline-none"
       style={{
         padding: isMain ? '2px' : '1.5px',
-        background:
-          'linear-gradient(135deg, #C8973E 0%, #DEB668 25%, #C8973E 50%, #8B6914 75%, #C8973E 100%)',
+        background: 'var(--gradient-gold-edge)',
         boxShadow:
           '0 1px 2px rgba(26, 20, 16, 0.3), 0 4px 8px rgba(26, 20, 16, 0.15), 0 12px 24px rgba(26, 20, 16, 0.1)',
       }}
