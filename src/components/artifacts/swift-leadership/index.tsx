@@ -17,26 +17,13 @@ const skills = ['communication', 'maximizer', 'belief']
 export default function SwiftLeadershipArtifact() {
   return (
     <div>
-      {/* Hero */}
-      <div className="mb-8">
-        <h2 className="font-display text-3xl sm:text-4xl font-bold text-text-on-dark mb-3">
-          SWIFT Product Leadership
-        </h2>
-        <p className="font-serif italic text-lg text-primary leading-relaxed max-w-2xl">
-          From 3rd percentile to market standard. The story of rebuilding a product
-          that 100 companies depend on every day.
-        </p>
-      </div>
-
-      <GoldDivider className="my-8" />
-
       {/* The Challenge */}
-      <div className="mb-10">
-        <h3 className="font-display text-sm font-semibold tracking-widest uppercase text-primary mb-4">
+      <section className="mb-10">
+        <h2 className="font-display text-sm font-semibold tracking-widest uppercase text-primary mb-4">
           The Challenge
-        </h3>
-        <div className="space-y-4 max-w-3xl">
-          <p className="font-serif text-text-on-dark-muted leading-relaxed">
+        </h2>
+        <div className="space-y-4">
+          <p className="drop-cap font-serif text-text-on-dark leading-relaxed">
             SWIFT is the authorization platform behind ONEOK&rsquo;s natural gas
             liquids transportation network — a system that more than 100 companies
             and 400 weekly users depend on to move product worth $1.5 billion in
@@ -50,14 +37,14 @@ export default function SwiftLeadershipArtifact() {
             it worked well.
           </p>
         </div>
-      </div>
+      </section>
 
       {/* The Approach */}
-      <div className="mb-10">
-        <h3 className="font-display text-sm font-semibold tracking-widest uppercase text-primary mb-4">
+      <section className="mb-10">
+        <h2 className="font-display text-sm font-semibold tracking-widest uppercase text-primary mb-4">
           The Approach
-        </h3>
-        <div className="space-y-4 max-w-3xl">
+        </h2>
+        <div className="space-y-4">
           <p className="font-serif text-text-on-dark-muted leading-relaxed">
             I started with the fundamentals: user research across the shipper
             ecosystem, a complete audit of pain points, and a prioritization
@@ -77,29 +64,29 @@ export default function SwiftLeadershipArtifact() {
             secured funding — delivering a positive NPV at 30% IRR.
           </p>
         </div>
-      </div>
+      </section>
 
       <GoldDivider className="my-8" />
 
       {/* The Results */}
-      <div className="mb-10">
-        <h3 className="font-display text-sm font-semibold tracking-widest uppercase text-primary mb-4">
+      <section className="mb-10">
+        <h2 className="font-display text-sm font-semibold tracking-widest uppercase text-primary mb-4 text-center">
           The Results
-        </h3>
+        </h2>
         <MetricGrid metrics={metrics} />
-      </div>
+      </section>
 
       {/* Skills used */}
-      <div className="mb-4">
-        <h3 className="font-display text-xs font-semibold tracking-widest uppercase text-text-on-dark-muted mb-3">
+      <section className="mb-4">
+        <h2 className="font-display text-xs font-semibold tracking-widest uppercase text-text-on-dark-muted mb-3 text-center">
           Skills Used
-        </h3>
-        <div className="flex flex-wrap gap-4">
+        </h2>
+        <div className="flex flex-wrap justify-center gap-4">
           {skills.map((id) => (
             <SkillBadge key={id} skillId={id} />
           ))}
         </div>
-      </div>
+      </section>
 
       {/* Closing CTA — catch intent at its peak */}
       <GoldDivider className="my-8" />

@@ -15,19 +15,8 @@ const skills = ['ideation', 'communication', 'maximizer']
 export default function ShapeMattersArtifact() {
   return (
     <div>
-      {/* Hero */}
-      <div className="mb-8">
-        <h2 className="font-display text-3xl sm:text-4xl font-bold text-text-on-dark mb-3">
-          Shape Matters
-        </h2>
-        <p className="font-serif italic text-lg text-primary leading-relaxed max-w-2xl">
-          What if the shape of an organization determines how much truth survives
-          the climb to the top?
-        </p>
-      </div>
-
-      {/* Description */}
-      <p className="text-text-on-dark-muted leading-relaxed max-w-3xl mb-8">
+      {/* Description — opens the page */}
+      <p className="drop-cap font-serif text-text-on-dark leading-relaxed mb-8">
         An interactive research tool that explores how organizational depth drives
         signal decay and shapes institutional behavior. Based on academic theory
         from Bartlett, Deming, and organizational science, it lets you model your
@@ -41,11 +30,11 @@ export default function ShapeMattersArtifact() {
       <MetricGrid metrics={stats} className="mb-8" />
 
       {/* Tech stack */}
-      <div className="mb-8">
-        <h3 className="font-display text-xs font-semibold tracking-widest uppercase text-text-on-dark-muted mb-3">
+      <section className="mb-8">
+        <h2 className="font-display text-xs font-semibold tracking-widest uppercase text-text-on-dark-muted mb-3 text-center">
           Tech Stack
-        </h3>
-        <div className="flex flex-wrap gap-2">
+        </h2>
+        <div className="flex flex-wrap justify-center gap-2">
           {techStack.map((tech) => (
             <span
               key={tech}
@@ -55,19 +44,19 @@ export default function ShapeMattersArtifact() {
             </span>
           ))}
         </div>
-      </div>
+      </section>
 
       {/* Skills used */}
-      <div className="mb-8">
-        <h3 className="font-display text-xs font-semibold tracking-widest uppercase text-text-on-dark-muted mb-3">
+      <section className="mb-8">
+        <h2 className="font-display text-xs font-semibold tracking-widest uppercase text-text-on-dark-muted mb-3 text-center">
           Skills Used
-        </h3>
-        <div className="flex flex-wrap gap-4">
+        </h2>
+        <div className="flex flex-wrap justify-center gap-4">
           {skills.map((id) => (
             <SkillBadge key={id} skillId={id} />
           ))}
         </div>
-      </div>
+      </section>
 
       <GoldDivider className="my-8" />
 
@@ -77,7 +66,7 @@ export default function ShapeMattersArtifact() {
           href="https://mattbayne83.github.io/shape-matters/"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-primary hover:bg-primary-light text-bg font-display font-bold rounded-lg px-6 py-3 transition-colors"
+          className="inline-flex items-center gap-2 bg-primary hover:bg-primary-light text-bg font-display font-bold rounded-lg px-6 py-3 transition-colors focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-bg focus-visible:outline-none"
         >
           Enter the Lab
           <ExternalLink size={16} />

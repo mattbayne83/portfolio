@@ -15,26 +15,15 @@ const skills = ['ideation', 'maximizer', 'belief']
 export default function PlyplanArtifact() {
   return (
     <div>
-      {/* Hero */}
-      <div className="mb-8">
-        <h2 className="font-display text-3xl sm:text-4xl font-bold text-text-on-dark mb-3">
-          Plyplan
-        </h2>
-        <p className="font-serif italic text-lg text-primary leading-relaxed max-w-2xl">
-          Built for the workshop, not the office. Because measuring twice means
-          cutting plywood once.
-        </p>
-      </div>
-
-      {/* Description */}
-      <p className="text-text-on-dark-muted leading-relaxed max-w-3xl mb-4">
+      {/* Description — opens the page */}
+      <p className="drop-cap font-serif text-text-on-dark leading-relaxed mb-4">
         A phone-first plywood cut optimizer that answers the question every
         woodworker asks at the lumberyard: &ldquo;How many sheets do I need?&rdquo;
         Snap a photo of your hand-drawn cut list, and Gemini Vision AI extracts the
         dimensions automatically. Two bin-packing algorithms — guillotine for
         minimum waste, shelf for minimum saw changes — optimize the layout instantly.
       </p>
-      <p className="text-text-on-dark-muted leading-relaxed max-w-3xl mb-8">
+      <p className="font-serif text-text-on-dark-muted leading-relaxed mb-8">
         The answer appears in a single bold number. Then tap into SawView for a
         full-screen, pinch-to-zoom cut diagram you can take straight to the shop.
       </p>
@@ -45,11 +34,11 @@ export default function PlyplanArtifact() {
       <MetricGrid metrics={stats} className="mb-8" />
 
       {/* Tech stack */}
-      <div className="mb-8">
-        <h3 className="font-display text-xs font-semibold tracking-widest uppercase text-text-on-dark-muted mb-3">
+      <section className="mb-8">
+        <h2 className="font-display text-xs font-semibold tracking-widest uppercase text-text-on-dark-muted mb-3 text-center">
           Tech Stack
-        </h3>
-        <div className="flex flex-wrap gap-2">
+        </h2>
+        <div className="flex flex-wrap justify-center gap-2">
           {techStack.map((tech) => (
             <span
               key={tech}
@@ -59,19 +48,19 @@ export default function PlyplanArtifact() {
             </span>
           ))}
         </div>
-      </div>
+      </section>
 
       {/* Skills used */}
-      <div className="mb-8">
-        <h3 className="font-display text-xs font-semibold tracking-widest uppercase text-text-on-dark-muted mb-3">
+      <section className="mb-8">
+        <h2 className="font-display text-xs font-semibold tracking-widest uppercase text-text-on-dark-muted mb-3 text-center">
           Skills Used
-        </h3>
-        <div className="flex flex-wrap gap-4">
+        </h2>
+        <div className="flex flex-wrap justify-center gap-4">
           {skills.map((id) => (
             <SkillBadge key={id} skillId={id} />
           ))}
         </div>
-      </div>
+      </section>
 
       <GoldDivider className="my-8" />
 
@@ -81,7 +70,7 @@ export default function PlyplanArtifact() {
           href="https://mattbayne83.github.io/plyplan/"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-primary hover:bg-primary-light text-bg font-display font-bold rounded-lg px-6 py-3 transition-colors"
+          className="inline-flex items-center gap-2 bg-primary hover:bg-primary-light text-bg font-display font-bold rounded-lg px-6 py-3 transition-colors focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-bg focus-visible:outline-none"
         >
           Launch App
           <ExternalLink size={16} />
