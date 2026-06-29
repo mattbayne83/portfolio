@@ -6,9 +6,9 @@ Format follows [Keep a Changelog](https://keepachangelog.com/); this project is 
 ## [Unreleased]
 
 ### Added
-- **Maker's Mark footer** (`MakersMark.tsx`) — a signature seal closing the landing page: a single primary "Get in touch" contact CTA plus quiet links to LinkedIn, GitHub, and a résumé PDF. Links with an empty `href` are hidden; external links and the PDF open in a new tab.
-- **Shared `ContactButton`** (`ContactButton.tsx`) — one source of truth for the gold mailto button and the `CONTACT_EMAIL` constant, used by both the footer and the SWIFT case-study CTA.
-- **Plain dual-labels on quest cards** — `subject` and `subtitle` fields on `ArtifactMeta`; cards now lead with the real subject (e.g. "Pipeline Risk & Integrity") and demote the themed name ("The Prophecy") to a small kicker.
+- **Maker's Mark footer** (`MakersMark.tsx`) — a flat bar pinned to the viewport bottom: a compact "Get in touch" CTA plus quiet links to LinkedIn, GitHub, and a résumé PDF. It auto-hides — visible on landing, hides on scroll-down, returns on scroll-up or at page bottom (`inert` while hidden). Links with an empty `href` are hidden; external links and the PDF open in a new tab.
+- **Shared `ContactButton`** (`ContactButton.tsx`) — one source of truth for the gold mailto button and the `CONTACT_EMAIL` constant, used by both the footer and the SWIFT case-study CTA. A `size` prop (`'md'` hero / `'sm'` compact) keeps the footer CTA from dominating the bar.
+- **Plain dual-labels on quest cards** — `subject` and `subtitle` fields on `ArtifactMeta`; cards now lead with the real subject (e.g. "SWIFT Product Turnaround") and demote the themed name ("Rags to Riches") to a small kicker.
 - **Hero role line** — explicit "Senior Product Manager · Energy & Enterprise" under the "The Synthesizer" class line.
 - **Closing CTA on the SWIFT case study** — "Want the full story behind these numbers?" → contact button.
 - **Résumé PDF** — `public/Matt_Bayne_Resume.pdf`, linked from the footer.
@@ -21,6 +21,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/); this project is 
 - **Design docs** — `.impeccable.md` (aesthetic intent / design context) and `design-system.md` (component + token catalog).
 
 ### Changed
+- **Quest cards are now 5:7 portrait** — matching the skill-card silhouette, width-capped (`max-w-[280px]`, centered) so they stay proportional from mobile through a `lg:grid-cols-3` desktop grid instead of ballooning to column width. Card body is `flex flex-col` with the text block vertically centered, footer pinned to the bottom, and flavor text `line-clamp-5`.
 - Quest card hierarchy reordered: kicker → subject → descriptor → flavor quote.
 - Artifact result metrics now render via `MetricGrid` (parchment + gold) instead of flat `bg-bg-elevated` cards with accent stripes.
 - De-glassed the `ArtifactShell` sticky header (removed `backdrop-blur`).
@@ -38,6 +39,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/); this project is 
 
 ### Removed
 
+- **Pipeline Risk & Integrity quest** — the "Prophecy" immersive 8-slide deck and its registry entry, narrowing the board to the four strongest quests. The orphaned `--color-success` / `--color-error` tokens (its only consumers) are now unused.
 - Stale `design-system.md` (the superseded "Bold Editorial" indigo direction) — replaced by `.impeccable.md` + a regenerated `design-system.md` catalog.
 - `.badge-pill` hover glint/scale and the dead `glint` keyframe — implied clickability on static hero badges.
 - Border-left/-top accent stripes on artifact metric cards (an AI-slop tell).

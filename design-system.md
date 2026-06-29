@@ -33,7 +33,7 @@ Tailwind as utilities (`bg-surface`, `text-primary`, `font-display`, …).
 | `--color-text-on-dark` | `#D4C8B0` | Text on walnut |
 | `--color-text-on-dark-muted` | `#9E9282` | Muted text on walnut |
 | `--color-skill-*` | — | Five Clifton Strengths identity colors (belief/communication/woo/ideation/maximizer) |
-| `--color-success` `--color-error` | `#4A8B5E` `#8B3A3A` | Used in pipeline-risk slides (`text-success`/`text-error`) |
+| `--color-success` `--color-error` | `#4A8B5E` `#8B3A3A` | Currently unused — only consumer was the removed pipeline-risk deck. Safe to delete unless a future artifact needs status colors |
 
 `--color-info` / `--color-warning` are defined but currently unused — left in
 place as the obvious slots if a status/alert surface is ever needed.

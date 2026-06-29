@@ -14,15 +14,14 @@ A single-page React app that presents Matt Bayne's professional work as an inter
 - **Skill Cards** — Clifton Strengths (Belief, Communication, Woo, Ideation, Maximizer) as flippable playing cards with 3D CSS animations
 - **Quest Board** — portfolio artifacts presented as main quests with difficulty ratings, skill badges, and flavor text
 - **Artifact Pages** — each quest opens into either a full-screen immersive experience (slide decks) or a shell-mode page (case studies, project showcases)
-- **Maker's Mark footer** — a single signature seal closing the page: one primary contact action plus quiet links to LinkedIn, GitHub, and résumé (deliberately a signature, not a link hub)
+- **Maker's Mark footer** — a flat bar pinned to the bottom edge: one primary contact action plus quiet links to LinkedIn, GitHub, and résumé. It's visible on landing, slides away as you read down, and returns when you scroll back up or reach the foot of the page (deliberately a signature, not a link hub)
 
-Each quest card leads with the **plain subject** of the work (e.g. "Pipeline Risk & Integrity"), with the themed name ("The Prophecy") demoted to a small kicker — so the work is scannable in seconds while the theme stays as flavor.
+Each quest card leads with the **plain subject** of the work (e.g. "SWIFT Product Turnaround"), with the themed name ("Rags to Riches") demoted to a small kicker — so the work is scannable in seconds while the theme stays as flavor. Cards are 5:7 portrait, echoing the skill-card silhouette.
 
 ## Current Quests
 
 | Quest | Category | Type | Description |
 |-------|----------|------|-------------|
-| Pipeline Risk & Integrity | Lore | Immersive Deck | Executive presentation on the future of pipeline safety |
 | SWIFT Product Leadership | Lore | Case Study | Transforming a $1.5B platform from 3rd to 50th percentile |
 | Shape Matters | Artifact | Project Showcase | Interactive research tool: org depth and signal decay |
 | Plyplan | Artifact | Project Showcase | AI-powered plywood cut optimizer for woodworkers |

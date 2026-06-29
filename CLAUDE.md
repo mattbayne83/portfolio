@@ -15,7 +15,7 @@ Premium tabletop game-inspired personal portfolio. Character sheet hero with 5 C
 
 ## Architecture
 - State-driven routing: `activeArtifactId` null = landing, string = artifact view
-- Hash URL sync via `useHashSync` hook (`#/` ↔ `#/pipeline-risk-integrity`)
+- Hash URL sync via `useHashSync` hook (`#/` ↔ `#/swift-leadership`)
 - Artifact registry: data-driven array in `data/artifacts.ts` — add one entry + one component to add a quest
 - Two render modes: **Immersive** (full-screen, Escape to close) for decks/demos, **Shell** (persistent nav) for articles/viz
 - 3D card flip on skill cards via CSS `perspective` + `rotateY(180deg)`
@@ -37,8 +37,8 @@ Premium tabletop game-inspired personal portfolio. Character sheet hero with 5 C
 - `src/data/artifacts.ts` — Artifact registry (quest metadata: subject, subtitle, difficulty, skillsUsed, flavorText)
 - `src/data/categories.ts` — Category config (lore/scroll/artifact/map)
 - `src/store/useAppStore.ts` — activeArtifactId, filterCategory, currentSlide (partialize persists nav + slide only)
-- `src/components/landing/MakersMark.tsx` — Footer: contact CTA + LinkedIn/GitHub/Résumé. Edit the `LINKS` array to change destinations; empty `href` hides a link
-- `src/components/shared/ContactButton.tsx` — Shared gold mailto button + `CONTACT_EMAIL` constant (used by footer and the SWIFT article CTA)
+- `src/components/landing/MakersMark.tsx` — Flat, fixed bottom bar (contact CTA + LinkedIn/GitHub/Résumé). Auto-hides: visible on landing, hides on scroll-down, returns on scroll-up or at page bottom (`inert` while hidden). Edit the `LINKS` array to change destinations; empty `href` hides a link. LandingPage reserves a bottom spacer so it never covers the last quest
+- `src/components/shared/ContactButton.tsx` — Shared gold mailto button + `CONTACT_EMAIL` constant. `size` prop: `'md'` (hero CTA, default) / `'sm'` (compact, used in the footer bar). Used by footer and the SWIFT article CTA
 - `src/components/shared/MetricGrid.tsx` — Result/stat callouts as gold-border parchment cards (Cormorant numerals); use instead of flat metric grids
 - `src/components/shared/ArtifactErrorBoundary.tsx` — Wraps lazy artifact Suspense; "back to the board" recovery card on chunk-load failure
 
@@ -66,6 +66,7 @@ Premium tabletop game-inspired personal portfolio. Character sheet hero with 5 C
 - **`overflow-x-auto` forces `overflow-y: auto`** (CSS spec) — scroll containers need extra padding to accommodate `scale()` transforms on children
 - Category filter bar only renders when `allCategories.length > 1`
 - QuestCard leads with `subject` (the real headline); `title` is a small gold kicker above it — don't swap them back
+- **Quest cards are 5:7 portrait** (`aspect-[5/7]`), matching the skill-card silhouette. Width is capped (`max-w-[280px] mx-auto` on the QuestBoard grid item) so they stay proportional from mobile through the `lg:grid-cols-3` desktop grid instead of ballooning to column width. Card body is `flex flex-col`: text block vertically centered, footer pinned bottom, flavor `line-clamp-5`
 - `.scrollbar-hide` is a custom utility defined in `index.css` (not a Tailwind default) — the mobile skill carousel depends on it
 - lucide's brand icons (LinkedIn/GitHub) are deprecated; `MakersMark.tsx` uses inline SVG brand marks instead
 - Muted-on-parchment text uses `--color-text-muted: #6B5F4F` (darkened to clear WCAG AA ≈5.2:1) — don't lighten it back
