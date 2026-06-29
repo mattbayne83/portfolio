@@ -18,6 +18,8 @@ export default function LandingPage() {
     >
       <CharacterSheet />
       <QuestBoard />
+      {/* Reserve space so the fixed Maker's Mark bar never covers the last quest */}
+      <div aria-hidden className="h-20" />
       <MakersMark />
     </div>
   )

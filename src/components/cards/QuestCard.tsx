@@ -16,7 +16,7 @@ export default function QuestCard({ artifact, onClick }: QuestCardProps) {
   return (
     <button
       onClick={onClick}
-      className="group text-left w-full cursor-pointer rounded-xl transition-all duration-300 hover:-translate-y-1 will-change-transform focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-bg focus-visible:outline-none"
+      className="group text-left w-full aspect-[5/7] cursor-pointer rounded-xl transition-all duration-300 hover:-translate-y-1 will-change-transform focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-bg focus-visible:outline-none"
       style={{
         padding: isMain ? '2px' : '1.5px',
         background: 'var(--gradient-gold-edge)',
@@ -24,7 +24,7 @@ export default function QuestCard({ artifact, onClick }: QuestCardProps) {
           '0 1px 2px rgba(26, 20, 16, 0.3), 0 4px 8px rgba(26, 20, 16, 0.15), 0 12px 24px rgba(26, 20, 16, 0.1)',
       }}
     >
-      <div className="rounded-[10px] bg-surface h-full p-5 sm:p-6 relative overflow-hidden group-hover:shadow-[0_0_30px_rgba(200,151,62,0.1)]">
+      <div className="rounded-[10px] bg-surface h-full p-5 sm:p-6 relative overflow-hidden flex flex-col group-hover:shadow-[0_0_30px_rgba(200,151,62,0.1)]">
         {/* Filigree corners for main quests */}
         {isMain && (
           <>
@@ -39,39 +39,44 @@ export default function QuestCard({ artifact, onClick }: QuestCardProps) {
           <QuestTypeBadge questType={artifact.questType} />
         </div>
 
-        {/* Themed name — small kicker above the real subject */}
-        <p className="font-display text-[11px] font-semibold tracking-[0.18em] uppercase text-primary-dark mb-1">
-          {artifact.title}
-        </p>
+        {/* Text block — vertically centered so the portrait whitespace stays balanced */}
+        <div className="flex-1 flex flex-col justify-center min-h-0">
+          {/* Themed name — small kicker above the real subject */}
+          <p className="font-display text-[11px] font-semibold tracking-[0.18em] uppercase text-primary-dark mb-1">
+            {artifact.title}
+          </p>
 
-        {/* Subject — the scannable headline */}
-        <h3
-          className={`font-display font-bold text-text-high leading-tight ${
-            isMain ? 'text-2xl' : 'text-lg'
-          }`}
-        >
-          {artifact.subject}
-        </h3>
+          {/* Subject — the scannable headline */}
+          <h3
+            className={`font-display font-bold text-text-high leading-tight ${
+              isMain ? 'text-xl sm:text-2xl' : 'text-lg'
+            }`}
+          >
+            {artifact.subject}
+          </h3>
 
-        {/* Plain descriptor */}
-        <p className="font-sans text-xs text-text-muted mt-1 mb-3">
-          {artifact.subtitle}
-        </p>
+          {/* Plain descriptor */}
+          <p className="font-sans text-xs text-text-muted mt-1 mb-3">
+            {artifact.subtitle}
+          </p>
 
-        {/* Flavor text */}
-        <p className="font-serif italic text-sm text-text-body leading-relaxed mb-4">
-          &ldquo;{artifact.flavorText}&rdquo;
-        </p>
-
-        {/* Footer divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent mb-3" />
+          {/* Flavor text */}
+          <p className="font-serif italic text-sm text-text-body leading-relaxed line-clamp-5">
+            &ldquo;{artifact.flavorText}&rdquo;
+          </p>
+        </div>
 
         {/* Footer */}
-        <div className="flex items-center justify-between">
-          <DifficultyPips level={artifact.difficulty} />
-          <span className="font-mono text-[11px] text-text-muted">
-            {new Date(artifact.date).getFullYear()}
-          </span>
+        <div className="mt-4">
+          {/* Footer divider */}
+          <div className="h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent mb-3" />
+
+          <div className="flex items-center justify-between">
+            <DifficultyPips level={artifact.difficulty} />
+            <span className="font-mono text-[11px] text-text-muted">
+              {new Date(artifact.date).getFullYear()}
+            </span>
+          </div>
         </div>
       </div>
     </button>

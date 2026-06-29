@@ -22,11 +22,11 @@ export interface SkillCard {
 
 export interface ArtifactMeta {
   id: string
-  /** Themed name shown as a small kicker (e.g. "The Prophecy") */
+  /** Themed name shown as a small kicker (e.g. "Rags to Riches") */
   title: string
-  /** Plain, scannable subject — the card's real headline (e.g. "Pipeline Risk & Integrity") */
+  /** Plain, scannable subject — the card's real headline (e.g. "SWIFT Product Turnaround") */
   subject: string
-  /** One-line plain descriptor (e.g. "Executive deck · risk maturity models") */
+  /** One-line plain descriptor (e.g. "Case study · enterprise product leadership") */
   subtitle: string
   description: string
   type: ArtifactType

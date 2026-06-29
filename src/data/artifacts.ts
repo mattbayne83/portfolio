@@ -3,27 +3,6 @@ import type { ArtifactMeta } from '../types'
 
 export const artifacts: ArtifactMeta[] = [
   {
-    id: 'pipeline-risk-integrity',
-    title: 'The Prophecy',
-    subject: 'Pipeline Risk & Integrity',
-    subtitle: 'Executive deck · risk maturity models',
-    description:
-      'Executive presentation on the future of pipeline safety, risk maturity models, and data-driven integrity programs.',
-    type: 'deck',
-    category: 'lore',
-    categoryLabel: 'Lore',
-    tags: ['pipeline', 'risk', 'energy', 'strategy'],
-    date: '2020-03-11',
-    featured: true,
-    immersive: true,
-    component: lazy(() => import('../components/artifacts/pipeline-risk')),
-    questType: 'main',
-    difficulty: 4,
-    skillsUsed: ['communication', 'ideation', 'maximizer'],
-    flavorText:
-      'A vision of what pipeline safety could become when data replaces intuition and models replace spreadsheets.',
-  },
-  {
     id: 'swift-leadership',
     title: 'Rags to Riches',
     subject: 'SWIFT Product Turnaround',

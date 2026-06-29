@@ -1,16 +1,51 @@
+import { useEffect, useRef, useState } from 'react'
 import type { ComponentType, SVGProps } from 'react'
 import { Mail, FileText } from 'lucide-react'
 import ContactButton from '../shared/ContactButton'
 
 /**
- * The "Maker's Mark" — a single signature seal closing the page.
- * Not a nav bar: one primary action (contact) plus a few quiet links
- * so intent has somewhere to go without becoming a link hub.
+ * The "Maker's Mark" — a flat signature bar pinned to the bottom edge.
+ * One primary action (contact) plus a few quiet links, kept to a single row.
  *
- * To finish the footer, fill in the two empty URLs below. Links with an
- * empty `href` are automatically hidden, so nothing ever 404s.
+ * Visible on landing, it slides away as you read down and returns the moment
+ * you scroll back up or reach the foot of the page — present when wanted,
+ * out of the way otherwise.
+ *
+ * Links with an empty `href` are automatically hidden, so nothing ever 404s.
  */
 type IconProps = SVGProps<SVGSVGElement> & { size?: number }
+
+/** Show on landing, hide on scroll-down, reveal on scroll-up or at page bottom. */
+function useAutoHide() {
+  const [visible, setVisible] = useState(true)
+  const lastY = useRef(0)
+
+  useEffect(() => {
+    lastY.current = window.scrollY
+    let ticking = false
+    const update = () => {
+      const y = window.scrollY
+      const atBottom =
+        window.innerHeight + y >= document.documentElement.scrollHeight - 8
+      const delta = y - lastY.current
+      if (atBottom) setVisible(true)
+      else if (delta < -4) setVisible(true) // scrolling up
+      else if (delta > 4) setVisible(false) // scrolling down
+      lastY.current = y
+      ticking = false
+    }
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true
+        requestAnimationFrame(update)
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  return visible
+}
 
 // Brand marks are inline SVG — lucide deprecated its brand icons (trademark).
 function LinkedInMark({ size = 16, ...props }: IconProps) {
@@ -37,24 +72,44 @@ const LINKS: { label: string; href: string; Icon: ComponentType<IconProps> }[] =
 
 export default function MakersMark() {
   const links = LINKS.filter((l) => l.href)
+  const visible = useAutoHide()
 
   return (
-    <footer className="px-6 pb-16 pt-4">
-      <div className="max-w-5xl mx-auto">
-        {/* Sealing rule */}
-        <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent mb-10" />
+    <footer
+      inert={!visible}
+      className={`fixed inset-x-0 bottom-0 z-40 transition-transform duration-300 ease-out ${
+        visible ? 'translate-y-0' : 'translate-y-full'
+      }`}
+    >
+      {/* Sealing rule — the gold hairline that crowns the bar */}
+      <div className="h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
 
-        <div className="flex flex-col items-center text-center gap-6">
-          <p className="font-serif italic text-base text-text-on-dark-muted max-w-md">
-            Have a problem worth solving? I&rsquo;d like to hear about it.
+      <div
+        className="border-t border-primary/10"
+        style={{
+          backgroundColor: 'var(--color-bg)',
+          boxShadow: '0 -8px 24px rgba(26, 20, 16, 0.45)',
+        }}
+      >
+        <div className="max-w-3xl mx-auto px-6 py-3.5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+          {/* Invitation + primary action */}
+          <p className="hidden sm:block font-serif italic text-sm text-text-on-dark-muted">
+            Have a problem worth solving?
           </p>
+          <ContactButton
+            label="Get in touch"
+            size="sm"
+            icon={<Mail size={14} strokeWidth={2.25} />}
+          />
 
-          {/* Primary action — the only solid-gold button on the page */}
-          <ContactButton label="Get in touch" icon={<Mail size={16} strokeWidth={2.25} />} />
+          {/* Hairline separator between the ask and the quiet links */}
+          {links.length > 0 && (
+            <span aria-hidden className="hidden sm:block h-5 w-px bg-primary/20" />
+          )}
 
           {/* Quiet secondary links */}
           {links.length > 0 && (
-            <nav className="flex items-center gap-6">
+            <nav className="flex items-center gap-5">
               {links.map(({ label, href, Icon }) => {
                 // Open external profiles and the résumé PDF in a new tab
                 const newTab = href.startsWith('http') || href.endsWith('.pdf')
@@ -63,20 +118,17 @@ export default function MakersMark() {
                     key={label}
                     href={href}
                     {...(newTab ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                    className="group inline-flex items-center gap-1.5 py-2 px-1 text-text-on-dark-muted hover:text-primary transition-colors focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:outline-none rounded"
+                    className="group inline-flex items-center gap-1.5 py-1 text-text-on-dark-muted hover:text-primary transition-colors focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:outline-none rounded"
                   >
-                    <Icon size={16} className="opacity-80 group-hover:opacity-100" />
-                    <span className="font-display text-xs font-medium tracking-wide">{label}</span>
+                    <Icon size={15} className="opacity-80 group-hover:opacity-100" />
+                    <span className="font-display text-xs font-medium tracking-wide">
+                      {label}
+                    </span>
                   </a>
                 )
               })}
             </nav>
           )}
-
-          {/* Colophon */}
-          <p className="font-mono text-[10px] tracking-wider uppercase text-text-on-dark-muted/70 mt-2">
-            Designed &amp; built by Matt Bayne
-          </p>
         </div>
       </div>
     </footer>
