@@ -2,6 +2,7 @@
 
 ## Completed
 
+- [x] **Illuminated-manuscript shell pages** — centered reading column + warm page surface + metadata-driven chapter opener + drop caps, across SWIFT/Shape Matters/Plyplan (2026-06-28)
 - [x] **Portrait quest cards** — 5:7 aspect matching skill cards, width-capped for proportional sizing on mobile + desktop (2026-06-28)
 - [x] **Auto-hiding flat footer** — Maker's Mark restyled as a flat fixed bar that hides on scroll-down and returns on scroll-up / at page bottom (2026-06-28)
 - [x] **Removed Pipeline Risk quest** — narrowed the board to the four strongest quests (2026-06-28)
@@ -57,6 +58,7 @@
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-06-28 | Illuminated-manuscript shell pages, opener driven by metadata | Three competing left-aligned widths read as "wonky"; one centered column + a single metadata opener fixes consistency and de-duplicates per-artifact heroes — and makes case studies read like a story |
 | 2026-06-28 | Quest cards → 5:7 portrait, width-capped | Echo the skill-card silhouette for a cohesive "hand of cards" feel; cap width so they don't balloon to column width on mobile |
 | 2026-06-28 | Footer auto-hides (flat fixed bar) | Keeps the contact CTA reachable without a tall static footer stealing vertical space; present on landing + when wanted, out of the way while reading |
 | 2026-06-28 | Removed Pipeline Risk quest | /elon: four strong quests beat five when one deck is the weakest; tightens the board |

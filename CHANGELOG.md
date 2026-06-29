@@ -21,6 +21,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/); this project is 
 - **Design docs** — `.impeccable.md` (aesthetic intent / design context) and `design-system.md` (component + token catalog).
 
 ### Changed
+- **Illuminated-manuscript shell pages** — `ArtifactShell` now renders shell-mode artifacts as a single centered `max-w-2xl` reading column on a warm "page" surface (subtle parchment glow, gold hairline, soft shadow), opened by one metadata-driven chapter header (kicker=`title`, H1=`subject`, italic `flavorText`, gem divider). Replaces three competing left-aligned measures that ran body lines to ~95ch. New `.drop-cap` gilded initial opens each article; section headings are `<h2>` under the opener's single `<h1>`. SWIFT / Shape Matters / Plyplan lost their duplicated hero blocks. (SWIFT's H1 now reads "SWIFT Product Turnaround" from `subject`, matching its card.)
 - **Quest cards are now 5:7 portrait** — matching the skill-card silhouette, width-capped (`max-w-[280px]`, centered) so they stay proportional from mobile through a `lg:grid-cols-3` desktop grid instead of ballooning to column width. Card body is `flex flex-col` with the text block vertically centered, footer pinned to the bottom, and flavor text `line-clamp-5`.
 - Quest card hierarchy reordered: kicker → subject → descriptor → flavor quote.
 - Artifact result metrics now render via `MetricGrid` (parchment + gold) instead of flat `bg-bg-elevated` cards with accent stripes.

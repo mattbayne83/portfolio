@@ -17,7 +17,7 @@ Premium tabletop game-inspired personal portfolio. Character sheet hero with 5 C
 - State-driven routing: `activeArtifactId` null = landing, string = artifact view
 - Hash URL sync via `useHashSync` hook (`#/` ↔ `#/swift-leadership`)
 - Artifact registry: data-driven array in `data/artifacts.ts` — add one entry + one component to add a quest
-- Two render modes: **Immersive** (full-screen, Escape to close) for decks/demos, **Shell** (persistent nav) for articles/viz
+- Two render modes: **Immersive** (full-screen, Escape to close) for decks/demos, **Shell** (persistent nav) for articles/viz. Shell mode is an "illuminated manuscript" reading view: one centered `max-w-2xl` column on a warm "page" surface, with a metadata-driven chapter opener (kicker=`title`, H1=`subject`, italic `flavorText`, gem divider) rendered by `ArtifactShell` — artifacts supply only the body below it
 - 3D card flip on skill cards via CSS `perspective` + `rotateY(180deg)`
 - SlideViewer: fixed 960×540 design resolution, CSS `transform: scale()` to fit; floored at `MIN_SCALE` 0.6 so slides pan/scroll (not shrink to unreadable) on phones
 
@@ -55,6 +55,8 @@ Premium tabletop game-inspired personal portfolio. Character sheet hero with 5 C
 1. Create `src/components/artifacts/<id>/index.tsx` (default export component)
 2. Add one entry to `src/data/artifacts.ts` with quest metadata — including `subject` (plain scannable headline) and `subtitle` (one-line descriptor); `title` is the themed kicker
 3. Done — no other files need to change
+
+**Shell-mode artifacts:** don't render your own title/subtitle hero — `ArtifactShell` builds the illuminated opener from metadata. Start the body at the first section; add the `drop-cap` class to the opening paragraph; use `<h2>` for section headings (the opener owns the `<h1>`).
 
 ## Gotchas
 - `portfolio-storage` localStorage key — don't change (backward compat)
