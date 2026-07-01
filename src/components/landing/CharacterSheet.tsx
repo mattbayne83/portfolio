@@ -156,8 +156,8 @@ export default function CharacterSheet() {
             </p>
             <p className="font-serif text-base sm:text-lg text-text-on-dark-muted mt-4 max-w-lg leading-relaxed">
               Started in the field. Built risk models. Now ships product. Still
-              builds furniture on weekends &mdash; a strategist and relentless
-              refiner who turns vast information into things that endure.
+              builds furniture on weekends. The through-line: a product manager
+              who builds the thing himself.
             </p>
             <div className="flex flex-wrap gap-2 mt-4">
               {['Builder', 'Engineer', 'Storyteller'].map((badge) => (
@@ -174,6 +174,12 @@ export default function CharacterSheet() {
 
         {/* Skill card spread */}
         <SkillCardSpread />
+
+        {/* Card mechanic caption — names the framework, cues the flip */}
+        <p className="text-center font-serif italic text-sm text-text-on-dark-muted mt-1">
+          My top five of 34 CliftonStrengths &mdash; flip a card to read the
+          story behind each.
+        </p>
 
         {/* Divider into quest board */}
         <GoldDivider className="mt-10 mb-4" />

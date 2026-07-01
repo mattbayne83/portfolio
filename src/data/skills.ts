@@ -12,7 +12,7 @@ export const skillCards: SkillCard[] = [
     iconName: 'Compass',
     tagline: 'Core values provide clarity and conviction.',
     flavorText:
-      "Guided by unchanging core values, The Compass approaches every situation with a clarity that others find magnetic. Where others see ambiguity, he sees a clear path forward — not because the path is simple, but because the principles that light it never waver. This is the foundation upon which all other strengths are built.",
+      "I have one test for everything I make: will it hold up after I've moved on? I started in the field, where work either endures or it doesn't. It's why I build furniture on weekends and products the same way — joined properly, meant to outlast the trend that inspired them.",
     relatedTraits: [],
   },
   {
@@ -26,7 +26,7 @@ export const skillCards: SkillCard[] = [
     iconName: 'Feather',
     tagline: 'Puts thoughts into words that capture and hold attention.',
     flavorText:
-      "The Storyteller possesses a rare gift: the ability to take ideas — complex, abstract, half-formed — and breathe them into vivid language. Every presentation is a performance, every explanation a narrative. He doesn't just inform; he makes people feel the weight and wonder of what he's describing.",
+      "Numbers don't fund products — the story around them does. When I pitched the SWIFT turnaround, I didn't open with a roadmap; I told the story of a tool stuck in the 3rd usability percentile and the people stuck using it. Leadership retold that story up the chain. The retelling funded a new product.",
     relatedTraits: [],
   },
   {
@@ -40,7 +40,7 @@ export const skillCards: SkillCard[] = [
     iconName: 'Magnet',
     tagline: 'Draws energy from meeting new people and winning them over.',
     flavorText:
-      "Winning Others Over isn't a strategy — it's a reflex. The Magnetist walks into a room of strangers and feels a surge of energy where others feel dread. Every new face is an unread story, every introduction the opening line of a potential collaboration. This isn't shallow charm; it's genuine fascination with people.",
+      "The hardest room I've won ran on decades of muscle memory: field users who'd mastered the legacy system SWIFT replaced. No pitch works on people like that. I showed up, learned their workarounds, and let them watch their complaints become fixes. Strangers aren't obstacles — they're allies who haven't seen you follow through yet.",
     relatedTraits: [],
   },
   {
@@ -54,7 +54,7 @@ export const skillCards: SkillCard[] = [
     iconName: 'Lightbulb',
     tagline: 'Fascinated by ideas and connections between disparate phenomena.',
     flavorText:
-      "Where others see unrelated facts, The Architect sees a web of invisible threads connecting everything. New concepts aren't just interesting — they're intoxicating. The thrill of finding a hidden pattern, of connecting an insight from pipeline engineering to a principle from game design, is what makes every day feel like a puzzle worth solving.",
+      "My best ideas are trespassers from other fields. Plyplan started when I noticed that the question every woodworker asks at the lumberyard — how many sheets? — is a bin-packing problem computer science solved decades ago. A few weekends later I was using it to build furniture. Everything connects if you stare long enough.",
     relatedTraits: [],
   },
   {
@@ -68,7 +68,7 @@ export const skillCards: SkillCard[] = [
     iconName: 'Gem',
     tagline: "Transforms what's strong into something superb.",
     flavorText:
-      '"Good enough" is a phrase that physically hurts. The Refiner doesn\'t fix what\'s broken — that\'s a different job. Instead, he takes what\'s already working and polishes it until it gleams. Excellence isn\'t a destination; it\'s a relentless process of asking "What if this were even better?"',
+      "When I took over SWIFT it tested in the 3rd usability percentile. Getting to average would have counted as a win. We passed the 50th and I was still filing refinements — that's the affliction. I don't rescue broken things; I take what already works and polish it until it gleams.",
     relatedTraits: [],
   },
 ]
