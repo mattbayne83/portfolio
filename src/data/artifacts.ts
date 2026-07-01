@@ -80,5 +80,3 @@ export const artifacts: ArtifactMeta[] = [
   },
 ]
 
-export const allTags = [...new Set(artifacts.flatMap((a) => a.tags))]
-export const allCategories = [...new Set(artifacts.map((a) => a.category))]

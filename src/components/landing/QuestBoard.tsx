@@ -1,20 +1,12 @@
 import { useAppStore } from '../../store/useAppStore'
-import { artifacts, allCategories } from '../../data/artifacts'
-import { categoryConfig } from '../../data/categories'
+import { artifacts } from '../../data/artifacts'
 import QuestCard from '../cards/QuestCard'
-import type { ArtifactCategory } from '../../types'
 
 export default function QuestBoard() {
-  const filterCategory = useAppStore((s) => s.filterCategory)
-  const setFilterCategory = useAppStore((s) => s.setFilterCategory)
   const openArtifact = useAppStore((s) => s.openArtifact)
 
-  const filtered = filterCategory
-    ? artifacts.filter((a) => a.category === filterCategory)
-    : artifacts
-
-  const mainQuests = filtered.filter((a) => a.questType === 'main')
-  const sideQuests = filtered.filter((a) => a.questType === 'side')
+  const mainQuests = artifacts.filter((a) => a.questType === 'main')
+  const sideQuests = artifacts.filter((a) => a.questType === 'side')
 
   return (
     <section id="quest-board" className="px-6 pb-20 scroll-mt-8">
@@ -23,37 +15,6 @@ export default function QuestBoard() {
         <h2 className="font-display text-sm font-semibold tracking-[0.2em] uppercase text-primary mb-6">
           Quest Log
         </h2>
-
-        {/* Category filters — only show if more than one category exists */}
-        {allCategories.length > 1 && (
-          <div className="flex gap-2 mb-8">
-            <button
-              onClick={() => setFilterCategory(null)}
-              className={`inline-flex items-center min-h-[40px] px-4 py-2 rounded-full text-sm font-display font-semibold transition-colors cursor-pointer border focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:outline-none ${
-                filterCategory === null
-                  ? 'bg-primary/15 text-primary border-primary/30'
-                  : 'bg-transparent text-text-on-dark-muted border-text-on-dark-muted/20 hover:border-primary/30 hover:text-primary'
-              }`}
-            >
-              All
-            </button>
-            {allCategories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() =>
-                  setFilterCategory(filterCategory === cat ? null : (cat as ArtifactCategory))
-                }
-                className={`inline-flex items-center min-h-[40px] px-4 py-2 rounded-full text-sm font-display font-semibold transition-colors cursor-pointer border focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:outline-none ${
-                  filterCategory === cat
-                    ? 'bg-primary/15 text-primary border-primary/30'
-                    : 'bg-transparent text-text-on-dark-muted border-text-on-dark-muted/20 hover:border-primary/30 hover:text-primary'
-                }`}
-              >
-                {categoryConfig[cat as ArtifactCategory]?.label ?? cat}
-              </button>
-            ))}
-          </div>
-        )}
 
         {/* Main Quests */}
         {mainQuests.length > 0 && (
@@ -99,13 +60,6 @@ export default function QuestBoard() {
               ))}
             </div>
           </div>
-        )}
-
-        {/* Empty state */}
-        {filtered.length === 0 && (
-          <p className="text-center text-text-on-dark-muted py-16 font-serif italic">
-            No quests match the current filter.
-          </p>
         )}
       </div>
     </section>
