@@ -105,9 +105,23 @@
   text-shadow: 0 1px 2px rgba(26, 20, 16, 0.4);
 }
 
+/* Quest-card → manuscript morph (View Transitions API). The card and its
+   article page share a view-transition-name; the group animation carries the
+   parchment from card to page. Exponential ease-out — objects decelerate. */
+::view-transition-group(*) {
+  animation-duration: 480ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 320ms;
+}
+
 /* Honor the OS "reduce motion" setting — a stated brand principle.
    Collapses the coin spin, card-enter stagger, 3D flip, hover lifts, and
-   glint to near-instant while keeping every state change functional. */
+   glint to near-instant while keeping every state change functional.
+   (Navigation also skips startViewTransition in JS — see viewTransition.ts —
+   but the pseudo-element guard covers any future transition callers.) */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -116,5 +130,12 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  ::view-transition-group(*),
+  ::view-transition-image-pair(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
   }
 }

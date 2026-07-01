@@ -1,4 +1,4 @@
-import { Suspense } from 'react'
+import { Suspense, useEffect } from 'react'
 import { useAppStore } from './store/useAppStore'
 import { useHashSync } from './hooks/useHashSync'
 import { artifacts } from './data/artifacts'
@@ -6,12 +6,9 @@ import LandingPage from './components/landing/LandingPage'
 import ArtifactShell from './components/viewers/ArtifactShell'
 import ArtifactErrorBoundary from './components/shared/ArtifactErrorBoundary'
 
-function LoadingScreen() {
+function BodyLoading() {
   return (
-    <div
-      className="min-h-screen flex items-center justify-center"
-      style={{ backgroundColor: 'var(--color-bg)' }}
-    >
+    <div className="flex justify-center py-16">
       <div className="w-6 h-6 border-2 border-primary/30 border-t-primary rounded-full animate-spin" />
     </div>
   )
@@ -23,13 +20,17 @@ function App() {
   const activeArtifactId = useAppStore((s) => s.activeArtifactId)
   const closeArtifact = useAppStore((s) => s.closeArtifact)
 
-  if (!activeArtifactId) {
-    return <LandingPage />
-  }
+  const artifact = activeArtifactId
+    ? artifacts.find((a) => a.id === activeArtifactId)
+    : undefined
 
-  const artifact = artifacts.find((a) => a.id === activeArtifactId)
+  // Unknown hash → back to the board. Runs as an effect, not during render:
+  // closeArtifact starts a View Transition and flushes synchronously.
+  useEffect(() => {
+    if (activeArtifactId && !artifact) closeArtifact()
+  }, [activeArtifactId, artifact, closeArtifact])
+
   if (!artifact) {
-    closeArtifact()
     return <LandingPage />
   }
 
@@ -37,11 +38,14 @@ function App() {
 
   return (
     <ArtifactErrorBoundary onBack={closeArtifact}>
-      <Suspense fallback={<LoadingScreen />}>
-        <ArtifactShell artifact={artifact} onBack={closeArtifact}>
+      {/* Suspense sits INSIDE the shell so the article frame — the view-
+          transition morph target — commits synchronously on first visit;
+          only the lazy body content waits for its chunk. */}
+      <ArtifactShell artifact={artifact} onBack={closeArtifact}>
+        <Suspense fallback={<BodyLoading />}>
           <ArtifactComponent />
-        </ArtifactShell>
-      </Suspense>
+        </Suspense>
+      </ArtifactShell>
     </ArtifactErrorBoundary>
   )
 }

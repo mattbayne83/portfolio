@@ -39,6 +39,8 @@ export default function ArtifactShell({ artifact, onBack, children }: ArtifactSh
         <article
           className="max-w-2xl mx-auto rounded-2xl border border-primary/15 px-6 py-10 sm:px-12 sm:py-14"
           style={{
+            // Shared with this artifact's quest card — the card morphs into this page
+            viewTransitionName: `quest-${artifact.id}`,
             backgroundColor: 'var(--color-bg-elevated)',
             // Faint warm glow — candlelit vellum, not a hard parchment flip
             backgroundImage:
