@@ -24,9 +24,9 @@ export default function SwiftLeadershipArtifact() {
         </h2>
         <div className="space-y-4">
           <p className="drop-cap font-serif text-text-on-dark leading-relaxed">
-            SWIFT is the authorization platform behind ONEOK&rsquo;s natural gas
-            liquids transportation network — a system that more than 100 companies
-            and 400 weekly users depend on to move product worth $1.5 billion in
+            Behind ONEOK&rsquo;s natural gas liquids transportation network sits
+            SWIFT — the authorization platform that more than 100 companies and
+            400 weekly users depend on to move product worth $1.5 billion in
             annual revenue.
           </p>
           <p className="font-serif text-text-on-dark-muted leading-relaxed">

@@ -61,7 +61,7 @@ export default function QuestBoard() {
             <h3 className="font-display text-xs font-semibold tracking-widest uppercase text-text-on-dark-muted mb-4">
               Main Quests
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-[600px] mx-auto">
               {mainQuests.map((artifact, i) => (
                 <div
                   key={artifact.id}
@@ -84,7 +84,7 @@ export default function QuestBoard() {
             <h3 className="font-display text-xs font-semibold tracking-widest uppercase text-text-on-dark-muted mb-4">
               Side Quests
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-[600px] mx-auto">
               {sideQuests.map((artifact, i) => (
                 <div
                   key={artifact.id}
