@@ -1,7 +1,5 @@
 import type { ArtifactMeta } from '../../types'
 import CategoryBadge from './CategoryBadge'
-import QuestTypeBadge from './QuestTypeBadge'
-
 import DifficultyPips from './DifficultyPips'
 import GoldFiligree from '../shared/GoldFiligree'
 
@@ -22,6 +20,8 @@ export default function QuestCard({ artifact, onClick }: QuestCardProps) {
         background: 'var(--gradient-gold-edge)',
         boxShadow:
           '0 1px 2px rgba(26, 20, 16, 0.3), 0 4px 8px rgba(26, 20, 16, 0.15), 0 12px 24px rgba(26, 20, 16, 0.1)',
+        // Shared with the ArtifactShell page — the card morphs into the manuscript
+        viewTransitionName: `quest-${artifact.id}`,
       }}
     >
       <div className="rounded-[10px] bg-surface h-full p-5 sm:p-6 relative overflow-hidden flex flex-col group-hover:shadow-[0_0_30px_rgba(200,151,62,0.1)]">
@@ -36,7 +36,9 @@ export default function QuestCard({ artifact, onClick }: QuestCardProps) {
         {/* Header row */}
         <div className="flex items-start justify-between mb-3">
           <CategoryBadge category={artifact.category} />
-          <QuestTypeBadge questType={artifact.questType} />
+          <span className="font-mono text-[11px] text-text-muted">
+            {new Date(artifact.date).getFullYear()}
+          </span>
         </div>
 
         {/* Text block — vertically centered so the portrait whitespace stays balanced */}
@@ -73,8 +75,14 @@ export default function QuestCard({ artifact, onClick }: QuestCardProps) {
 
           <div className="flex items-center justify-between">
             <DifficultyPips level={artifact.difficulty} />
-            <span className="font-mono text-[11px] text-text-muted">
-              {new Date(artifact.date).getFullYear()}
+            <span className="inline-flex items-center gap-1.5 font-display text-[11px] font-bold tracking-[0.15em] uppercase text-primary-dark group-hover:text-primary group-focus-visible:text-primary transition-colors">
+              Begin Quest
+              <span
+                aria-hidden
+                className="transition-transform group-hover:translate-x-0.5"
+              >
+                →
+              </span>
             </span>
           </div>
         </div>
