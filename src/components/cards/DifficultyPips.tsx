@@ -17,7 +17,7 @@ export default function DifficultyPips({ level, max = 5 }: DifficultyPipsProps) 
           key={i}
           aria-hidden="true"
           className={`text-[11px] ${
-            i < level ? 'text-primary' : 'text-text-muted/40'
+            i < level ? 'text-primary' : 'text-text-muted'
           }`}
         >
           {i < level ? '◆' : '◇'}

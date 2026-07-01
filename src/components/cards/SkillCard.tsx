@@ -84,7 +84,7 @@ export default function SkillCard({
 
             {/* Flip affordance — signals the card has a back face */}
             <span
-              className="absolute top-2.5 right-2.5 text-text-muted/40 group-hover:text-primary group-focus-visible:text-primary transition-colors"
+              className="absolute top-2.5 right-2.5 text-text-muted group-hover:text-primary group-focus-visible:text-primary transition-colors"
               aria-hidden="true"
             >
               <RotateCw size={13} strokeWidth={2} />
