@@ -1,12 +1,14 @@
-import { ExternalLink, Shield, Cpu, Lightbulb, Zap } from 'lucide-react'
+import { ExternalLink } from 'lucide-react'
 import GoldDivider from '../../shared/GoldDivider'
 import MetricGrid from '../../shared/MetricGrid'
+import ProductShot from '../../shared/ProductShot'
 import SkillBadge from '../../cards/SkillBadge'
+import analysisShot from '../../../assets/artifacts/glimpse-analysis.png'
 
 const stats = [
-  { value: '10MB', label: 'Max File Size' },
   { value: '0', label: 'Server Calls' },
-  { value: '100%', label: 'Client-Side Processing' },
+  { value: '409', label: 'Lines Deleted in One Pass' },
+  { value: '7', label: 'Attempts to Ship Dark Mode' },
 ]
 
 const techStack = [
@@ -21,106 +23,78 @@ const skills = ['maximizer', 'ideation', 'belief']
 export default function GlimpseArtifact() {
   return (
     <div>
-      {/* Hero */}
-      <div className="mb-8">
-        <h2 className="font-display text-3xl sm:text-4xl font-bold text-text-on-dark mb-3">
-          Glimpse
+      {/* The Premise */}
+      <section className="mb-10">
+        <h2 className="font-display text-sm font-semibold tracking-widest uppercase text-primary mb-4">
+          The Premise
         </h2>
-        <p className="font-serif italic text-lg text-primary leading-relaxed max-w-2xl">
-          What if data analysis didn&rsquo;t require sending your data to strangers?
-          Pyodide brings Python to the browser. Privacy stays with you.
-        </p>
-      </div>
-
-      {/* The Vision */}
-      <section className="mb-8">
-        <div className="flex items-center gap-2 mb-4">
-          <Shield className="text-primary" size={20} />
-          <h3 className="font-display text-xl font-semibold text-text-on-dark">
-            The Vision
-          </h3>
+        <div className="space-y-4">
+          <p className="drop-cap font-serif text-text-on-dark leading-relaxed">
+            Every CSV-analysis tool on the web asks you to upload your data to
+            someone else&rsquo;s servers &mdash; financial records, customer
+            lists, proprietary datasets, all sent to strangers who promise not
+            to look. I wanted the analysis without the upload, so I built
+            Glimpse to run Python&rsquo;s pandas library entirely in the
+            browser via WebAssembly.
+          </p>
+          <p className="font-serif text-text-on-dark-muted leading-relaxed">
+            Drop in a CSV or Excel file and you get statistics, distributions,
+            correlations, and quality checks &mdash; and not a single byte
+            leaves your machine. The architecture stays deliberately small:
+            React for the UI, Zustand for state, Pyodide executing pandas on
+            the main thread.
+          </p>
         </div>
-        <p className="text-text-on-dark-muted leading-relaxed max-w-3xl mb-4">
-          Every CSV analysis tool on the web asks you to upload your data to their
-          servers. Financial records, customer lists, proprietary datasets — all sent
-          to strangers who promise they won&rsquo;t look. What if we just… didn&rsquo;t?
-        </p>
-        <p className="text-text-on-dark-muted leading-relaxed max-w-3xl">
-          Glimpse runs Python&rsquo;s pandas library entirely in your browser using
-          WebAssembly. Upload a CSV, get correlation matrices and statistical insights,
-          and never send a single byte to a server. Your data never leaves your machine.
-        </p>
       </section>
 
-      <GoldDivider className="my-8" />
+      <ProductShot
+        src={analysisShot}
+        alt="Glimpse analyzing a retail sales dataset in the browser: statistics, column structure, and quality checks"
+        caption="A 731-row dataset profiled entirely in-browser &mdash; the file never leaves the machine."
+      />
 
-      {/* The Stack */}
-      <section className="mb-8">
-        <div className="flex items-center gap-2 mb-4">
-          <Cpu className="text-primary" size={20} />
-          <h3 className="font-display text-xl font-semibold text-text-on-dark">
-            The Stack
-          </h3>
+      {/* The Hard Bug */}
+      <section className="mb-10">
+        <h2 className="font-display text-sm font-semibold tracking-widest uppercase text-primary mb-4">
+          The Bug That Took Seven Tries
+        </h2>
+        <div className="space-y-4">
+          <p className="font-serif text-text-on-dark-muted leading-relaxed">
+            Dark mode should have been trivial. It wasn&rsquo;t. My first
+            implementation read CSS variables from the DOM via{' '}
+            <code className="font-mono text-sm bg-bg-elevated px-1.5 py-0.5 rounded">getComputedStyle()</code>,
+            which created a race: React state updated, the component
+            re-rendered, a{' '}
+            <code className="font-mono text-sm bg-bg-elevated px-1.5 py-0.5 rounded">useEffect</code>{' '}
+            added the <code className="font-mono text-sm bg-bg-elevated px-1.5 py-0.5 rounded">.dark</code>{' '}
+            class <em>after</em> the render &mdash; but the canvas code read
+            CSS <em>during</em> the render. Wrong colors, every time.
+          </p>
+          <p className="font-serif text-text-on-dark-muted leading-relaxed">
+            <strong className="text-text-on-dark">Seven attempts later</strong>, the
+            insight: don&rsquo;t read the DOM. I hardcoded the theme colors in
+            TypeScript, selected them via React state, and let the data flow
+            through the tree. No race conditions, no timing bugs.
+          </p>
         </div>
-        <p className="text-text-on-dark-muted leading-relaxed max-w-3xl mb-4">
-          The technical challenge: run Python in a browser without a backend.
-          Pyodide compiles Python and its scientific stack (pandas, numpy) to
-          WebAssembly — a 30MB runtime that loads on-demand and executes
-          statistical analysis in milliseconds.
-        </p>
-        <p className="text-text-on-dark-muted leading-relaxed max-w-3xl">
-          The architecture is radically simple: React handles the UI, Zustand persists
-          results, and Pyodide executes on the main thread. No workers, no servers,
-          no complexity. Just upload, analyze, and export.
-        </p>
       </section>
 
-      <GoldDivider className="my-8" />
-
-      {/* The Challenge */}
-      <section className="mb-8">
-        <div className="flex items-center gap-2 mb-4">
-          <Lightbulb className="text-primary" size={20} />
-          <h3 className="font-display text-xl font-semibold text-text-on-dark">
-            The Challenge: Seven Iterations
-          </h3>
+      {/* The Deletion */}
+      <section className="mb-10">
+        <h2 className="font-display text-sm font-semibold tracking-widest uppercase text-primary mb-4">
+          What I Deleted
+        </h2>
+        <div className="space-y-4">
+          <p className="font-serif text-text-on-dark-muted leading-relaxed">
+            The first version had a 3D data visualization (409 lines), four
+            tabs, and 50MB file support. Impressive, unused, and slow. I
+            questioned each requirement, deleted the 3D viz outright, merged
+            correlation into the Overview tab, and cut the file limit to 10MB
+            &mdash; the size real spreadsheets actually are. The tool got
+            faster and clearer, and nobody has missed a single deleted
+            feature.
+          </p>
         </div>
-        <p className="text-text-on-dark-muted leading-relaxed max-w-3xl mb-4">
-          Dark mode should be trivial. It wasn&rsquo;t. The first implementation read
-          CSS variables from the DOM via <code className="font-mono text-sm bg-bg-elevated px-1.5 py-0.5 rounded">getComputedStyle()</code>.
-          It created race conditions: React state updated → component re-rendered →{' '}
-          <code className="font-mono text-sm bg-bg-elevated px-1.5 py-0.5 rounded">useEffect</code> added the{' '}
-          <code className="font-mono text-sm bg-bg-elevated px-1.5 py-0.5 rounded">.dark</code> class <em>after</em> the
-          render, but canvas code read CSS <em>during</em> the render. Wrong colors, every time.
-        </p>
-        <p className="text-text-on-dark-muted leading-relaxed max-w-3xl">
-          <strong className="text-text-on-dark">Seven attempts later</strong>, the insight:
-          don&rsquo;t read the DOM. Hardcode theme colors in TypeScript, select via React
-          state, and let data flow through the React tree. No race conditions. No timing
-          bugs. Just pure, predictable state.
-        </p>
-      </section>
-
-      <GoldDivider className="my-8" />
-
-      {/* The Simplification */}
-      <section className="mb-8">
-        <div className="flex items-center gap-2 mb-4">
-          <Zap className="text-primary" size={20} />
-          <h3 className="font-display text-xl font-semibold text-text-on-dark">
-            The Simplification: Elon&rsquo;s Algorithm
-          </h3>
-        </div>
-        <p className="text-text-on-dark-muted leading-relaxed max-w-3xl mb-4">
-          The first version had 3D data visualizations (DataCube3D, 409 lines),
-          four separate tabs, and 50MB file support. Impressive. Unused. Slow.
-        </p>
-        <p className="text-text-on-dark-muted leading-relaxed max-w-3xl">
-          Applied Elon&rsquo;s 5-step algorithm: Question the requirement, delete the
-          part, simplify what remains, accelerate the cycle, then automate. Deleted
-          the 3D viz. Merged correlation into Overview (4 tabs → 3). Reduced file
-          limit to 10MB. The result? Faster, clearer, and nobody missed the features.
-        </p>
       </section>
 
       <GoldDivider className="my-8" />
@@ -129,11 +103,11 @@ export default function GlimpseArtifact() {
       <MetricGrid metrics={stats} className="mb-8" />
 
       {/* Tech stack */}
-      <div className="mb-8">
-        <h3 className="font-display text-xs font-semibold tracking-widest uppercase text-text-on-dark-muted mb-3">
+      <section className="mb-8">
+        <h2 className="font-display text-xs font-semibold tracking-widest uppercase text-text-on-dark-muted mb-3 text-center">
           Tech Stack
-        </h3>
-        <div className="flex flex-wrap gap-2">
+        </h2>
+        <div className="flex flex-wrap justify-center gap-2">
           {techStack.map((tech) => (
             <span
               key={tech}
@@ -143,19 +117,19 @@ export default function GlimpseArtifact() {
             </span>
           ))}
         </div>
-      </div>
+      </section>
 
       {/* Skills used */}
-      <div className="mb-8">
-        <h3 className="font-display text-xs font-semibold tracking-widest uppercase text-text-on-dark-muted mb-3">
+      <section className="mb-8">
+        <h2 className="font-display text-xs font-semibold tracking-widest uppercase text-text-on-dark-muted mb-3 text-center">
           Skills Used
-        </h3>
-        <div className="flex flex-wrap gap-4">
+        </h2>
+        <div className="flex flex-wrap justify-center gap-4">
           {skills.map((id) => (
             <SkillBadge key={id} skillId={id} />
           ))}
         </div>
-      </div>
+      </section>
 
       <GoldDivider className="my-8" />
 
@@ -165,7 +139,7 @@ export default function GlimpseArtifact() {
           href="https://glimpse-e5e.pages.dev/"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-primary hover:bg-primary-light text-bg font-display font-bold rounded-lg px-6 py-3 transition-colors"
+          className="inline-flex items-center gap-2 bg-primary hover:bg-primary-light text-bg font-display font-bold rounded-lg px-6 py-3 transition-colors focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-bg focus-visible:outline-none"
         >
           Launch Demo
           <ExternalLink size={16} />

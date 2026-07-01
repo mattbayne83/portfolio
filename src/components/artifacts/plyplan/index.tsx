@@ -1,12 +1,14 @@
 import { ExternalLink } from 'lucide-react'
 import GoldDivider from '../../shared/GoldDivider'
 import MetricGrid from '../../shared/MetricGrid'
+import ProductShot from '../../shared/ProductShot'
 import SkillBadge from '../../cards/SkillBadge'
+import resultShot from '../../../assets/artifacts/plyplan-result.png'
 
 const stats = [
-  { value: '2', label: 'Packing Algorithms' },
-  { value: 'AI', label: 'Gemini Vision Extraction' },
-  { value: 'Phone', label: 'Built for the Job Site' },
+  { value: '30', label: 'Automated Tests' },
+  { value: '1/8"', label: 'Kerf Modeled Per Cut' },
+  { value: '2', label: 'Cutting Strategies' },
 ]
 
 const techStack = ['React', 'TypeScript', 'Gemini AI', 'Tailwind CSS', 'SVG Visualization']
@@ -15,18 +17,58 @@ const skills = ['ideation', 'maximizer', 'belief']
 export default function PlyplanArtifact() {
   return (
     <div>
-      {/* Description — opens the page */}
-      <p className="drop-cap font-serif text-text-on-dark leading-relaxed mb-4">
-        A phone-first plywood cut optimizer that answers the question every
-        woodworker asks at the lumberyard: &ldquo;How many sheets do I need?&rdquo;
-        Snap a photo of your hand-drawn cut list, and Gemini Vision AI extracts the
-        dimensions automatically. Two bin-packing algorithms — guillotine for
-        minimum waste, shelf for minimum saw changes — optimize the layout instantly.
-      </p>
-      <p className="font-serif text-text-on-dark-muted leading-relaxed mb-8">
-        The answer appears in a single bold number. Then tap into SawView for a
-        full-screen, pinch-to-zoom cut diagram you can take straight to the shop.
-      </p>
+      {/* The Problem */}
+      <section className="mb-10">
+        <h2 className="font-display text-sm font-semibold tracking-widest uppercase text-primary mb-4">
+          The Problem
+        </h2>
+        <div className="space-y-4">
+          <p className="drop-cap font-serif text-text-on-dark leading-relaxed">
+            Every project I build starts at the lumberyard with the same
+            question: how many sheets do I need? I used to answer it with a
+            pencil sketch and a guess &mdash; and I built Plyplan the weekend I
+            realized that question is a bin-packing problem computer science
+            solved decades ago.
+          </p>
+          <p className="font-serif text-text-on-dark-muted leading-relaxed">
+            Type your pieces in &mdash; or snap a photo of the hand-drawn cut
+            list and let Gemini Vision extract the dimensions, fractions and
+            all. The answer comes back as one bold number, with a cut diagram
+            you can take straight to the saw.
+          </p>
+        </div>
+      </section>
+
+      <ProductShot
+        src={resultShot}
+        alt="Plyplan on a phone: three pieces entered, one sheet needed, labeled cut diagram"
+        caption="Three pieces in, one answer out &mdash; sheet count, cost, and the cut diagram."
+        maxWidth={300}
+      />
+
+      {/* The Decision */}
+      <section className="mb-10">
+        <h2 className="font-display text-sm font-semibold tracking-widest uppercase text-primary mb-4">
+          The Decision That Matters
+        </h2>
+        <div className="space-y-4">
+          <p className="font-serif text-text-on-dark-muted leading-relaxed">
+            Plyplan ships two optimizers because waste isn&rsquo;t the only
+            cost. Minimum-waste packing gives the tightest sheets, but at the
+            saw, every fence change is a chance to make a mistake. The
+            second strategy packs pieces into shelves &mdash; same-height rows,
+            same-width rips &mdash; so you set the fence once per row and just
+            cut. Fewer perfect rectangles, fewer ruined ones.
+          </p>
+          <p className="font-serif text-text-on-dark-muted leading-relaxed">
+            The physics is modeled honestly: the blade eats an eighth of an
+            inch of material with every pass, so the packer charges kerf to the
+            right and bottom edge of every placed piece &mdash; the way a real
+            saw does. My accuracy bar for the whole tool: if the optimizer says
+            two sheets and the woodworker fits it on one, the tool is broken.
+          </p>
+        </div>
+      </section>
 
       <GoldDivider className="my-8" />
 

@@ -1,12 +1,14 @@
 import { ExternalLink } from 'lucide-react'
 import GoldDivider from '../../shared/GoldDivider'
 import MetricGrid from '../../shared/MetricGrid'
+import ProductShot from '../../shared/ProductShot'
 import SkillBadge from '../../cards/SkillBadge'
+import modelShot from '../../../assets/artifacts/shape-matters-model.png'
 
 const stats = [
-  { value: '6', label: 'Interactive Sections' },
-  { value: 'Live', label: 'Real-time Signal Model' },
-  { value: '100%', label: 'Browser-Based' },
+  { value: '223', label: 'Unit Tests' },
+  { value: '15', label: 'Reference Companies' },
+  { value: '17%', label: 'Signal Left at 9 Layers' },
 ]
 
 const techStack = ['React', 'TypeScript', 'Zustand', 'Tailwind CSS', 'SVG Animations']
@@ -15,14 +17,73 @@ const skills = ['ideation', 'communication', 'maximizer']
 export default function ShapeMattersArtifact() {
   return (
     <div>
-      {/* Description — opens the page */}
-      <p className="drop-cap font-serif text-text-on-dark leading-relaxed mb-8">
-        An interactive research tool that explores how organizational depth drives
-        signal decay and shapes institutional behavior. Based on academic theory
-        from Bartlett, Deming, and organizational science, it lets you model your
-        own organization and watch information fidelity degrade in real time as
-        layers increase.
-      </p>
+      {/* The Question */}
+      <section className="mb-10">
+        <h2 className="font-display text-sm font-semibold tracking-widest uppercase text-primary mb-4">
+          The Question
+        </h2>
+        <div className="space-y-4">
+          <p className="drop-cap font-serif text-text-on-dark leading-relaxed">
+            Most &ldquo;communication problems&rdquo; inside big companies are
+            geometry problems. I&rsquo;ve spent my career in large enterprises
+            watching good information die on its way up the chain, and I built
+            Shape Matters to test whether the org chart itself &mdash; not the
+            people on it &mdash; predicts the loss.
+          </p>
+          <p className="font-serif text-text-on-dark-muted leading-relaxed">
+            The core mechanic is Bartlett&rsquo;s 1932 serial-reproduction
+            finding, applied to hierarchy: every management layer is a lossy
+            relay. At 82% retention per relay, an organization nine layers deep
+            delivers 17% of the original signal to the CEO. Ask a question back
+            down the chain and the round trip keeps 4%.
+          </p>
+        </div>
+      </section>
+
+      <ProductShot
+        src={modelShot}
+        alt="Shape Matters org-modeling workbench: four levers, three pillar health scores, and lever exchange rates"
+        caption="The workbench &mdash; set your org&rsquo;s depth and levers, get pillar scores and what to move first."
+      />
+
+      {/* The Model */}
+      <section className="mb-10">
+        <h2 className="font-display text-sm font-semibold tracking-widest uppercase text-primary mb-4">
+          The Model
+        </h2>
+        <div className="space-y-4">
+          <p className="font-serif text-text-on-dark-muted leading-relaxed">
+            Three pillars, each with an explicit formula: Fidelity (signal
+            decays geometrically per relay), Latency (decision delay grows with
+            the square of depth), and Autonomy (decision rights, anchored to
+            Bloom &amp; Van Reenen&rsquo;s World Management Survey of ~15,000
+            firms). You model your own org with four sliders, then compare it
+            against 15 reference companies &mdash; from Valve&rsquo;s handbook
+            to GAO audits of the USPS to Gerstner&rsquo;s account of
+            pre-turnaround IBM &mdash; each scored from documented sources, not
+            vibes.
+          </p>
+        </div>
+      </section>
+
+      {/* Keeping It Honest */}
+      <section className="mb-10">
+        <h2 className="font-display text-sm font-semibold tracking-widest uppercase text-primary mb-4">
+          Keeping It Honest
+        </h2>
+        <div className="space-y-4">
+          <p className="font-serif text-text-on-dark-muted leading-relaxed">
+            A model like this is easy to bend toward the answer you wanted, so
+            the discipline is the point: 223 unit tests, and a diagnostic rule
+            (&ldquo;which pillar is binding?&rdquo;) that I replaced with a
+            theorem-backed version after exhaustively verifying it across every
+            one of the 1,030,301 possible score combinations. When experiments
+            showed a congestion parameter changed results by less than 1.1
+            points anywhere, I deleted it. The model earns each mechanism or
+            loses it.
+          </p>
+        </div>
+      </section>
 
       <GoldDivider className="my-8" />
 
