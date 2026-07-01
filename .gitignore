@@ -23,5 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
-# Private assets (resume, assessments)
-assets/
+# Private assets (resume, assessments) — root folder only
+/assets/
+
+# Design source (not needed in the published repo)
+src/assets/favicon.pen
