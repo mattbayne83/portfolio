@@ -17,7 +17,7 @@ export default function QuestBoard() {
   const sideQuests = filtered.filter((a) => a.questType === 'side')
 
   return (
-    <section className="px-6 pb-20">
+    <section id="quest-board" className="px-6 pb-20 scroll-mt-8">
       <div className="max-w-5xl mx-auto">
         {/* Section header */}
         <h2 className="font-display text-sm font-semibold tracking-[0.2em] uppercase text-primary mb-6">

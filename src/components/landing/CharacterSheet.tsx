@@ -26,13 +26,13 @@ export default function CharacterSheet() {
   }, [isSpinning])
 
   return (
-    <section className="pt-16 sm:pt-24 pb-8 px-6">
+    <section className="pt-12 sm:pt-16 pb-8 px-6">
       <div className="max-w-5xl mx-auto">
         {/* Top ornamental line */}
-        <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent mb-12" />
+        <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent mb-8" />
 
         {/* Character header */}
-        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8 mb-12">
+        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8 mb-8">
           {/* Monogram seal — 3D coin spin on hover */}
           <div
             className="shrink-0 relative cursor-pointer"
@@ -148,27 +148,24 @@ export default function CharacterSheet() {
             >
               Matt Bayne
             </h1>
-            <p className="font-serif italic text-xl sm:text-2xl text-primary mt-2">
-              The Synthesizer
-            </p>
-            <p className="font-display text-sm sm:text-base font-semibold tracking-[0.12em] uppercase text-text-on-dark mt-1">
+            <p className="font-display text-sm sm:text-base font-semibold tracking-[0.12em] uppercase text-text-on-dark mt-3">
               Senior Product Manager · Energy &amp; Enterprise
+            </p>
+            <p className="font-serif italic text-lg text-primary mt-1">
+              The Synthesizer
             </p>
             <p className="font-serif text-base sm:text-lg text-text-on-dark-muted mt-4 max-w-lg leading-relaxed">
               Started in the field. Built risk models. Now ships product. Still
               builds furniture on weekends. The through-line: a product manager
               who builds the thing himself.
             </p>
-            <div className="flex flex-wrap gap-2 mt-4">
-              {['Builder', 'Engineer', 'Storyteller'].map((badge) => (
-                <span
-                  key={badge}
-                  className="font-display text-[11px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-full border border-primary/20 text-text-on-dark-muted/70 bg-primary/5"
-                >
-                  {badge}
-                </span>
-              ))}
-            </div>
+            <p className="mt-4 font-display text-sm text-text-on-dark-muted tracking-wide">
+              <span className="text-primary text-[11px] font-bold uppercase tracking-widest mr-2">
+                Current Quest
+              </span>
+              Rebuilding the $1.5B SWIFT platform &mdash; usability up from the
+              3rd to the 50th percentile
+            </p>
           </div>
         </div>
 
@@ -180,6 +177,30 @@ export default function CharacterSheet() {
           My top five of 34 CliftonStrengths &mdash; flip a card to read the
           story behind each.
         </p>
+
+        {/* Scroll cue — the quest board lives below the fold. Button (not an
+            anchor) so it never fights useHashSync for location.hash */}
+        <div className="text-center mt-2">
+          <button
+            onClick={() => {
+              const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+              document.getElementById('quest-board')?.scrollIntoView({
+                behavior: reduce ? 'auto' : 'smooth',
+              })
+            }}
+            className="group inline-flex flex-col items-center gap-1 cursor-pointer rounded-lg px-4 py-2 focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:outline-none"
+          >
+            <span className="font-display text-xs font-semibold tracking-[0.2em] uppercase text-primary group-hover:text-primary-light transition-colors">
+              The Quest Log
+            </span>
+            <span
+              aria-hidden
+              className="text-primary group-hover:text-primary-light group-hover:translate-y-0.5 transition-all"
+            >
+              ↓
+            </span>
+          </button>
+        </div>
 
         {/* Divider into quest board */}
         <GoldDivider className="mt-10 mb-4" />
