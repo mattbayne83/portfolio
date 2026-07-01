@@ -6,6 +6,8 @@ Format follows [Keep a Changelog](https://keepachangelog.com/); this project is 
 ## [Unreleased]
 
 ### Added
+- **Quest-card → manuscript morph** (`utils/viewTransition.ts`) — nav actions run inside `document.startViewTransition`; each quest card shares a `view-transition-name` with its article page, so opening a quest expands the parchment card into the reading page and Back reverses it (scroll handled inside the snapshot window; skipped under reduced motion and in unsupported browsers). Suspense moved inside `ArtifactShell` so the morph target commits on first visit.
+- **"Begin Quest →" affordance** on quest cards — always visible (touch has no hover), gold, arrow nudges on hover.
 - **First-person skill cards with receipts** — all five CliftonStrengths flavor texts rewritten from third-person Gallup paraphrase to Matt's voice, each anchored to one verifiable story (SWIFT funding pitch, field-user adoption, bin-packing→Plyplan, 3rd→50th percentile climb). A caption under the spread names the framework ("My top five of 34 CliftonStrengths") and cues the flip.
 - **`ProductShot`** (`ProductShot.tsx`) — shared gold-framed screenshot figure for shell pages; Plyplan/Shape Matters/Glimpse now show the live products working (captured from the deployed apps).
 - **Current Quest proof line** — hero badges (Builder/Engineer/Storyteller) replaced with evidence: "Rebuilding the $1.5B SWIFT platform — usability up from the 3rd to the 50th percentile."
@@ -42,6 +44,8 @@ Format follows [Keep a Changelog](https://keepachangelog.com/); this project is 
 
 ### Removed
 
+- **Category filter bar** — filtering four quests hid work ("Lore" showed one card); subtitles already say what each quest is in plain language. Corner badges stay as flavor. Deleted the `filterCategory` store slice, `categories.ts`, and unused `allTags`/`allCategories`.
+- **MAIN QUEST chip on cards** — all four quests are main; the chip carried zero information. Year moved to the card header. Deleted `QuestTypeBadge`.
 - **Immersive mode** — `ImmersiveWrapper`, `SlideViewer`, `useEscapeKey`, the `currentSlide` store slice, and the `immersive` flag; no artifact used it in production. Also dropped the never-read `featured` flag and the unused Scroll/Map categories.
 
 ### Fixed

@@ -18,6 +18,7 @@ Premium tabletop game-inspired personal portfolio. Character sheet hero with 5 C
 - Hash URL sync via `useHashSync` hook (`#/` ↔ `#/swift-leadership`)
 - Artifact registry: data-driven array in `data/artifacts.ts` — add one entry + one component to add a quest
 - One render mode: **Shell** (persistent nav) — an "illuminated manuscript" reading view: one centered `max-w-2xl` column on a warm "page" surface, with a metadata-driven chapter opener (kicker=`title`, H1=`subject`, italic `flavorText`, gem divider) rendered by `ArtifactShell` — artifacts supply only the body below it. (Immersive/SlideViewer mode was deleted 2026-07-01 as unused dead code; restore from git history if a real deck ships)
+- **Quest-card → manuscript morph**: `openArtifact`/`closeArtifact` run inside `document.startViewTransition` (`utils/viewTransition.ts`); each QuestCard and its ArtifactShell `<article>` share `view-transition-name: quest-<id>`, so the card expands into the page and back. Scroll happens inside the snapshot window (top on open, quest board on close). Skipped under reduced motion / unsupported browsers
 - 3D card flip on skill cards via CSS `perspective` + `rotateY(180deg)`
 
 ## Design System — "The Gaming Table"
@@ -34,8 +35,8 @@ Premium tabletop game-inspired personal portfolio. Character sheet hero with 5 C
 - `src/types/index.ts` — SkillCard, ArtifactMeta, QuestType, ArtifactCategory, DifficultyLevel
 - `src/data/skills.ts` — 5 skill card objects; flavor text is FIRST-PERSON with one real receipt per strength (Belief=things that endure, Communication=SWIFT funding pitch, Woo=field-user adoption, Ideation=bin-packing→Plyplan, Maximizer=3rd→50th percentile) — don't regress to third-person Gallup paraphrase
 - `src/data/artifacts.ts` — Artifact registry (quest metadata: subject, subtitle, difficulty, skillsUsed, flavorText)
-- `src/data/categories.ts` — Category config (lore/artifact)
-- `src/store/useAppStore.ts` — activeArtifactId, filterCategory (partialize persists nav only)
+- `src/store/useAppStore.ts` — activeArtifactId only (persisted); open/close actions wrap `withViewTransition`
+- `src/utils/viewTransition.ts` — `withViewTransition(commit, afterCommit)`: flushSync inside `startViewTransition`, plain fallback for reduced-motion/unsupported
 - `src/components/landing/MakersMark.tsx` — Flat, fixed bottom bar (contact CTA + LinkedIn/GitHub/Résumé). Auto-hides: visible on landing, hides on scroll-down, returns on scroll-up or at page bottom (`inert` while hidden). Edit the `LINKS` array to change destinations; empty `href` hides a link. LandingPage reserves a bottom spacer so it never covers the last quest
 - `src/components/shared/ContactButton.tsx` — Shared gold mailto button + `CONTACT_EMAIL` constant. `size` prop: `'md'` (hero CTA, default) / `'sm'` (compact, used in the footer bar). Used by footer and the SWIFT article CTA
 - `src/components/shared/MetricGrid.tsx` — Result/stat callouts as gold-border parchment cards (Cormorant numerals); use instead of flat metric grids
@@ -44,12 +45,13 @@ Premium tabletop game-inspired personal portfolio. Character sheet hero with 5 C
 
 ## Directories
 - `src/components/landing/` — CharacterSheet, QuestBoard, LandingPage, MakersMark
-- `src/components/cards/` — SkillCard, SkillCardSpread, QuestCard, SkillBadge, DifficultyPips, QuestTypeBadge, CategoryBadge
+- `src/components/cards/` — SkillCard, SkillCardSpread, QuestCard, SkillBadge, DifficultyPips, CategoryBadge
 - `src/components/shared/` — GoldBorder, GoldDivider, GoldFiligree, ContactButton, MetricGrid, ProductShot, ArtifactErrorBoundary
 - `src/components/viewers/` — ArtifactShell
 - `src/components/artifacts/` — Self-contained artifact content (one subfolder per artifact)
 - `src/hooks/` — useHashSync, useCardFlip
-- `src/data/` — skills, artifacts, categories
+- `src/data/` — skills, artifacts
+- `src/utils/` — viewTransition
 
 ## Adding a New Artifact
 1. Create `src/components/artifacts/<id>/index.tsx` (default export component)
@@ -64,7 +66,9 @@ Premium tabletop game-inspired personal portfolio. Character sheet hero with 5 C
 - Gold gradient border uses `padding` trick on wrapper div with `bg-surface` inner — NOT a CSS border
 - 3D flip: `backface-visibility: hidden` required on BOTH faces, `transform-style: preserve-3d` on inner container
 - **`overflow-x-auto` forces `overflow-y: auto`** (CSS spec) — scroll containers need extra padding to accommodate `scale()` transforms on children
-- Category filter bar only renders when `allCategories.length > 1`
+- **No category filter** — deleted 2026-07-01 (filtering 4 quests hid work); corner CategoryBadges on cards are flavor only. Revisit only if the board grows past ~8 quests
+- **`closeArtifact`/`openArtifact` must NOT be called during render** — they `flushSync` inside a View Transition; use an effect (see the unknown-hash fallback in `App.tsx`)
+- **Suspense lives INSIDE ArtifactShell** — the article frame is the morph target and must commit synchronously; only the lazy body chunk may suspend
 - QuestCard leads with `subject` (the real headline); `title` is a small gold kicker above it — don't swap them back
 - **Quest cards are 5:7 portrait** (`aspect-[5/7]`), matching the skill-card silhouette. Width is capped (`max-w-[280px] mx-auto` on the grid item) and the main-quest grid is a centered 2×2 tableau (`sm:grid-cols-2 max-w-[600px] mx-auto`) — no 3-column orphan rows. Card body is `flex flex-col`: text block vertically centered, footer pinned bottom, flavor `line-clamp-5`
 - **Quest Log scroll cue is a `<button>`, not an `<a href="#...">`** — a hash anchor would fight `useHashSync` for `location.hash` and break routing
