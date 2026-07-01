@@ -2,6 +2,17 @@
 
 ## Completed
 
+- [x] **Quest-card → manuscript morph** — View Transitions API; card expands into its article page and back (2026-07-01)
+- [x] **First-person skill cards with receipts** — all 5 flavor texts rewritten in Matt's voice, one verifiable story each (2026-07-01)
+- [x] **Artifact page screenshots** — live-product captures on Plyplan/Shape Matters/Glimpse via shared `ProductShot` (2026-07-01)
+- [x] **Demo pages to case-study standard** — first-person, one real engineering decision each, verifiable metrics (2026-07-01)
+- [x] **Skill card back text reviewed** — tone, length, and voice unified (first-person receipts) (2026-07-01)
+- [x] **Above-the-fold credibility** — Current Quest proof line, title over epithet, Quest Log scroll cue (2026-07-01)
+- [x] **Removed category filter bar** — filtering 4 quests hid work; badges stay as flavor (2026-07-01)
+- [x] **Removed Immersive mode** — unused dead code (SlideViewer, ImmersiveWrapper, currentSlide) (2026-07-01)
+- [x] **Quest cards simplified** — MAIN QUEST chip removed, year in header, "Begin Quest →" affordance (2026-07-01)
+- [x] **Contrast fixes** — flip icon + unfilled pips to full AA muted token (2026-07-01)
+- [x] **Keyboard/ARIA on cards** — skill-card flip keyboard + aria-pressed; quest cards are buttons (verified 2026-07-01)
 - [x] **Illuminated-manuscript shell pages** — centered reading column + warm page surface + metadata-driven chapter opener + drop caps, across SWIFT/Shape Matters/Plyplan (2026-06-28)
 - [x] **Portrait quest cards** — 5:7 aspect matching skill cards, width-capped for proportional sizing on mobile + desktop (2026-06-28)
 - [x] **Auto-hiding flat footer** — Maker's Mark restyled as a flat fixed bar that hides on scroll-down and returns on scroll-up / at page bottom (2026-06-28)
@@ -34,9 +45,8 @@
 
 ## P2 — Content Refinement
 
-- [ ] **Swift case study narrative** — refine the Challenge/Approach/Results prose, add specific anecdotes
-- [ ] **Artifact page screenshots** — add visual previews (screenshots or mockups) to Shape Matters and Plyplan pages
-- [ ] **Skill card back text** — review all 5 flavor texts for tone consistency and length balance
+- [ ] **Deepen the SWIFT case study** — add tenure dates, team/scope, one named hard decision; footnote or cut the circular "380% maturity gain" metric (measured against Matt's own model — a sharp reader will notice)
+- [ ] **Maker's note** — short block: why a gaming table, photo or workshop shot, location, what Matt is open to. Turns the theme from costume into signature (top remaining authenticity gap from the 2026-07-01 review)
 
 ## P3 — New Quests (Future)
 
@@ -47,8 +57,8 @@
 
 ## P4 — Technical
 
-- [ ] **Performance** — audit Lighthouse score, optimize font loading (font-display: swap already set)
-- [ ] **Accessibility** — keyboard navigation for skill card flip, ARIA labels on quest cards
+- [ ] **Performance** — audit Lighthouse score; five Google Font families is a heavy first paint for the "several tabs open" visit (subset or trim)
+- [ ] **Copy-email fallback** — `mailto:` fails silently on machines with no mail client; add a copy-to-clipboard affordance on the contact button
 - [ ] **Analytics** — add privacy-friendly analytics (Plausible or similar) to track which quests get clicked
 - [ ] **Print stylesheet** — ensure the character sheet prints cleanly as a one-page resume alternative
 
@@ -58,6 +68,12 @@
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-07-01 | Skill-card copy is first-person with one receipt each | Third-person Gallup paraphrase was horoscope — swap-any-name-in generic; receipts make the centerpiece hiring-manager-usable |
+| 2026-07-01 | Demo pages lead with live-product screenshots + one real decision | The audience's core skepticism is "does he ship?" — shipped software was hidden behind blog-stub interstitials |
+| 2026-07-01 | Deleted category filter | Filtering 4 quests hid work ("Lore" = one card); revisit past ~8 quests |
+| 2026-07-01 | Deleted Immersive mode | No artifact used it in production; delete before you build — restore from git history with real deck content |
+| 2026-07-01 | Card→page navigation is a View Transitions morph | The parchment card expanding into the manuscript page IS the theme; falls back cleanly (reduced motion, unsupported browsers) |
+| 2026-07-01 | Quest grid is a centered 2×2 tableau | 4 cards in 3 columns left an orphan row; 2×2 reads as cards dealt on a table |
 | 2026-06-28 | Illuminated-manuscript shell pages, opener driven by metadata | Three competing left-aligned widths read as "wonky"; one centered column + a single metadata opener fixes consistency and de-duplicates per-artifact heroes — and makes case studies read like a story |
 | 2026-06-28 | Quest cards → 5:7 portrait, width-capped | Echo the skill-card silhouette for a cohesive "hand of cards" feel; cap width so they don't balloon to column width on mobile |
 | 2026-06-28 | Footer auto-hides (flat fixed bar) | Keeps the contact CTA reachable without a tall static footer stealing vertical space; present on landing + when wanted, out of the way while reading |

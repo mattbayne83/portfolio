@@ -31,7 +31,6 @@ Format follows [Keep a Changelog](https://keepachangelog.com/); this project is 
 - **Hero hierarchy** — job title now outranks "The Synthesizer"; bio ends with the site's thesis ("a product manager who builds the thing himself"); meta description swapped from abstract nouns to facts across all three meta tags.
 - **Quest board is a 2×2 tableau** — main-quest grid capped at `max-w-[600px]` two columns, eliminating the 3+1 orphan row.
 - **SWIFT opener re-worded** so the gilded drop cap no longer severs the acronym ("S|WIFT").
-
 - **Illuminated-manuscript shell pages** — `ArtifactShell` now renders shell-mode artifacts as a single centered `max-w-2xl` reading column on a warm "page" surface (subtle parchment glow, gold hairline, soft shadow), opened by one metadata-driven chapter header (kicker=`title`, H1=`subject`, italic `flavorText`, gem divider). Replaces three competing left-aligned measures that ran body lines to ~95ch. New `.drop-cap` gilded initial opens each article; section headings are `<h2>` under the opener's single `<h1>`. SWIFT / Shape Matters / Plyplan lost their duplicated hero blocks. (SWIFT's H1 now reads "SWIFT Product Turnaround" from `subject`, matching its card.)
 - **Quest cards are now 5:7 portrait** — matching the skill-card silhouette, width-capped (`max-w-[280px]`, centered) so they stay proportional from mobile through a `lg:grid-cols-3` desktop grid instead of ballooning to column width. Card body is `flex flex-col` with the text block vertically centered, footer pinned to the bottom, and flavor text `line-clamp-5`.
 - Quest card hierarchy reordered: kicker → subject → descriptor → flavor quote.
@@ -43,10 +42,13 @@ Format follows [Keep a Changelog](https://keepachangelog.com/); this project is 
 - Tokenized flat `#1A1410` backgrounds to `var(--color-bg)`.
 
 ### Removed
-
 - **Category filter bar** — filtering four quests hid work ("Lore" showed one card); subtitles already say what each quest is in plain language. Corner badges stay as flavor. Deleted the `filterCategory` store slice, `categories.ts`, and unused `allTags`/`allCategories`.
 - **MAIN QUEST chip on cards** — all four quests are main; the chip carried zero information. Year moved to the card header. Deleted `QuestTypeBadge`.
 - **Immersive mode** — `ImmersiveWrapper`, `SlideViewer`, `useEscapeKey`, the `currentSlide` store slice, and the `immersive` flag; no artifact used it in production. Also dropped the never-read `featured` flag and the unused Scroll/Map categories.
+- **Pipeline Risk & Integrity quest** — the "Prophecy" immersive 8-slide deck and its registry entry, narrowing the board to the four strongest quests. The orphaned `--color-success` / `--color-error` tokens (its only consumers) are now unused.
+- Stale `design-system.md` (the superseded "Bold Editorial" indigo direction) — replaced by `.impeccable.md` + a regenerated `design-system.md` catalog.
+- `.badge-pill` hover glint/scale and the dead `glint` keyframe — implied clickability on static hero badges.
+- Border-left/-top accent stripes on artifact metric cards (an AI-slop tell).
 
 ### Fixed
 - **`.gitignore` anchored `assets/` → `/assets/`** — the unanchored pattern silently ignored `src/assets/`, which would have broken the GitHub Actions deploy on the new bundled screenshots.
@@ -56,13 +58,6 @@ Format follows [Keep a Changelog](https://keepachangelog.com/); this project is 
 - Regenerated `package-lock.json` to resolve an esbuild native-binary (darwin-arm64) mismatch that blocked the dev server.
 - **A11y** — difficulty pips use shape (◆/◇) not color alone, with `role=img`/`aria-label`; filter pills and footer links enlarged to ~40px+ tap targets; slide-viewer arrows/dots got `aria-label`s and focus-visible rings; colophon and skill-card-rank contrast lifted.
 - **Mobile skill-card flip** no longer clips inside the scroll carousel (new `flipScale` prop; mobile passes `1`).
-
-### Removed
-
-- **Pipeline Risk & Integrity quest** — the "Prophecy" immersive 8-slide deck and its registry entry, narrowing the board to the four strongest quests. The orphaned `--color-success` / `--color-error` tokens (its only consumers) are now unused.
-- Stale `design-system.md` (the superseded "Bold Editorial" indigo direction) — replaced by `.impeccable.md` + a regenerated `design-system.md` catalog.
-- `.badge-pill` hover glint/scale and the dead `glint` keyframe — implied clickability on static hero badges.
-- Border-left/-top accent stripes on artifact metric cards (an AI-slop tell).
 
 ## Baseline
 

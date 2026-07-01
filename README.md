@@ -10,10 +10,10 @@ A premium tabletop game-inspired personal portfolio where career artifacts are q
 
 A single-page React app that presents Matt Bayne's professional work as an interactive quest board. Instead of a traditional resume site, visitors encounter:
 
-- **Character Sheet** — name, class ("The Synthesizer"), monogram seal, and 5 skill cards fanned like a hand of cards
-- **Skill Cards** — Clifton Strengths (Belief, Communication, Woo, Ideation, Maximizer) as flippable playing cards with 3D CSS animations
+- **Character Sheet** — name, class ("The Synthesizer"), monogram seal, a "Current Quest" proof line, and 5 skill cards fanned like a hand of cards
+- **Skill Cards** — Clifton Strengths (Belief, Communication, Woo, Ideation, Maximizer) as flippable playing cards with 3D CSS animations; each back carries a first-person story with a real receipt
 - **Quest Board** — portfolio artifacts presented as main quests with difficulty ratings, skill badges, and flavor text
-- **Artifact Pages** — each quest opens into either a full-screen immersive experience (slide decks) or a shell-mode page (case studies, project showcases)
+- **Artifact Pages** — clicking a quest card morphs it into an illuminated-manuscript reading page (View Transitions API) with case-study narrative, live product screenshots, and real metrics
 - **Maker's Mark footer** — a flat bar pinned to the bottom edge: one primary contact action plus quiet links to LinkedIn, GitHub, and résumé. It's visible on landing, slides away as you read down, and returns when you scroll back up or reach the foot of the page (deliberately a signature, not a link hub)
 
 Each quest card leads with the **plain subject** of the work (e.g. "SWIFT Product Turnaround"), with the themed name ("Rags to Riches") demoted to a small kicker — so the work is scannable in seconds while the theme stays as flavor. Cards are 5:7 portrait, echoing the skill-card silhouette.
@@ -56,22 +56,25 @@ npm run dev
 
 1. Create `src/components/artifacts/<id>/index.tsx` with a default export component
 2. Add one entry to `src/data/artifacts.ts` with quest metadata
-3. Done — routing, cards, and filtering are all derived from the data
+3. Done — routing, cards, and the card→page morph are all derived from the data
 
 ## Project Structure
 
 ```
 src/
+  assets/
+    artifacts/     Live product screenshots (bundled)
   components/
     landing/       Character sheet, quest board, landing page
     cards/         Skill cards, quest cards, badges, pips
-    shared/        Gold border, divider, filigree, contact button
-    viewers/       Slide viewer, immersive wrapper, artifact shell
+    shared/        Gold border, divider, filigree, contact button, product shot
+    viewers/       Artifact shell (illuminated-manuscript reading view)
     artifacts/     One subfolder per quest (self-contained)
-  data/            Skills, artifacts, categories
-  hooks/           Hash sync, escape key, card flip
+  data/            Skills, artifacts
+  hooks/           Hash sync, card flip
   store/           Zustand app store
   types/           TypeScript interfaces
+  utils/           View-transition helper
 ```
 
 ## Scripts

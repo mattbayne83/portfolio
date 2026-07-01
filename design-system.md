@@ -66,9 +66,14 @@ they're not duplicated, so they're not tokens.
 ### Motion
 
 `--animate-fade-in` (0.4s) and `--animate-card-enter` (0.5s, staggered by
-`index * 80ms`) are the two entrance animations. A global
-`@media (prefers-reduced-motion: reduce)` block collapses **all** animation and
-transition to ~instant — honor it; never add motion that ignores it.
+`index * 80ms`) are the two entrance animations. Navigation runs a
+**quest-card → manuscript morph** via the View Transitions API
+(`utils/viewTransition.ts`; group animation 480ms, exponential ease-out) —
+each quest card shares a `view-transition-name` with its article page. A
+global `@media (prefers-reduced-motion: reduce)` block collapses **all**
+animation and transition to ~instant (including the view-transition
+pseudo-elements), and `withViewTransition` skips the API entirely under
+reduced motion — honor it; never add motion that ignores it.
 
 ---
 
@@ -110,8 +115,12 @@ this writing.
   `max?=5`.
 - **`SkillBadge`** (cards, ×4) — skill name with its identity-color dot. Props:
   `skillId`.
-- **`CategoryBadge` / `QuestTypeBadge`** (cards) — small metadata pills on quest
-  cards.
+- **`CategoryBadge`** (cards) — small icon+label metadata pill in the quest-card
+  header (Lore/Artifact). Flavor only — there is no category filtering.
+- **`ProductShot`** (shared, ×3) — gold-framed screenshot figure for shell
+  pages; the canonical way to show a live product working. Props: `src`, `alt`,
+  `caption?`, `maxWidth?` (cap for phone-format captures). Images live in
+  `src/assets/artifacts/`.
 
 ### Composites
 
@@ -123,6 +132,10 @@ this writing.
   `SkillCard`s.
 - **`QuestCard`** (cards) — artifact entry card. Leads with `subject` (real
   headline); themed `title` is the small gold kicker — **never swap them**.
+  Year sits in the header row; footer closes with an always-visible
+  "Begin Quest →" affordance (touch has no hover). The card root carries
+  `view-transition-name: quest-<id>`, shared with its article page for the
+  open/close morph.
 
 ### Robustness
 
@@ -136,11 +149,14 @@ this writing.
 
 - **Adding an artifact**: create `src/components/artifacts/<id>/index.tsx`
   (default export), add one entry to `src/data/artifacts.ts`. Use `MetricGrid`
-  for stats, `GoldDivider` between sections, `SkillBadge` for skills-used.
-- **Two render modes**: Immersive (full-screen decks, `ImmersiveWrapper`) vs
-  Shell (persistent-nav articles, `ArtifactShell`). Don't blur them.
-- **Slides** are fixed 960×540, scaled by `SlideViewer` — use fixed px inside
-  slides, not responsive breakpoints.
+  for stats, `GoldDivider` between sections, `SkillBadge` for skills-used,
+  `ProductShot` for live-product evidence.
+- **One render mode**: Shell (`ArtifactShell`, the illuminated-manuscript
+  reading view). Artifacts supply only the body — gold small-caps `<h2>`
+  kickers, `.drop-cap` on the opening paragraph, left-set prose. Don't invent
+  per-page layouts. (Immersive/SlideViewer was deleted 2026-07-01 as unused.)
+- **Metrics must be real** — `MetricGrid` values are verifiable numbers (test
+  counts, percentiles, outcomes), never label-padding like "100% Browser-Based".
 
 ## Enforced anti-patterns
 
