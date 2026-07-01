@@ -6,6 +6,10 @@ Format follows [Keep a Changelog](https://keepachangelog.com/); this project is 
 ## [Unreleased]
 
 ### Added
+- **First-person skill cards with receipts** — all five CliftonStrengths flavor texts rewritten from third-person Gallup paraphrase to Matt's voice, each anchored to one verifiable story (SWIFT funding pitch, field-user adoption, bin-packing→Plyplan, 3rd→50th percentile climb). A caption under the spread names the framework ("My top five of 34 CliftonStrengths") and cues the flip.
+- **`ProductShot`** (`ProductShot.tsx`) — shared gold-framed screenshot figure for shell pages; Plyplan/Shape Matters/Glimpse now show the live products working (captured from the deployed apps).
+- **Current Quest proof line** — hero badges (Builder/Engineer/Storyteller) replaced with evidence: "Rebuilding the $1.5B SWIFT platform — usability up from the 3rd to the 50th percentile."
+- **Quest Log scroll cue** — button below the card spread scrolling to `#quest-board` (a button, not an anchor, so it never fights `useHashSync`); honors `prefers-reduced-motion`.
 - **Maker's Mark footer** (`MakersMark.tsx`) — a flat bar pinned to the viewport bottom: a compact "Get in touch" CTA plus quiet links to LinkedIn, GitHub, and a résumé PDF. It auto-hides — visible on landing, hides on scroll-down, returns on scroll-up or at page bottom (`inert` while hidden). Links with an empty `href` are hidden; external links and the PDF open in a new tab.
 - **Shared `ContactButton`** (`ContactButton.tsx`) — one source of truth for the gold mailto button and the `CONTACT_EMAIL` constant, used by both the footer and the SWIFT case-study CTA. A `size` prop (`'md'` hero / `'sm'` compact) keeps the footer CTA from dominating the bar.
 - **Plain dual-labels on quest cards** — `subject` and `subtitle` fields on `ArtifactMeta`; cards now lead with the real subject (e.g. "SWIFT Product Turnaround") and demote the themed name ("Rags to Riches") to a small kicker.
@@ -21,6 +25,11 @@ Format follows [Keep a Changelog](https://keepachangelog.com/); this project is 
 - **Design docs** — `.impeccable.md` (aesthetic intent / design context) and `design-system.md` (component + token catalog).
 
 ### Changed
+- **Demo pages raised to case-study standard** — Plyplan/Shape Matters/Glimpse rewritten first-person with one real engineering decision each (two-optimizer tradeoff + kerf asymmetry; three-pillar model + theorem-verified binding rule; 7-attempt dark-mode race + 409-line deletion) and verifiable metrics (30/223 tests, 15 provenance-tagged reference companies) replacing filler stat grids. Glimpse's duplicate in-page hero removed; all three pages now follow SWIFT's left-set section grammar.
+- **Hero hierarchy** — job title now outranks "The Synthesizer"; bio ends with the site's thesis ("a product manager who builds the thing himself"); meta description swapped from abstract nouns to facts across all three meta tags.
+- **Quest board is a 2×2 tableau** — main-quest grid capped at `max-w-[600px]` two columns, eliminating the 3+1 orphan row.
+- **SWIFT opener re-worded** so the gilded drop cap no longer severs the acronym ("S|WIFT").
+
 - **Illuminated-manuscript shell pages** — `ArtifactShell` now renders shell-mode artifacts as a single centered `max-w-2xl` reading column on a warm "page" surface (subtle parchment glow, gold hairline, soft shadow), opened by one metadata-driven chapter header (kicker=`title`, H1=`subject`, italic `flavorText`, gem divider). Replaces three competing left-aligned measures that ran body lines to ~95ch. New `.drop-cap` gilded initial opens each article; section headings are `<h2>` under the opener's single `<h1>`. SWIFT / Shape Matters / Plyplan lost their duplicated hero blocks. (SWIFT's H1 now reads "SWIFT Product Turnaround" from `subject`, matching its card.)
 - **Quest cards are now 5:7 portrait** — matching the skill-card silhouette, width-capped (`max-w-[280px]`, centered) so they stay proportional from mobile through a `lg:grid-cols-3` desktop grid instead of ballooning to column width. Card body is `flex flex-col` with the text block vertically centered, footer pinned to the bottom, and flavor text `line-clamp-5`.
 - Quest card hierarchy reordered: kicker → subject → descriptor → flavor quote.
@@ -31,7 +40,13 @@ Format follows [Keep a Changelog](https://keepachangelog.com/); this project is 
 - Immersive close button moved top-left → top-right with an `aria-label` and focus ring.
 - Tokenized flat `#1A1410` backgrounds to `var(--color-bg)`.
 
+### Removed
+
+- **Immersive mode** — `ImmersiveWrapper`, `SlideViewer`, `useEscapeKey`, the `currentSlide` store slice, and the `immersive` flag; no artifact used it in production. Also dropped the never-read `featured` flag and the unused Scroll/Map categories.
+
 ### Fixed
+- **`.gitignore` anchored `assets/` → `/assets/`** — the unanchored pattern silently ignored `src/assets/`, which would have broken the GitHub Actions deploy on the new bundled screenshots.
+- **Flip-affordance and unfilled-pip contrast** — `text-muted/40` (≈1.9:1 on parchment) raised to the full AA-compliant muted token.
 - **WCAG AA contrast** — darkened `--color-text-muted` (#8A7E6E → #6B5F4F) so muted text on parchment surfaces clears AA (≈5.2:1).
 - **Defined the `.scrollbar-hide` utility** in `index.css` — it was referenced by the mobile skill carousel but never declared, so a raw scrollbar was showing.
 - Regenerated `package-lock.json` to resolve an esbuild native-binary (darwin-arm64) mismatch that blocked the dev server.

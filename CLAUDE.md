@@ -17,9 +17,8 @@ Premium tabletop game-inspired personal portfolio. Character sheet hero with 5 C
 - State-driven routing: `activeArtifactId` null = landing, string = artifact view
 - Hash URL sync via `useHashSync` hook (`#/` ↔ `#/swift-leadership`)
 - Artifact registry: data-driven array in `data/artifacts.ts` — add one entry + one component to add a quest
-- Two render modes: **Immersive** (full-screen, Escape to close) for decks/demos, **Shell** (persistent nav) for articles/viz. Shell mode is an "illuminated manuscript" reading view: one centered `max-w-2xl` column on a warm "page" surface, with a metadata-driven chapter opener (kicker=`title`, H1=`subject`, italic `flavorText`, gem divider) rendered by `ArtifactShell` — artifacts supply only the body below it
+- One render mode: **Shell** (persistent nav) — an "illuminated manuscript" reading view: one centered `max-w-2xl` column on a warm "page" surface, with a metadata-driven chapter opener (kicker=`title`, H1=`subject`, italic `flavorText`, gem divider) rendered by `ArtifactShell` — artifacts supply only the body below it. (Immersive/SlideViewer mode was deleted 2026-07-01 as unused dead code; restore from git history if a real deck ships)
 - 3D card flip on skill cards via CSS `perspective` + `rotateY(180deg)`
-- SlideViewer: fixed 960×540 design resolution, CSS `transform: scale()` to fit; floored at `MIN_SCALE` 0.6 so slides pan/scroll (not shrink to unreadable) on phones
 
 ## Design System — "The Gaming Table"
 - **Palette**: Dark walnut bg (#1A1410), parchment surface (#F2EAD9), burnished gold primary (#C8973E)
@@ -30,25 +29,26 @@ Premium tabletop game-inspired personal portfolio. Character sheet hero with 5 C
 - **Design docs**: `.impeccable.md` = aesthetic *intent* (audience/brand/anti-references); `design-system.md` = component + token *catalog*
 
 ## Key Files
-- `src/App.tsx` — Hub shell: LandingPage vs ImmersiveWrapper vs ArtifactShell
+- `src/App.tsx` — Hub shell: LandingPage vs ArtifactShell
 - `src/index.css` — Tailwind @theme tokens (palette, gradients, animations), `Cormorant Fallback` @font-face (CLS), and the global `prefers-reduced-motion` block
 - `src/types/index.ts` — SkillCard, ArtifactMeta, QuestType, ArtifactCategory, DifficultyLevel
-- `src/data/skills.ts` — 5 skill card objects with flavor text from Clifton Strengths assessment
+- `src/data/skills.ts` — 5 skill card objects; flavor text is FIRST-PERSON with one real receipt per strength (Belief=things that endure, Communication=SWIFT funding pitch, Woo=field-user adoption, Ideation=bin-packing→Plyplan, Maximizer=3rd→50th percentile) — don't regress to third-person Gallup paraphrase
 - `src/data/artifacts.ts` — Artifact registry (quest metadata: subject, subtitle, difficulty, skillsUsed, flavorText)
-- `src/data/categories.ts` — Category config (lore/scroll/artifact/map)
-- `src/store/useAppStore.ts` — activeArtifactId, filterCategory, currentSlide (partialize persists nav + slide only)
+- `src/data/categories.ts` — Category config (lore/artifact)
+- `src/store/useAppStore.ts` — activeArtifactId, filterCategory (partialize persists nav only)
 - `src/components/landing/MakersMark.tsx` — Flat, fixed bottom bar (contact CTA + LinkedIn/GitHub/Résumé). Auto-hides: visible on landing, hides on scroll-down, returns on scroll-up or at page bottom (`inert` while hidden). Edit the `LINKS` array to change destinations; empty `href` hides a link. LandingPage reserves a bottom spacer so it never covers the last quest
 - `src/components/shared/ContactButton.tsx` — Shared gold mailto button + `CONTACT_EMAIL` constant. `size` prop: `'md'` (hero CTA, default) / `'sm'` (compact, used in the footer bar). Used by footer and the SWIFT article CTA
 - `src/components/shared/MetricGrid.tsx` — Result/stat callouts as gold-border parchment cards (Cormorant numerals); use instead of flat metric grids
 - `src/components/shared/ArtifactErrorBoundary.tsx` — Wraps lazy artifact Suspense; "back to the board" recovery card on chunk-load failure
+- `src/components/shared/ProductShot.tsx` — Gold-framed screenshot figure for shell pages; live-product captures live in `src/assets/artifacts/`
 
 ## Directories
 - `src/components/landing/` — CharacterSheet, QuestBoard, LandingPage, MakersMark
 - `src/components/cards/` — SkillCard, SkillCardSpread, QuestCard, SkillBadge, DifficultyPips, QuestTypeBadge, CategoryBadge
-- `src/components/shared/` — GoldBorder, GoldDivider, GoldFiligree, ContactButton, MetricGrid, ArtifactErrorBoundary
-- `src/components/viewers/` — SlideViewer, ImmersiveWrapper, ArtifactShell
+- `src/components/shared/` — GoldBorder, GoldDivider, GoldFiligree, ContactButton, MetricGrid, ProductShot, ArtifactErrorBoundary
+- `src/components/viewers/` — ArtifactShell
 - `src/components/artifacts/` — Self-contained artifact content (one subfolder per artifact)
-- `src/hooks/` — useHashSync, useEscapeKey, useCardFlip
+- `src/hooks/` — useHashSync, useCardFlip
 - `src/data/` — skills, artifacts, categories
 
 ## Adding a New Artifact
@@ -61,14 +61,14 @@ Premium tabletop game-inspired personal portfolio. Character sheet hero with 5 C
 ## Gotchas
 - `portfolio-storage` localStorage key — don't change (backward compat)
 - Skill card fan rotations hardcoded in `SkillCardSpread.tsx` — change `fanRotations` array for different spread
-- Slide components use their own internal colors (neutral-50/950) — not affected by theme tokens
-- **Slides are designed at 960×540** — use fixed pixel sizes inside slides (NOT responsive Tailwind breakpoints). SlideViewer scales the entire slide with CSS transform.
 - Gold gradient border uses `padding` trick on wrapper div with `bg-surface` inner — NOT a CSS border
 - 3D flip: `backface-visibility: hidden` required on BOTH faces, `transform-style: preserve-3d` on inner container
 - **`overflow-x-auto` forces `overflow-y: auto`** (CSS spec) — scroll containers need extra padding to accommodate `scale()` transforms on children
 - Category filter bar only renders when `allCategories.length > 1`
 - QuestCard leads with `subject` (the real headline); `title` is a small gold kicker above it — don't swap them back
-- **Quest cards are 5:7 portrait** (`aspect-[5/7]`), matching the skill-card silhouette. Width is capped (`max-w-[280px] mx-auto` on the QuestBoard grid item) so they stay proportional from mobile through the `lg:grid-cols-3` desktop grid instead of ballooning to column width. Card body is `flex flex-col`: text block vertically centered, footer pinned bottom, flavor `line-clamp-5`
+- **Quest cards are 5:7 portrait** (`aspect-[5/7]`), matching the skill-card silhouette. Width is capped (`max-w-[280px] mx-auto` on the grid item) and the main-quest grid is a centered 2×2 tableau (`sm:grid-cols-2 max-w-[600px] mx-auto`) — no 3-column orphan rows. Card body is `flex flex-col`: text block vertically centered, footer pinned bottom, flavor `line-clamp-5`
+- **Quest Log scroll cue is a `<button>`, not an `<a href="#...">`** — a hash anchor would fight `useHashSync` for `location.hash` and break routing
+- **`.gitignore` uses `/assets/` (root-anchored)** — the unanchored form silently ignores `src/assets/` and breaks the CI build on bundled images
 - `.scrollbar-hide` is a custom utility defined in `index.css` (not a Tailwind default) — the mobile skill carousel depends on it
 - lucide's brand icons (LinkedIn/GitHub) are deprecated; `MakersMark.tsx` uses inline SVG brand marks instead
 - Muted-on-parchment text uses `--color-text-muted: #6B5F4F` (darkened to clear WCAG AA ≈5.2:1) — don't lighten it back
