@@ -1,18 +1,14 @@
-import { BookOpen, Scroll, Box, Map } from 'lucide-react'
+import { BookOpen, Box } from 'lucide-react'
 import type { ArtifactCategory } from '../../types'
 
 const iconMap = {
   lore: BookOpen,
-  scroll: Scroll,
   artifact: Box,
-  map: Map,
 } as const
 
 const labelMap: Record<ArtifactCategory, string> = {
   lore: 'Lore',
-  scroll: 'Scroll',
   artifact: 'Artifact',
-  map: 'Map',
 }
 
 interface CategoryBadgeProps {

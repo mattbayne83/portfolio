@@ -7,21 +7,11 @@ export const categoryConfig: Record<
   lore: {
     label: 'Lore',
     iconName: 'BookOpen',
-    description: 'Presentations and decks — collections of knowledge',
-  },
-  scroll: {
-    label: 'Scroll',
-    iconName: 'Scroll',
-    description: 'Written pieces — articles, analyses, narratives',
+    description: 'Case studies and written narratives',
   },
   artifact: {
     label: 'Artifact',
     iconName: 'Box',
     description: 'Interactive demonstrations and working prototypes',
-  },
-  map: {
-    label: 'Map',
-    iconName: 'Map',
-    description: 'Data visualizations and exploratory maps',
   },
 }

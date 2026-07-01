@@ -1,7 +1,7 @@
 import type { LazyExoticComponent, ComponentType } from 'react'
 
-export type ArtifactType = 'deck' | 'article' | 'demo' | 'viz'
-export type ArtifactCategory = 'lore' | 'scroll' | 'artifact' | 'map'
+export type ArtifactType = 'article' | 'demo'
+export type ArtifactCategory = 'lore' | 'artifact'
 export type QuestType = 'main' | 'side'
 export type DifficultyLevel = 1 | 2 | 3 | 4 | 5
 export type StrengthDomain = 'executing' | 'influencing' | 'strategic-thinking'
@@ -34,8 +34,6 @@ export interface ArtifactMeta {
   categoryLabel: string
   tags: string[]
   date: string
-  featured: boolean
-  immersive: boolean
   thumbnail?: string
   component: LazyExoticComponent<ComponentType>
   questType: QuestType

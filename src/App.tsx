@@ -4,7 +4,6 @@ import { useHashSync } from './hooks/useHashSync'
 import { artifacts } from './data/artifacts'
 import LandingPage from './components/landing/LandingPage'
 import ArtifactShell from './components/viewers/ArtifactShell'
-import ImmersiveWrapper from './components/viewers/ImmersiveWrapper'
 import ArtifactErrorBoundary from './components/shared/ArtifactErrorBoundary'
 
 function LoadingScreen() {
@@ -35,18 +34,6 @@ function App() {
   }
 
   const ArtifactComponent = artifact.component
-
-  if (artifact.immersive) {
-    return (
-      <ArtifactErrorBoundary onBack={closeArtifact}>
-        <Suspense fallback={<LoadingScreen />}>
-          <ImmersiveWrapper onClose={closeArtifact} title={artifact.title}>
-            <ArtifactComponent />
-          </ImmersiveWrapper>
-        </Suspense>
-      </ArtifactErrorBoundary>
-    )
-  }
 
   return (
     <ArtifactErrorBoundary onBack={closeArtifact}>
