@@ -11,7 +11,7 @@ const stats = [
   { value: '2', label: 'Cutting Strategies' },
 ]
 
-const techStack = ['React', 'TypeScript', 'Gemini AI', 'Tailwind CSS', 'SVG Visualization']
+const techStack = ['React', 'TypeScript', 'Tailwind CSS', 'SVG Visualization']
 const skills = ['ideation', 'maximizer', 'belief']
 
 export default function PlyplanArtifact() {
@@ -31,10 +31,12 @@ export default function PlyplanArtifact() {
             solved decades ago.
           </p>
           <p className="font-serif text-text-on-dark-muted leading-relaxed">
-            Type your pieces in &mdash; or snap a photo of the hand-drawn cut
-            list and let Gemini Vision extract the dimensions, fractions and
-            all. The answer comes back as one bold number, with a cut diagram
-            you can take straight to the saw.
+            Type your pieces in &mdash; width, length, how many &mdash; and a
+            simple nesting algorithm packs them onto standard sheets. The
+            answer comes back as one bold number, with a cost estimate and a
+            cut diagram you can take straight to the saw. No AI, no magic
+            &mdash; a well-understood algorithm, applied where it earns its
+            keep.
           </p>
         </div>
       </section>
