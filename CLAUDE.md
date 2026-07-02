@@ -74,9 +74,10 @@ Premium tabletop game-inspired personal portfolio. Character sheet hero with 5 C
 - **Quest Log scroll cue is a `<button>`, not an `<a href="#...">`** — a hash anchor would fight `useHashSync` for `location.hash` and break routing
 - **`.gitignore` uses `/assets/` (root-anchored)** — the unanchored form silently ignores `src/assets/` and breaks the CI build on bundled images
 - `.scrollbar-hide` is a custom utility defined in `index.css` (not a Tailwind default) — the mobile skill carousel depends on it
+- **Mobile skill carousel is a scroll-driven fan** (`SkillCardSpread.tsx`): a rAF scroll handler sinks/tilts/shrinks cards by distance from center; the edge fade is a CSS `mask-image` on the scroller itself (never an overlay div — it can't stay aligned with the scroll edge). The scroller is full-bleed via `-mx-6`, which must match CharacterSheet's section `px-6`; `paddingInline: calc(50vw - 100px)` lets the first/last cards snap to center. Arc transforms skip under reduced motion; gem pips below the fan handle position + tap-to-navigate
 - lucide's brand icons (LinkedIn/GitHub) are deprecated; `MakersMark.tsx` uses inline SVG brand marks instead
 - Muted-on-parchment text uses `--color-text-muted: #6B5F4F` (darkened to clear WCAG AA ≈5.2:1) — don't lighten it back
 - **Reduced motion is honored globally** — `index.css` has a `prefers-reduced-motion: reduce` block that collapses all animation/transition; don't add motion that ignores it
 - **Artifact stats use `MetricGrid`** — never hand-roll flat metric cards with colored `border-left/-top` stripes (an AI-slop tell the detector flags)
-- **Skill-card flip** takes a `flipScale` prop; the mobile carousel passes `1` to avoid clipping inside `overflow-x-auto`
+- **Skill-card flip** takes a `flipScale` prop; the mobile carousel passes `1.06` (subtle pop that stays inside the scroller's `pt-8 pb-12` — bigger scales clip in `overflow-x-auto`)
 - `npx impeccable --json src` should stay at **0 findings** — it gates banned anti-patterns (accent stripes, gradient text, glassmorphism)
