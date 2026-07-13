@@ -5,10 +5,6 @@ Format follows [Keep a Changelog](https://keepachangelog.com/); this project is 
 
 ## [Unreleased]
 
-### Changed
-- **Skill-card receipts diversified** — Communication → release-comms play (ADO stories → 5 channels · ~15 min · 7 releases); Woo → Williams Operational Risk (40+ trained · 2,500 projects / $1.5B CAPEX); Maximizer → KB audit (113 articles · 61/100 · 22 dead links). Belief (furniture) and Ideation (Plyplan) unchanged. SWIFT usability turnaround no longer repeats on skill backs.
-- **Skill-card back layout** — quiet reading surface only (name + one flavor paragraph). Dropped the overbuilt reverse (thematic kicker, gold rule, echo split, rank, flip icon). Woo receipt shortened (40+ trained; CAPEX scale left off the card).
-
 ### Added
 - **`VOICE.md`** — single writing doctrine merging ONEOK work corpus (Teams/email mechanics, anti-slop) with portfolio gold (receipts, hard calls, registers). `CLAUDE.md` and `README.md` point agents here before any user-facing copy. Audit: `tasks/voice-audit-2026-07-12.md`.
 - **Maker's note** — ultra-short parchment card in the Character Sheet bio column (`MakersNote.tsx`): why a gaming table, Tulsa, open invitation. Text-only v1; theme as signature, not costume.
@@ -24,6 +20,8 @@ Format follows [Keep a Changelog](https://keepachangelog.com/); this project is 
 - **Design docs** — `.impeccable.md` + `design-system.md`.
 
 ### Changed
+- **Skill-card receipts diversified** — Communication → release-comms play (ADO stories → 5 channels · ~15 min · 7 releases); Woo → Williams Operational Risk (40+ trained); Maximizer → KB audit (113 articles · 61/100 · 22 dead links). Belief (furniture) and Ideation (Plyplan) unchanged. SWIFT usability turnaround no longer repeats on skill backs (lives on the SWIFT quest + Current Quest line only).
+- **Skill-card back layout** — quiet reading surface only: small name + one italic flavor paragraph (~45–55 words), design-system `text-xs` / `leading-relaxed`. Front owns icon, thematic title, domain, tagline, rank, flip affordance — do not restack them on the reverse.
 - **Voice alignment pass** — skill **taglines** first-person with receipts (no Gallup paste); Shape/Glimpse descriptions plain; Glimpse flavor declarative; SWIFT flavor drops "not just"; SWIFT section "Foundations, Then the Storage Bet"; hallway CTA (*Curious about the intake system - or the storage bet?*); user-facing em dashes → spaced hyphens; italic pivots on Plyplan/Glimpse/Shape gold lines.
 - **Demo pages to case-study standard** — first-person, one real engineering decision each, verifiable metrics; shared manuscript grammar.
 - **Hero hierarchy** — job title outranks "The Synthesizer"; bio ends with site thesis.
@@ -31,13 +29,13 @@ Format follows [Keep a Changelog](https://keepachangelog.com/); this project is 
 
 ### Fixed
 - **SWIFT tenure** — Senior PM on SWIFT from **2024** (not 2022).
-- **Communication skill receipt** — pitch retelling funded a **usability improvement effort**, not a new product.
+- **Skill-card reverse density** — overbuilt back (kicker / rule / echo / rank / flip icon) and ad-hoc 11px shrink removed after cramped Woo; restored quiet face that fits without shrinking type.
 - **Plyplan story** — plain nesting algorithm, not "AI-powered" (earlier correction retained in copy).
 - **`.gitignore` anchored `/assets/`** — unanchored pattern would ignore `src/assets/` and break CI image bundling.
 - Contrast (muted-on-parchment AA), `.scrollbar-hide`, mobile skill carousel fan, a11y on cards/pips.
 
 ### Removed
-- Category filter bar; MAIN QUEST chip; Immersive/SlideViewer mode; Pipeline Risk quest; accent-stripe metric cards.
+- Category filter bar; MAIN QUEST chip; Immersive/SlideViewer mode; Pipeline Risk quest; accent-stripe metric cards; skill-back `echo` field and reverse-face chrome stack.
 
 ## Baseline
 

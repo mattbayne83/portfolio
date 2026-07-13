@@ -19,7 +19,7 @@ Premium tabletop game-inspired personal portfolio. Character sheet hero with 5 C
 - Artifact registry: data-driven array in `data/artifacts.ts` — add one entry + one component to add a quest
 - One render mode: **Shell** (persistent nav) — an "illuminated manuscript" reading view: one centered `max-w-2xl` column on a warm "page" surface, with a metadata-driven chapter opener (kicker=`title`, H1=`subject`, italic `flavorText`, gem divider) rendered by `ArtifactShell` — artifacts supply only the body below it. (Immersive/SlideViewer mode was deleted 2026-07-01 as unused dead code; restore from git history if a real deck ships)
 - **Quest-card → manuscript morph**: `openArtifact`/`closeArtifact` run inside `document.startViewTransition` (`utils/viewTransition.ts`); each QuestCard and its ArtifactShell `<article>` share `view-transition-name: quest-<id>`, so the card expands into the page and back. Scroll happens inside the snapshot window (top on open, quest board on close). Skipped under reduced motion / unsupported browsers
-- 3D card flip on skill cards via CSS `perspective` + `rotateY(180deg)`
+- 3D card flip on skill cards via CSS `perspective` + `rotateY(180deg)`. Front = chrome + tagline; back = quiet reverse (name + italic receipt only)
 
 ## Design System — "The Gaming Table"
 - **Palette**: Dark walnut bg (#1A1410), parchment surface (#F2EAD9), burnished gold primary (#C8973E)
@@ -84,6 +84,8 @@ Premium tabletop game-inspired personal portfolio. Character sheet hero with 5 C
 - **Reduced motion is honored globally** — `index.css` has a `prefers-reduced-motion: reduce` block that collapses all animation/transition; don't add motion that ignores it
 - **Artifact stats use `MetricGrid`** — never hand-roll flat metric cards with colored `border-left/-top` stripes (an AI-slop tell the detector flags)
 - **Skill-card flip** takes a `flipScale` prop; the mobile carousel passes `1.06` (subtle pop that stays inside the scroller's `pt-8 pb-12` — bigger scales clip in `overflow-x-auto`)
+- **Skill-card back is quiet** — name + one italic `flavorText` only (~45–55 words). Do not reintroduce thematic title, domain badge, rank, gold rules, flip icon, or split `echo` on the reverse; cut words before shrinking type
+- **`SKILL_CARD_WIDTH` / `SKILL_CARD_HEIGHT`** exported from `SkillCard.tsx` — `SkillCardSpread` imports width for carousel pitch; change both places via the export
 - `npx impeccable --json src` should stay at **0 findings** — it gates banned visual anti-patterns (accent stripes, gradient text, glassmorphism); `VOICE.md` gates verbal AI-slop
 - **User-facing copy joints** — prefer spaced hyphen ` - ` (or period/comma); do not "upgrade" to em dashes for polish. Code comments may still use em dashes
 - **SWIFT facts** — Senior PM on SWIFT from **2024** (not 2022). Storage product funding is a separate bet (3% adoption IRR). Skill-card receipts are *not* the usability turnaround (that story lives on the SWIFT quest only)

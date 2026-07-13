@@ -49,10 +49,15 @@
 - [x] **Maker's note** — ultra-short parchment card inside Character Sheet (why the table, Tulsa, open to hard problems); text-only v1 (2026-07-12)
 - [x] **Voice doctrine codified** — `VOICE.md` merges ONEOK work corpus + portfolio gold; CLAUDE.md points at it (2026-07-12)
 - [x] **Voice alignment pass** — P0 taglines, P1 blurbs/SWIFT, P2 joints per `tasks/voice-audit-2026-07-12.md` (2026-07-12)
+- [x] **Skill receipts diversified** — Comm=release-comms, Woo=Williams Operational Risk (40+), Maximizer=KB audit; Belief/Ideation kept; SWIFT off skill backs (2026-07-12)
+- [x] **Skill-card quiet reverse** — name + one italic flavor only; no front chrome restacked; ~45–55 words (2026-07-12)
 - [ ] **Maker's note photo** — optional workshop/portrait shot if a photo becomes available
+- [ ] **Current Quest line** — still SWIFT 3rd→50th; optional rotate to Conduit / dual-track once a new hero proof is chosen
 
 ## P3 — New Quests (Future)
 
+- [ ] **Conduit — living tariff map** — strongest documented non-SWIFT work win (wins-gallery); 0→1 map, delete route-planning hard call; public-safe check first
+- [ ] **KB self-improving / release-comms** — already skill receipts; full quest only if depth warrants beyond the cards
 - [ ] **F3 Podcast deep dive** — if enough content warrants a standalone Scroll artifact (episode highlights, audio player)
 - [ ] **Woodworking gallery** — if photo-ready projects accumulate, create a Map artifact with project cards
 - [ ] **Career timeline visualization** — interactive "Adventurer's Path" if the character sheet needs more depth
@@ -75,7 +80,8 @@
 | 2026-07-12 | Prefer spaced hyphen in user-facing copy | Work typing uses ` - `; stacked em-dash essay cadence reads as tool voice |
 | 2026-07-12 | Skill taglines first-person like backs | Card fronts were Gallup paste; name-swap failure at first glance |
 | 2026-07-12 | SWIFT tenure 2024; Communication funded usability effort | Fact corrections from Matt - never invent or soft-guess receipts |
-| 2026-07-12 | Skill receipts: Comm=release-comms, Woo=Williams risk, Maximizer=KB audit | Diversify off SWIFT turnaround overuse; Belief/Ideation kept |
+| 2026-07-12 | Skill receipts: Comm=release-comms, Woo=Williams risk (40+), Maximizer=KB audit | Diversify off SWIFT turnaround overuse; Belief/Ideation kept |
+| 2026-07-12 | Skill back = quiet reverse (name + italic story only) | Restacking front chrome cramped Woo; Matt confirmed keep name, 40+, italic |
 | 2026-07-01 | Skill-card copy is first-person with one receipt each | Third-person Gallup paraphrase was horoscope — swap-any-name-in generic; receipts make the centerpiece hiring-manager-usable |
 | 2026-07-01 | Demo pages lead with live-product screenshots + one real decision | The audience's core skepticism is "does he ship?" — shipped software was hidden behind blog-stub interstitials |
 | 2026-07-01 | Deleted category filter | Filtering 4 quests hid work ("Lore" = one card); revisit past ~8 quests |

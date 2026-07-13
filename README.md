@@ -11,7 +11,7 @@ A premium tabletop game-inspired personal portfolio where career artifacts are q
 A single-page React app that presents Matt Bayne's professional work as an interactive quest board. Instead of a traditional resume site, visitors encounter:
 
 - **Character Sheet** — name, role, class ("The Synthesizer"), monogram seal, a "Current Quest" proof line, Maker's Note colophon, and 5 skill cards fanned like a hand of cards
-- **Skill Cards** — Clifton Strengths as flippable playing cards; **front taglines** and **back stories** are first-person with real receipts (never Gallup paraphrase)
+- **Skill Cards** — Clifton Strengths as flippable playing cards; **front taglines** and **back stories** are first-person with real receipts (never Gallup paraphrase). Receipts are diversified: release-comms, Williams risk, KB audit, furniture, Plyplan — not five retellings of the SWIFT turnaround. Back face is a quiet reverse (name + one italic story)
 - **Quest Board** — portfolio artifacts as main quests with difficulty ratings and plain dual-labels (subject first, themed kicker second)
 - **Artifact Pages** — quest cards morph into illuminated-manuscript reading pages (View Transitions API) with case-study narrative, live product screenshots, and verifiable metrics
 - **Maker's Mark footer** — a flat bar pinned to the bottom: one primary contact action plus quiet LinkedIn, GitHub, and résumé links. Auto-hides on scroll-down; returns on scroll-up or at page bottom (signature, not a link hub)
@@ -92,4 +92,4 @@ tasks/             Backlog + voice audit
 
 ## Roadmap
 
-See `tasks/backlog.md`. Open items are mostly technical (performance, copy-email fallback, analytics) and future quests when content exists. Content/voice refinement for the four quests is largely complete.
+See `tasks/backlog.md`. Open items: technical polish (performance, copy-email fallback, analytics), optional Maker's note photo, Current Quest rotation, and future quests when content is public-safe (Conduit is the strongest documented candidate). Voice and skill-card receipts for the four quests are current.

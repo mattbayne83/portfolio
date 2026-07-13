@@ -121,7 +121,7 @@ Credible, specific, quietly confident. Arc: person stuck → unglamorous choice 
 | Code | Where | Length | Must | Must not |
 |------|--------|--------|------|----------|
 | **A Proof** | Hero, Current Quest, meta | ≤25 words | Role or outcome fact | Epithets, passion |
-| **B Skill back** | Card flip | 40–70 words | One scene + one outcome | Generic trait definition |
+| **B Skill back** | Card flip | ~45–55 words | One scene + one outcome; quiet reverse (name + italic story only) | Generic trait definition; restacked front chrome |
 | **B′ Skill face** | Tagline on front | ≤12 words | First-person or concrete | Third-person Gallup paraphrase |
 | **C Quest card** | Flavor + subtitle | 1–2 sentences | Specificity | Duplicate "What if"; "exploring how…" |
 | **D Manuscript** | Artifact body | 2–4 paras / section | Named hard call; verifiable metrics | Résumé soup; theme cosplay |

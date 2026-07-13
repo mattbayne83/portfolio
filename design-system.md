@@ -124,12 +124,15 @@ this writing.
 
 ### Composites
 
-- **`SkillCard`** (cards) — flippable Clifton-Strength card. 3D flip
-  (`preserve-3d` + `backface-visibility`), `flipScale?=1.2` (mobile passes `1`
-  to avoid carousel clipping), persistent `RotateCw` flip affordance, full
-  keyboard + `aria-pressed`/`aria-label`.
+- **`SkillCard`** (cards) — flippable Clifton-Strength card (fixed 200×280;
+  export `SKILL_CARD_WIDTH` / `SKILL_CARD_HEIGHT` for carousel math). 3D flip
+  (`preserve-3d` + `backface-visibility`), `flipScale?=1.2` (mobile passes
+  `1.06` to avoid carousel clipping). **Front:** icon, name, thematic title,
+  domain badge, tagline, rank, `RotateCw` flip affordance. **Back:** quiet
+  reverse only — small name + one italic flavor paragraph (~45–55 words);
+  do not restack front chrome. Full keyboard + `aria-pressed`/`aria-label`.
 - **`SkillCardSpread`** (cards) — desktop fan + mobile snap-carousel of
-  `SkillCard`s.
+  `SkillCard`s; imports `SKILL_CARD_WIDTH` so pitch stays in sync.
 - **`QuestCard`** (cards) — artifact entry card. Leads with `subject` (real
   headline); themed `title` is the small gold kicker — **never swap them**.
   Year sits in the header row; footer closes with an always-visible
