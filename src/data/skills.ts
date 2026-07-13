@@ -40,7 +40,7 @@ export const skillCards: SkillCard[] = [
     iconName: 'Magnet',
     tagline: 'Show up, train the room, follow through.',
     flavorText:
-      "When I founded Operational Risk at Williams, the hard room wasn't a board deck - it was practitioners who'd treated risk as a compliance checkbox. No pitch wins that. I showed up, trained 40+ people, and stuck around until risk-informed decisions beat reactive fire drills - including capital prioritization across 2,500 projects and $1.5B in planned CAPEX. Strangers aren't obstacles - they're allies who haven't seen you follow through yet.",
+      "When I founded Operational Risk at Williams, the hard room was practitioners treating risk as a compliance checkbox. No pitch wins that. I showed up, trained 40+ people, and stuck around until risk-informed decisions beat fire drills - including 2,500 projects and $1.5B in planned CAPEX. Strangers aren't obstacles - they're allies who haven't seen you follow through yet.",
     relatedTraits: [],
   },
   {

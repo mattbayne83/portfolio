@@ -138,7 +138,7 @@ export default function SkillCard({
             background: 'var(--gradient-gold-edge)',
           }}
         >
-          <div className="rounded-[10px] bg-surface h-full flex flex-col justify-center px-4 py-3 relative overflow-hidden">
+          <div className="rounded-[10px] bg-surface h-full flex flex-col justify-center px-3.5 py-3 relative overflow-hidden">
             {/* Accent bar */}
             <div
               className="absolute top-0 left-0 right-0 h-1"
@@ -146,12 +146,12 @@ export default function SkillCard({
             />
 
             {/* Name */}
-            <h4 className="font-display text-sm font-semibold text-text-high text-center mb-4">
+            <h4 className="font-display text-sm font-semibold text-text-high text-center mb-2">
               {skill.name}
             </h4>
 
-            {/* Flavor text */}
-            <p className="font-serif italic text-xs text-text-body leading-relaxed text-center">
+            {/* Flavor text — keep receipts ~50–60 words so they fit the fixed face */}
+            <p className="font-serif italic text-[11px] text-text-body leading-snug text-center">
               {skill.flavorText}
             </p>
           </div>
