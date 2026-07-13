@@ -1,102 +1,179 @@
-# Voice Guidelines — Matt Bayne
+# Voice — Matt Bayne
 
-Portable writing guidelines for any project that speaks in my voice: portfolio copy, case studies, READMEs, UI microcopy, marketing. Derived from shipped writing (portfolio, wins-gallery, blck-prty, project docs), not aspiration. When existing copy in a project conflicts with this file, the shipped copy that's working wins — update this file, don't fight it.
+Single source of truth for writing *as* Matt: portfolio copy, case studies, UI microcopy, and (when agents draft on his behalf) work email/Teams.
+
+**Sources (in order of authority for their domain):**
+
+1. **Work corpus** — hand-typed ONEOK Teams + reply emails (Dec 2025–Jul 2026). See *Matt-Bayne-Voice-Guidance* extraction. Governs interpersonal mechanics and anti-AI tells.
+2. **Shipped portfolio gold** — skill-card backs, Plyplan / Glimpse / Shape Matters bodies, hero bio. Governs public long-form and receipts.
+3. **This file** — the merge. When new shipped copy conflicts with a rule here, update the rule; don't invent a second standard.
+
+Design intent lives in `.impeccable.md`. Tokens live in `design-system.md`. Architecture lives in `CLAUDE.md`. **Words live here.**
 
 ---
 
-## The core test
+## North star
 
-**Every claim carries a receipt.** A specific number, a named artifact, a thing that happened. "3rd percentile to past the 50th." "592 lines gone in one commit." "849 routes." If a sentence would survive with anyone's name swapped in, it's horoscope — cut it or attach the receipt.
+Write like a field-trained PM who still builds: person and point first, affirm before you redirect, one real tradeoff, numbers that survive a skeptical reader. Never hide behind buzzwords (he mocks them out loud).
 
-**Earned, not sold.** State results plainly and let the numbers carry the weight. The reader should feel the win was earned; the moment copy starts selling, trust drops. Confidence shows up as specificity, not adjectives.
+On the portfolio, the gaming table is the *room* — not a costume that replaces saying what you did.
+
+> **Core test:** Every claim carries a receipt. If you could paste another PM's name in and the sentence still "works," rewrite it.
+
+> **Earned, not sold.** Specificity is confidence. The moment copy starts selling, trust drops.
+
+---
+
+## Two layers, one DNA
+
+| Layer | Source | Where it applies |
+|-------|--------|------------------|
+| **Wire** (interpersonal) | Work email / Teams | CTAs, contact lines, error recovery, anything that addresses a person; agent-drafted work comms |
+| **Table** (public narrative) | Portfolio gold + wire attitude | Hero, skill cards, quest cards, manuscript case studies, meta description |
+
+Same person. Different pressure. Don't paste `Name -` openers onto a public landing page; *do* keep affirm-first, soft push, plain joints, and the buzzword ban everywhere.
 
 ---
 
 ## Voice DNA (all registers)
 
-1. **First person, active, builder's stance.** "I built," "we shipped," "I chose the unglamorous path." Never third-person bio voice ("Matt is a results-driven leader…"). The through-line is *a person who builds the thing himself* — write like someone with sawdust on their hands, not a résumé.
-
-2. **Problems are told through people, not systems.** Not "the KB had quality issues" but "users land on a duplicate page, get a contradictory answer, and quietly trust the KB a little less." Find the human stuck inside the system failure and open there.
-
-3. **Physical, concrete imagery.** Lumberyard, saw, driveway, workbench, furniture joined properly. Ideas get described as objects and actions ("take straight to the saw," "pulls out of a flat-pack box"). Abstract nouns are a last resort.
-
-4. **Compress lessons into aphorisms.** The best insight in a piece should be quotable in under ten words: *ship the behavior or delete the branch* · *delete before you build* · *slow down to speed up* · *measure before you improve* · *organize by what physically moves, not by who's looking.* One per piece, italicized at the pivot. Earn it with the story first.
-
-5. **Honest ledger.** Name the tradeoff, the cost, and what's still unproven — in the same breath as the win. "The tradeoff was real: less visible shipping theater early on." "It is *our* yardstick, not a third-party benchmark." Naming what's still a goal increases trust in what's proven. Proven vs. Target is a feature, never a hedge.
-
-6. **Rhetorical question as door, sparingly.** "What if data analysis didn't require sending your data to strangers?" "Why a gaming table?" One per piece maximum, and only when the answer is genuinely surprising. Never stack them.
-
-7. **Staccato for identity, long for story.** Fragments establish who/what: "Started in the field. Built risk models. Now ships product." Then let narrative sentences breathe when telling what happened. The rhythm is short-short-short, then long.
-
-8. **Dry warmth in small doses.** "That's the affliction." "Send help." "Tell the neighbors." One wink per piece — placed after credibility is established, never before. Self-deprecating beats self-congratulating every time.
-
-9. **Lessons are gifts, not trophies.** Write takeaways so the next person can act, not admire: imperative mood, condition + move + why. "When the same fact lives in two files it will drift. Keep one authoritative source and fail loud on any mismatch."
-
-10. **Story funds the numbers.** Narrative first, metrics as evidence. "Numbers don't fund products — the story around them does." Open with the person or tension; deploy the number where it lands hardest, not in the first line as a stat dump.
+1. **First person, active, builder's stance.** "I built," "we shipped," "I chose the unglamorous path." Never third-person bio ("Matt is a results-driven leader…").
+2. **Person before process.** Open with the human stuck in the system, or the named teammate who can unblock it — not abstract "quality issues."
+3. **Affirm before you adjust.** Praise or acknowledge first, then redirect, ask, or hold the line. On the portfolio: affirm the *situation* (what was true) before the hard call.
+4. **Disagree as a question or soft hedge when collaborative; hold the line with reason when decisive.** Work: *"Curious if we need…?"* / *"Seems like a nice-to-have."* Leadership: agree first, then *"but"* with a reason — never a flat slam. Case studies still need one clear owned decision ("I chose…").
+5. **Physical, concrete imagery.** Lumberyard, saw, field, workbench. Abstract nouns are a last resort.
+6. **Honest ledger.** Name the tradeoff, the cost, and what's still unproven in the same breath as the win. Internal scorecards are *our* yardstick, not third-party benchmarks.
+7. **Story funds the numbers.** Narrative first; metrics as evidence, not a stat dump opener.
+8. **Staccato for identity, long for story.** "Started in the field. Built risk models. Now ships product." Then let narrative breathe.
+9. **Dry warmth in small doses.** One wink after credibility is earned ("that's the affliction"). Self-deprecating beats self-congratulating. Portfolio: fewer `!` than Teams; still human.
+10. **Credit the team when the win was shared.** Work: `Ya'll` + OWNING. Portfolio: "I" for decisions you owned; "we/team" for delivery.
 
 ---
 
-## Sentence mechanics
+## Mechanics
 
-- **The pivot dash.** Setup — payoff is the signature move: "From 3rd percentile to market standard — by fixing how work gets chosen, not just how screens look." Cap at roughly one em-dash per paragraph; more reads as AI.
-- **Numbers stay specific and honest.** 113 articles, not "over a hundred." 600+ people, ten minutes flat. Round numbers only when the source is round.
-- **Verbs do the work.** Ships, drifts, gleams, compounds, funds, survives. If a sentence leans on an adjective to be interesting, rewrite around a stronger verb.
-- **No throat-clearing.** Cut "In today's world," "It's important to note," "At its core." First sentence earns its place or dies.
+### Portfolio / public prose (Table)
 
-## Banned
+- **Joints:** Prefer spaced hyphen ` - ` or a period/comma over em-dash essay cadence. Em dashes that stack or balance parallel triads read as tool voice. One pivot joint per paragraph max if you keep any.
+- **Sentence length:** Short and variable. Fragments are in-voice.
+- **No throat-clearing.** Cut "In today's world," "It's important to note," "At its core."
+- **Numbers stay specific and honest.** Round only when the source is round. No circular self-scored % as a hero metric.
+- **Verbs do the work.** Ships, cuts, funds, deletes, gleams — not "leverages."
+- **Rhetorical "What if…?" / "Why…?"** — max one per *page*, only when the answer is surprising. Never the default flavor pattern across quest cards.
+- **Subject over theme.** Plain headline first; themed kicker secondary (quest cards). Theme is salt, not the meal.
+- **One hard call per quest.** Name it in a section title when possible.
 
-- Hype words: *revolutionary, game-changing, seamless, cutting-edge, robust, powerful, leverage, solution, empower, unlock* (as hype), *delve*.
-- Résumé voice: *results-driven, proven track record, passionate about, dynamic*.
-- AI tells: "not just X but Y" constructions, rule-of-three padding, hollow intensifiers (*incredibly, truly, deeply*), hedging (*arguably, perhaps somewhat*), stacked em-dashes.
-- "Hi, I'm Matt 👋" energy — waving emoji, exclamation-point enthusiasm, gradient-text personality.
-- Third-person self-description anywhere first-person is possible.
-- Comprehension verbs as claims: users don't "understand" or "see" — they *do* something you can watch. If you can't observe it, don't claim it.
+### Work email / Teams (Wire) — for agents drafting as Matt
+
+- **Opener:** `FirstName -` (space, hyphen, space). Never "Hi," "Dear," or "I hope this finds you well."
+- **Affirm first**, then add/redirect/ask.
+- **Pushback:** `Curious if…` / `Seems like…` / `feels like…` — not "I disagree."
+- **Yes:** short. *"Go ahead and schedule it."* *"Looks good to me! ship it!"*
+- **`w/`** for "with." Trailing `…` for WIP / soft handoff.
+- **ALL-CAPS** on single words for real emphasis (`OWNING`, `GREAT`) — not whole sentences.
+- **Exclamation points** frequent and sincere on the wire; dial down on public manuscript.
+- **Sign-off:** `Thx! MB` / `Thanks! Matt` — not a full corporate signature block on quick threads.
+- **Close:** next step or offer the call, then thanks.
 
 ---
 
-## Registers
+## Registers (portfolio)
 
-Same DNA, different pressure. Pick one per artifact and hold it.
+| Register | Where | Length | Must | Must not |
+|----------|--------|--------|------|----------|
+| **A — Proof** | Hero, Current Quest, meta | ≤25 words | Role or outcome fact | Epithets, passion |
+| **B — Skill back** | Card flip | 40–70 words | One scene + one outcome | Generic trait definition |
+| **B′ — Skill face** | Tagline on front | ≤12 words | First-person or concrete | Third-person Gallup paraphrase |
+| **C — Quest card** | Board flavor + subtitle | 1–2 sentences | Specificity or clear thesis | Duplicate "What if" openers; marketing "exploring how…" |
+| **D — Manuscript** | Artifact body | 2–4 paras / section | Named hard call; verifiable metrics | Résumé soup; theme cosplay |
+| **E — Table flavor** | Kickers, Quest Log, Begin Quest | Sparse | Theme without burying work | Dragons, blackletter, every sentence themed |
+| **F — Chrome** | Footer, errors, CTAs | ≤8 words (buttons) | Clear next step | Brochure hype ("unlock the full story") |
 
-**Case study / portfolio prose (Signal).** Credible, specific, quietly confident. Full sentences, narrative arc: person stuck → unglamorous choice → what shipped → honest ledger → reusable play. Numbers in-line, italicized aphorism at the turning point. This is the default register.
+### Case-study grammar (Register D)
 
-**Marketing / hype (Blck Prty).** Punchy, lowercase-comfortable, physical. Count things: "Twelve boards. Four brackets. One ramp. Ten minutes flat." Microcopy can drop capitals and formality ("see you fri · check your inbox") but never drops specificity. Humor allowed at full strength here.
+1. **Setup** — when, what, for whom, scale  
+2. **Hard call** — named tradeoff, what you refused  
+3. **How** — only mechanisms that earned their keep  
+4. **Evidence** — 3–6 metrics of *different kinds*  
+5. **Exit** — one primary action (launch or contact)
 
-**Documentation / README.** Terse, imperative, front-loaded. What it is in one sentence, then how to use it. Bold the load-bearing terms. Opinionated notes welcome ("**Not an app.**"). No marketing language leaks in — a README that sells is lying about something.
+---
 
-**UI microcopy.** Verb-first buttons that say what happens ("Hold my ramp · $50," "Watch the 10-min build →"). Reassurance in lowercase asides ("fully refundable until shipping"). Every label answers "what do I get if I click."
+## Lexicon
 
-**Decision logs / notes.** Compressed verdict + reason: "Four strong quests beat five when one deck is the weakest; tightens the board." Write for future-you skimming at speed.
+### Reach-for (wire + table)
+
+`w/` · `convo` · `sync` · `heads up` · `call-out` · `jump on a call` · `Ya'll` / `y'all` · `Sure thing` · `no worries` · `ship it` · `Curious if…` · `Seems like…` · `feels like…` · `own driving this` · `get out in front of` · `nail down` · plain tradeoffs · named people/roles when true
+
+### Never-write
+
+- Corporate triads and buzzword strings — he ridicules them: *"synergistic enablement of empowered collaboration"* / *"innovative modern web application that harness the power of automation in agentic agents."*
+- Hype: *revolutionary, game-changing, seamless, cutting-edge, robust, powerful, leverage, empower, unlock, delve, transformative, holistic*
+- Résumé paste: *results-driven, proven track record, passionate about, dynamic*
+- Throat-clearing: *Dear, To whom it may concern, I hope this email finds you well*
+- Em-dash-balanced parallelism (`X instantly, Y exactly, Z in bulk`) as a default rhythm
+- Over-apology; if sorry, quick then the fix: *"yeah, sorry -"* then action
+- Third-person strength definitions on *his* skill cards
+- "Hi, I'm Matt 👋" portfolio energy
+
+---
+
+## Canon (match these)
+
+**Skill receipt (Communication):**  
+*"Numbers don't fund products - the story around them does. When I pitched the SWIFT turnaround, I didn't open with a roadmap; I told the story of a tool stuck in the 3rd usability percentile and the people stuck using it. Leadership retold that story up the chain. The retelling funded a new product."*
+
+**Hard call (Plyplan):**  
+*"if the optimizer says two sheets and the woodworker fits it on one, the tool is broken."*
+
+**Honest ledger (Foundations / SWIFT):**  
+*"It is our yardstick, not a third-party benchmark: the value is how we prioritize, not a vanity percentage on a slide."*
+
+**Identity staccato (hero):**  
+*"Started in the field. Built risk models. Now ships product. Still builds furniture on weekends."*
+
+**Wire affirm + push (work):**  
+*"Curious if we need the 'recently used' section for this first round? Seems like a 'nice to have' not a must have?"*
+
+**Wire credit (work):**  
+*"Ya'll this was another amazing example of this team absolutely OWNING a fast and quality response…"*
 
 ---
 
 ## Pre-ship checklist
 
-1. Does every claim have a receipt (number, artifact, or event)?
-2. Would this survive the name-swap test, or is it horoscope?
-3. Is the problem told through a person, not a system?
-4. Is there one aphorism, earned by the story around it — and only one?
-5. Did I name a tradeoff or an unproven goal? (If everything sounds won, something's hidden.)
-6. Scan for banned words, "not just X but Y," and em-dash pileups.
-7. Read aloud: does it sound like a builder talking, or a deck presenting?
-8. Could the reader *act* on the takeaway, or only nod at it?
+1. Receipt on every claim (number, artifact, event, named constraint)?  
+2. Name-swap test: would this work for any PM? → rewrite  
+3. Problem told through a person or concrete situation?  
+4. Hard call named (heading or first line of that section)?  
+5. Tradeoff or unproven goal named where a win is claimed?  
+6. Scan banned words, "not just X but Y," stacked em dashes, Gallup third-person  
+7. Subject/theme dual-label correct on quest cards?  
+8. CTA something Matt would actually say in a hallway?  
+9. Read aloud: builder talking, or deck presenting?  
+10. (Wire only) `Name -` open, affirm-first, next step + `MB` / `Thanks! Matt`?
 
 ---
 
-## Calibration examples (from shipped copy)
+## Portfolio-specific notes
 
-**Horoscope → receipt:**
-- ✗ "A strategic communicator who influences stakeholders at all levels."
-- ✓ "When I pitched the SWIFT turnaround, I didn't open with a roadmap; I told the story of a tool stuck in the 3rd usability percentile and the people stuck using it. Leadership retold that story up the chain. The retelling funded a new product."
+- Skill **backs** are gold — don't regress to third-person Gallup.  
+- Skill **taglines** (card front) must follow the same rules or be removed.  
+- Quest **subject** leads; themed **title** is the small gold kicker.  
+- Theme chrome ("Begin Quest," "Quest Log," "Lore") is fine; body prose stays operator.  
+- `npx impeccable` gates visual AI-slop; this file gates *verbal* AI-slop. Both must pass.
 
-**System → person:**
-- ✗ "The knowledge base suffered from quality and consistency issues."
-- ✓ "Users feel it before anyone measures it: they land on a duplicate state page, a contradictory answer, a broken preview link, and quietly trust the KB a little less."
+---
 
-**Sold → earned:**
-- ✗ "A revolutionary privacy-first analytics solution."
-- ✓ "Drop in a CSV and you get statistics, distributions, correlations, and quality checks — and not a single byte leaves your machine."
+## Honesty / corpus gaps
 
-**Feature list → story:**
-- ✗ "Plyplan offers advanced cut optimization using bin-packing algorithms."
-- ✓ "Every project I build starts at the lumberyard with the same question: how many sheets do I need? I built Plyplan the weekend I realized that question is a bin-packing problem computer science solved decades ago."
+Work extraction is strong for peer email, Teams, and team wins. Weaker: hard "no" to a superior, unassisted bad news to leadership, external customer prose in his own hand, long solo memos. Portfolio long-form fills some of that gap — calibrate new case studies against Plyplan/Glimpse, not against newsletter templates.
+
+---
+
+## How agents should use this
+
+1. Read this file before drafting or editing any user-facing string.  
+2. Prefer rewriting toward **canon passages** over inventing a new style.  
+3. After edits, run the pre-ship checklist.  
+4. If you must invent a metric or anecdote, stop — ask Matt; never fabricate receipts.

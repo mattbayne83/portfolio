@@ -47,6 +47,8 @@
 
 - [x] **Deepen the SWIFT case study** — tenure (2022–), team ~10–15, hard call = intake over feature factory; cut circular 380% maturity metric, keep Foundations honestly framed (2026-07-12)
 - [x] **Maker's note** — ultra-short parchment card inside Character Sheet (why the table, Tulsa, open to hard problems); text-only v1 (2026-07-12)
+- [x] **Voice doctrine codified** — `VOICE.md` merges ONEOK work corpus + portfolio gold; CLAUDE.md points at it (2026-07-12)
+- [ ] **Voice alignment pass** — fix issues in `tasks/voice-audit-2026-07-12.md` (taglines, descriptions, em-dash joints, CTAs)
 - [ ] **Maker's note photo** — optional workshop/portrait shot if a photo becomes available
 
 ## P3 — New Quests (Future)

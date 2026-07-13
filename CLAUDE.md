@@ -28,6 +28,7 @@ Premium tabletop game-inspired personal portfolio. Character sheet hero with 5 C
 - **Cards**: Gold gradient borders (2px padding trick), layered box-shadows, 5:7 aspect ratio
 - **Gold gradients are tokens**: `--gradient-gold-edge` (5-stop, card edges) + `--gradient-gold-fill` (3-stop, solid gold buttons) in `index.css` — use them, don't paste literals
 - **Design docs**: `.impeccable.md` = aesthetic *intent* (audience/brand/anti-references); `design-system.md` = component + token *catalog*
+- **Voice**: `VOICE.md` = writing doctrine (work corpus + portfolio gold). All user-facing copy must pass its checklist — no AI-slop, no Gallup paste, receipts over adjectives
 
 ## Key Files
 - `src/App.tsx` — Hub shell: LandingPage vs ArtifactShell
