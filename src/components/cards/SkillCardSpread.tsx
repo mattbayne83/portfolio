@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 import { skillCards } from '../../data/skills'
 import { useCardFlip } from '../../hooks/useCardFlip'
-import SkillCard from './SkillCard'
+import SkillCard, { SKILL_CARD_WIDTH } from './SkillCard'
 
 const fanRotations = [-3, -1.5, 0, 1.5, 3]
 
-/* Mobile arc geometry — must match the card's fixed 200px width in SkillCard */
-const CARD_WIDTH = 200
+/* Mobile arc geometry — width must match SkillCard */
+const CARD_WIDTH = SKILL_CARD_WIDTH
 const CARD_PITCH = CARD_WIDTH + 16 // width + gap-4
 
 const edgeMask =

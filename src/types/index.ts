@@ -16,7 +16,10 @@ export interface SkillCard {
   color: string
   iconName: string
   tagline: string
+  /** Scene + outcome receipt shown on the card back body */
   flavorText: string
+  /** Optional closing line under the body - italic, muted (aphorism / pivot) */
+  echo?: string
   relatedTraits: string[]
 }
 

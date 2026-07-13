@@ -8,6 +8,10 @@ import {
 } from 'lucide-react'
 import type { SkillCard as SkillCardType } from '../../types'
 
+/** Fixed portrait size — keep in sync with SkillCardSpread carousel math */
+export const SKILL_CARD_WIDTH = 200
+export const SKILL_CARD_HEIGHT = 280
+
 const iconMap: Record<string, typeof Compass> = {
   Compass,
   Feather,
@@ -47,11 +51,16 @@ export default function SkillCard({
           ? `${skill.name} - showing details. Activate to flip back.`
           : `${skill.name}, ${skill.thematicTitle}. Activate to flip the card and read more.`
       }
-      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onFlip() } }}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault()
+          onFlip()
+        }
+      }}
       style={{
         perspective: '1000px',
-        width: '200px',
-        height: '280px',
+        width: SKILL_CARD_WIDTH,
+        height: SKILL_CARD_HEIGHT,
         animation: 'var(--animate-card-enter)',
         animationDelay: `${index * 80}ms`,
       }}
@@ -76,13 +85,11 @@ export default function SkillCard({
           }}
         >
           <div className="rounded-[10px] bg-surface h-full flex flex-col items-center px-4 py-5 relative overflow-hidden">
-            {/* Accent bar */}
             <div
               className="absolute top-0 left-0 right-0 h-1"
               style={{ backgroundColor: skill.color }}
             />
 
-            {/* Flip affordance — signals the card has a back face */}
             <span
               className="absolute top-2.5 right-2.5 text-text-muted group-hover:text-primary group-focus-visible:text-primary transition-colors"
               aria-hidden="true"
@@ -90,22 +97,18 @@ export default function SkillCard({
               <RotateCw size={13} strokeWidth={2} />
             </span>
 
-            {/* Icon */}
             <div className="mt-4 mb-3">
               <Icon size={36} style={{ color: skill.color }} strokeWidth={1.5} opacity={0.8} />
             </div>
 
-            {/* Name */}
             <h3 className="font-display text-lg font-bold text-text-high text-center">
               {skill.name}
             </h3>
 
-            {/* Thematic title */}
             <p className="font-serif italic text-sm text-text-body mt-0.5 text-center">
               {skill.thematicTitle}
             </p>
 
-            {/* Domain badge */}
             <span
               className="mt-3 text-[11px] font-display font-semibold tracking-widest uppercase px-2 py-0.5 rounded-full"
               style={{
@@ -116,19 +119,17 @@ export default function SkillCard({
               {skill.domainLabel}
             </span>
 
-            {/* Tagline */}
             <p className="mt-auto font-serif text-xs text-text-muted text-center leading-relaxed px-2">
               {skill.tagline}
             </p>
 
-            {/* Rank */}
             <span className="mt-2 font-mono text-[11px] text-text-muted">
               #{skill.rank}
             </span>
           </div>
         </div>
 
-        {/* Back Face */}
+        {/* Back Face — same type roles as the front / quest cards, not a compressed dump */}
         <div
           className="absolute inset-0 rounded-xl overflow-hidden"
           style={{
@@ -138,22 +139,52 @@ export default function SkillCard({
             background: 'var(--gradient-gold-edge)',
           }}
         >
-          <div className="rounded-[10px] bg-surface h-full flex flex-col justify-center px-3.5 py-3 relative overflow-hidden">
-            {/* Accent bar */}
+          <div className="rounded-[10px] bg-surface h-full flex flex-col px-4 pt-5 pb-3 relative overflow-hidden">
             <div
               className="absolute top-0 left-0 right-0 h-1"
               style={{ backgroundColor: skill.color }}
             />
 
-            {/* Name */}
-            <h4 className="font-display text-sm font-semibold text-text-high text-center mb-2">
-              {skill.name}
-            </h4>
+            {/* Flip cue (mirrors front) */}
+            <span
+              className="absolute top-2.5 right-2.5 text-text-muted group-hover:text-primary group-focus-visible:text-primary transition-colors"
+              aria-hidden="true"
+            >
+              <RotateCw size={13} strokeWidth={2} />
+            </span>
 
-            {/* Flavor text — keep receipts ~50–60 words so they fit the fixed face */}
-            <p className="font-serif italic text-[11px] text-text-body leading-snug text-center">
-              {skill.flavorText}
-            </p>
+            {/* Header: thematic kicker → strength name (quest-card dual-label rhythm) */}
+            <header className="text-center shrink-0 pr-5">
+              <p className="font-display text-[11px] font-semibold tracking-[0.18em] uppercase text-primary-dark">
+                {skill.thematicTitle}
+              </p>
+              <h4 className="font-display text-lg font-bold text-text-high leading-tight mt-0.5">
+                {skill.name}
+              </h4>
+            </header>
+
+            {/* Gold hairline — same treatment as quest-card footer rules */}
+            <div
+              className="h-px w-full my-3 shrink-0 bg-gradient-to-r from-transparent via-primary/30 to-transparent"
+              aria-hidden="true"
+            />
+
+            {/* Receipt body — Crimson roman at design-system text-xs (not ad-hoc 11px) */}
+            <div className="flex-1 flex flex-col min-h-0 justify-center gap-2.5">
+              <p className="font-serif text-xs text-text-body leading-relaxed text-center">
+                {skill.flavorText}
+              </p>
+              {skill.echo ? (
+                <p className="font-serif italic text-xs text-text-muted leading-relaxed text-center">
+                  {skill.echo}
+                </p>
+              ) : null}
+            </div>
+
+            {/* Rank footer — anchors the face like the front */}
+            <span className="mt-2.5 font-mono text-[11px] text-text-muted text-center shrink-0">
+              #{skill.rank}
+            </span>
           </div>
         </div>
       </div>
