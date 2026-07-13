@@ -28,24 +28,26 @@ Premium tabletop game-inspired personal portfolio. Character sheet hero with 5 C
 - **Cards**: Gold gradient borders (2px padding trick), layered box-shadows, 5:7 aspect ratio
 - **Gold gradients are tokens**: `--gradient-gold-edge` (5-stop, card edges) + `--gradient-gold-fill` (3-stop, solid gold buttons) in `index.css` — use them, don't paste literals
 - **Design docs**: `.impeccable.md` = aesthetic *intent* (audience/brand/anti-references); `design-system.md` = component + token *catalog*
-- **Voice**: `VOICE.md` = writing doctrine (work corpus + portfolio gold). All user-facing copy must pass its checklist — no AI-slop, no Gallup paste, receipts over adjectives
+- **Voice**: `VOICE.md` = single writing doctrine (ONEOK work corpus + portfolio gold). All user-facing copy must pass its checklist — no AI-slop, no Gallup paste, receipts over adjectives. Prefer spaced hyphen ` - ` over em-dash essay cadence in user-facing strings.
 
 ## Key Files
 - `src/App.tsx` — Hub shell: LandingPage vs ArtifactShell
 - `src/index.css` — Tailwind @theme tokens (palette, gradients, animations), `Cormorant Fallback` @font-face (CLS), and the global `prefers-reduced-motion` block
 - `src/types/index.ts` — SkillCard, ArtifactMeta, QuestType, ArtifactCategory, DifficultyLevel
-- `src/data/skills.ts` — 5 skill card objects; flavor text is FIRST-PERSON with one real receipt per strength (Belief=things that endure, Communication=SWIFT funding pitch, Woo=field-user adoption, Ideation=bin-packing→Plyplan, Maximizer=3rd→50th percentile) — don't regress to third-person Gallup paraphrase
-- `src/data/artifacts.ts` — Artifact registry (quest metadata: subject, subtitle, difficulty, skillsUsed, flavorText)
+- `src/data/skills.ts` — 5 skill cards. **Front taglines** and **back flavorText** are both first-person with receipts (never Gallup third-person). Receipts: Belief=endurance/joinery; Communication=SWIFT pitch → funded usability effort (not "a new product"); Woo=field-user adoption; Ideation=bin-packing→Plyplan; Maximizer=3rd→50th
+- `src/data/artifacts.ts` — Artifact registry (subject, subtitle, description, difficulty, skillsUsed, flavorText). Descriptions are plain one-liners with receipts; one rhetorical "What if" max across flavors (Shape Matters)
 - `src/store/useAppStore.ts` — activeArtifactId only (persisted); open/close actions wrap `withViewTransition`
 - `src/utils/viewTransition.ts` — `withViewTransition(commit, afterCommit)`: flushSync inside `startViewTransition`, plain fallback for reduced-motion/unsupported
+- `src/components/landing/MakersNote.tsx` — Ultra-short parchment colophon in Character Sheet bio column (why the table, Tulsa, open invitation). Text-only v1
 - `src/components/landing/MakersMark.tsx` — Flat, fixed bottom bar (contact CTA + LinkedIn/GitHub/Résumé). Auto-hides: visible on landing, hides on scroll-down, returns on scroll-up or at page bottom (`inert` while hidden). Edit the `LINKS` array to change destinations; empty `href` hides a link. LandingPage reserves a bottom spacer so it never covers the last quest
 - `src/components/shared/ContactButton.tsx` — Shared gold mailto button + `CONTACT_EMAIL` constant. `size` prop: `'md'` (hero CTA, default) / `'sm'` (compact, used in the footer bar). Used by footer and the SWIFT article CTA
 - `src/components/shared/MetricGrid.tsx` — Result/stat callouts as gold-border parchment cards (Cormorant numerals); use instead of flat metric grids
 - `src/components/shared/ArtifactErrorBoundary.tsx` — Wraps lazy artifact Suspense; "back to the board" recovery card on chunk-load failure
 - `src/components/shared/ProductShot.tsx` — Gold-framed screenshot figure for shell pages; live-product captures live in `src/assets/artifacts/`
+- `src/components/artifacts/swift-leadership/` — SWIFT case study: took over **2024**; Hard Call = intake over features; Foundations honest yardstick; storage bet underwritten at 3% adoption. No circular self-scored maturity % in the metric grid
 
 ## Directories
-- `src/components/landing/` — CharacterSheet, QuestBoard, LandingPage, MakersMark
+- `src/components/landing/` — CharacterSheet, QuestBoard, LandingPage, MakersMark, MakersNote
 - `src/components/cards/` — SkillCard, SkillCardSpread, QuestCard, SkillBadge, DifficultyPips, CategoryBadge
 - `src/components/shared/` — GoldBorder, GoldDivider, GoldFiligree, ContactButton, MetricGrid, ProductShot, ArtifactErrorBoundary
 - `src/components/viewers/` — ArtifactShell
@@ -53,6 +55,7 @@ Premium tabletop game-inspired personal portfolio. Character sheet hero with 5 C
 - `src/hooks/` — useHashSync, useCardFlip
 - `src/data/` — skills, artifacts
 - `src/utils/` — viewTransition
+- `tasks/` — backlog.md, voice-audit-2026-07-12.md
 
 ## Adding a New Artifact
 1. Create `src/components/artifacts/<id>/index.tsx` (default export component)
@@ -81,4 +84,7 @@ Premium tabletop game-inspired personal portfolio. Character sheet hero with 5 C
 - **Reduced motion is honored globally** — `index.css` has a `prefers-reduced-motion: reduce` block that collapses all animation/transition; don't add motion that ignores it
 - **Artifact stats use `MetricGrid`** — never hand-roll flat metric cards with colored `border-left/-top` stripes (an AI-slop tell the detector flags)
 - **Skill-card flip** takes a `flipScale` prop; the mobile carousel passes `1.06` (subtle pop that stays inside the scroller's `pt-8 pb-12` — bigger scales clip in `overflow-x-auto`)
-- `npx impeccable --json src` should stay at **0 findings** — it gates banned anti-patterns (accent stripes, gradient text, glassmorphism)
+- `npx impeccable --json src` should stay at **0 findings** — it gates banned visual anti-patterns (accent stripes, gradient text, glassmorphism); `VOICE.md` gates verbal AI-slop
+- **User-facing copy joints** — prefer spaced hyphen ` - ` (or period/comma); do not "upgrade" to em dashes for polish. Code comments may still use em dashes
+- **SWIFT facts** — Senior PM on SWIFT from **2024** (not 2022). Communication skill: pitch retelling funded a **usability improvement effort**, not a new product. Storage product funding is a separate bet (3% adoption IRR)
+- **Never invent receipts** — if a metric or anecdote is uncertain, ask Matt; wrong numbers destroy trust faster than missing ones

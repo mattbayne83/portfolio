@@ -2,7 +2,7 @@
 
 **Date:** 2026-07-12 (refreshed against merged VOICE.md)  
 **Scope:** All user-facing strings (not code comments, not README)  
-**Verdict:** Gold core, cracked veneer. The manuscripts and skill *backs* already *are* the doctrine. The card fronts, two quest blurbs, SWIFT Approach/CTA, and joint mechanics still fail the name-swap and wire tests.
+**Status:** Alignment pass **applied** (commit `fix: align portfolio copy…` + fact fixes 2024 / Communication usability). Keep this file as historical review + regression checklist.
 
 ---
 

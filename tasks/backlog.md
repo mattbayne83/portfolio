@@ -21,7 +21,7 @@
 - [x] **Quest card dual-labels** — lead with plain subject, themed name as kicker, plain descriptor line (2026-06-28)
 - [x] **Hero role line** — "Senior Product Manager · Energy & Enterprise" for instant role clarity (2026-06-28)
 - [x] **WCAG AA contrast pass** — darkened muted-on-parchment text token to ≈5.2:1 (2026-06-28)
-- [x] **SWIFT case-study closing CTA** — "Want the full story?" contact prompt (2026-06-28)
+- [x] **SWIFT case-study closing CTA** — hallway voice: "Curious about the intake system - or the storage bet?" (rewritten 2026-07-12; was brochure "Want the full story?")
 - [x] **Glimpse** — "The Scrying Glass" privacy-first EDA artifact (Pyodide/WASM)
 - [x] **Gaming Table foundation** — palette revolution, skill cards, quest board, character sheet
 - [x] **Shape Matters** — shell-mode project showcase, "Enter the Lab" CTA to live app
@@ -71,6 +71,10 @@
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-07-12 | Single `VOICE.md` (work corpus + portfolio gold) | One doctrine; no parallel voice guides; wire vs table layers |
+| 2026-07-12 | Prefer spaced hyphen in user-facing copy | Work typing uses ` - `; stacked em-dash essay cadence reads as tool voice |
+| 2026-07-12 | Skill taglines first-person like backs | Card fronts were Gallup paste; name-swap failure at first glance |
+| 2026-07-12 | SWIFT tenure 2024; Communication funded usability effort | Fact corrections from Matt - never invent or soft-guess receipts |
 | 2026-07-01 | Skill-card copy is first-person with one receipt each | Third-person Gallup paraphrase was horoscope — swap-any-name-in generic; receipts make the centerpiece hiring-manager-usable |
 | 2026-07-01 | Demo pages lead with live-product screenshots + one real decision | The audience's core skepticism is "does he ship?" — shipped software was hidden behind blog-stub interstitials |
 | 2026-07-01 | Deleted category filter | Filtering 4 quests hid work ("Lore" = one card); revisit past ~8 quests |
