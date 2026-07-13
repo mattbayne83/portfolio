@@ -7,7 +7,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/); this project is 
 
 ### Changed
 - **Skill-card receipts diversified** — Communication → release-comms play (ADO stories → 5 channels · ~15 min · 7 releases); Woo → Williams Operational Risk (40+ trained · 2,500 projects / $1.5B CAPEX); Maximizer → KB audit (113 articles · 61/100 · 22 dead links). Belief (furniture) and Ideation (Plyplan) unchanged. SWIFT usability turnaround no longer repeats on skill backs.
-- **Skill-card back layout** — restores design-system type hierarchy (thematic kicker → name → gold rule → roman body → italic `echo` → rank). Optional `echo` field for the aphorism; drops the ad-hoc 11px shrink-to-fit.
+- **Skill-card back layout** — quiet reading surface only (name + one flavor paragraph). Dropped the overbuilt reverse (thematic kicker, gold rule, echo split, rank, flip icon). Woo receipt shortened (40+ trained; CAPEX scale left off the card).
 
 ### Added
 - **`VOICE.md`** — single writing doctrine merging ONEOK work corpus (Teams/email mechanics, anti-slop) with portfolio gold (receipts, hard calls, registers). `CLAUDE.md` and `README.md` point agents here before any user-facing copy. Audit: `tasks/voice-audit-2026-07-12.md`.

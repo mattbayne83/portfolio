@@ -16,10 +16,8 @@ export interface SkillCard {
   color: string
   iconName: string
   tagline: string
-  /** Scene + outcome receipt shown on the card back body */
+  /** First-person receipt on the card back — one scene + outcome; keep ~45–55 words */
   flavorText: string
-  /** Optional closing line under the body - italic, muted (aphorism / pivot) */
-  echo?: string
   relatedTraits: string[]
 }
 

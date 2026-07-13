@@ -34,7 +34,7 @@ Premium tabletop game-inspired personal portfolio. Character sheet hero with 5 C
 - `src/App.tsx` — Hub shell: LandingPage vs ArtifactShell
 - `src/index.css` — Tailwind @theme tokens (palette, gradients, animations), `Cormorant Fallback` @font-face (CLS), and the global `prefers-reduced-motion` block
 - `src/types/index.ts` — SkillCard, ArtifactMeta, QuestType, ArtifactCategory, DifficultyLevel
-- `src/data/skills.ts` — 5 skill cards. **Front taglines** and **back body + optional echo** are first-person with receipts (never Gallup third-person). Back layout: thematic kicker → name → gold rule → roman body → italic echo → rank (mirrors front/quest hierarchy; design-system `text-xs`, never ad-hoc 11px shrink). Receipts: Belief=endurance/joinery; Communication=release-comms; Woo=Williams Operational Risk; Ideation=Plyplan; Maximizer=KB audit
+- `src/data/skills.ts` — 5 skill cards. Front: tagline + domain chrome. Back: quiet reading surface only (name + one italic flavor receipt, ~45–55 words). Never duplicate front chrome (thematic title, rank, domain, flip icon) on the back. Receipts: Belief=furniture/endurance; Communication=release-comms; Woo=Williams Operational Risk (40+ trained); Ideation=Plyplan; Maximizer=KB audit
 - `src/data/artifacts.ts` — Artifact registry (subject, subtitle, description, difficulty, skillsUsed, flavorText). Descriptions are plain one-liners with receipts; one rhetorical "What if" max across flavors (Shape Matters)
 - `src/store/useAppStore.ts` — activeArtifactId only (persisted); open/close actions wrap `withViewTransition`
 - `src/utils/viewTransition.ts` — `withViewTransition(commit, afterCommit)`: flushSync inside `startViewTransition`, plain fallback for reduced-motion/unsupported

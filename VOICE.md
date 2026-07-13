@@ -170,10 +170,9 @@ Compressed verdict + reason: "Four strong quests beat five when one deck is the 
 ## Canon (match these)
 
 **Skill receipt (Communication — release-comms play):**  
-Body: *"Every release used to start from a blank page. Now ADO user stories seed the list, a codified voice reframes each item as user benefit, and a five-channel launch ships in about fifteen minutes a channel. Seven releases through the same play."*  
-Echo: *"The story doesn't get reinvented - it compounds."*
+*"Every release used to start from a blank page. Now ADO user stories seed the list, a codified voice reframes each as user benefit, and a five-channel launch ships in about fifteen minutes a channel. Seven releases through the same play - the story compounds instead of getting reinvented."*
 
-Skill backs use body (roman, scene + outcome) + optional `echo` (italic muted aphorism). Keep body short enough for the fixed card face at design-system `text-xs` / `leading-relaxed` - never shrink type to force-fit.
+Skill backs are a quiet reading surface: small name + one italic flavor paragraph (~45–55 words). Do not restack front chrome (thematic title, domain, rank, flip icon) on the reverse.
 
 **Hard call (Plyplan):**  
 *"if the optimizer says two sheets and the woodworker fits it on one, the tool is broken."*

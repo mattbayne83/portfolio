@@ -129,7 +129,7 @@ export default function SkillCard({
           </div>
         </div>
 
-        {/* Back Face — same type roles as the front / quest cards, not a compressed dump */}
+        {/* Back Face — quiet reading surface: identity cue + one story. Front already owns icon, domain, rank, tagline. */}
         <div
           className="absolute inset-0 rounded-xl overflow-hidden"
           style={{
@@ -139,52 +139,19 @@ export default function SkillCard({
             background: 'var(--gradient-gold-edge)',
           }}
         >
-          <div className="rounded-[10px] bg-surface h-full flex flex-col px-4 pt-5 pb-3 relative overflow-hidden">
+          <div className="rounded-[10px] bg-surface h-full flex flex-col justify-center px-5 py-6 relative overflow-hidden">
             <div
               className="absolute top-0 left-0 right-0 h-1"
               style={{ backgroundColor: skill.color }}
             />
 
-            {/* Flip cue (mirrors front) */}
-            <span
-              className="absolute top-2.5 right-2.5 text-text-muted group-hover:text-primary group-focus-visible:text-primary transition-colors"
-              aria-hidden="true"
-            >
-              <RotateCw size={13} strokeWidth={2} />
-            </span>
+            <h4 className="font-display text-sm font-semibold text-text-high text-center mb-3">
+              {skill.name}
+            </h4>
 
-            {/* Header: thematic kicker → strength name (quest-card dual-label rhythm) */}
-            <header className="text-center shrink-0 pr-5">
-              <p className="font-display text-[11px] font-semibold tracking-[0.18em] uppercase text-primary-dark">
-                {skill.thematicTitle}
-              </p>
-              <h4 className="font-display text-lg font-bold text-text-high leading-tight mt-0.5">
-                {skill.name}
-              </h4>
-            </header>
-
-            {/* Gold hairline — same treatment as quest-card footer rules */}
-            <div
-              className="h-px w-full my-3 shrink-0 bg-gradient-to-r from-transparent via-primary/30 to-transparent"
-              aria-hidden="true"
-            />
-
-            {/* Receipt body — Crimson roman at design-system text-xs (not ad-hoc 11px) */}
-            <div className="flex-1 flex flex-col min-h-0 justify-center gap-2.5">
-              <p className="font-serif text-xs text-text-body leading-relaxed text-center">
-                {skill.flavorText}
-              </p>
-              {skill.echo ? (
-                <p className="font-serif italic text-xs text-text-muted leading-relaxed text-center">
-                  {skill.echo}
-                </p>
-              ) : null}
-            </div>
-
-            {/* Rank footer — anchors the face like the front */}
-            <span className="mt-2.5 font-mono text-[11px] text-text-muted text-center shrink-0">
-              #{skill.rank}
-            </span>
+            <p className="font-serif italic text-xs text-text-body leading-relaxed text-center">
+              {skill.flavorText}
+            </p>
           </div>
         </div>
       </div>
