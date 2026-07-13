@@ -24,9 +24,9 @@ export const skillCards: SkillCard[] = [
     rank: 2,
     color: '#2E5A8B',
     iconName: 'Feather',
-    tagline: "Numbers don't fund products - stories do.",
+    tagline: 'Start from the stories - not a blank page.',
     flavorText:
-      "Numbers don't fund products - the story around them does. When I pitched the SWIFT turnaround, I didn't open with a roadmap; I told the story of a tool stuck in the 3rd usability percentile and the people stuck using it. Leadership retold that story up the chain. The retelling funded a new effort to improve usability.",
+      "Every release used to start from a blank page - re-deciding what shipped, re-finding the voice. Now the ADO user stories seed the enhancement list, a codified voice reframes each item as user benefit, and a five-channel launch ships in about fifteen minutes a channel. Seven releases through the same play. The story doesn't get reinvented - it compounds.",
     relatedTraits: [],
   },
   {
@@ -38,9 +38,9 @@ export const skillCards: SkillCard[] = [
     rank: 3,
     color: '#2E6B4A',
     iconName: 'Magnet',
-    tagline: 'Show up, learn the workarounds, follow through.',
+    tagline: 'Show up, train the room, follow through.',
     flavorText:
-      "The hardest room I've won ran on decades of muscle memory: field users who'd mastered the legacy system SWIFT replaced. No pitch works on people like that. I showed up, learned their workarounds, and let them watch their complaints become fixes. Strangers aren't obstacles - they're allies who haven't seen you follow through yet.",
+      "When I founded Operational Risk at Williams, the hard room wasn't a board deck - it was practitioners who'd treated risk as a compliance checkbox. No pitch wins that. I showed up, trained 40+ people, and stuck around until risk-informed decisions beat reactive fire drills - including capital prioritization across 2,500 projects and $1.5B in planned CAPEX. Strangers aren't obstacles - they're allies who haven't seen you follow through yet.",
     relatedTraits: [],
   },
   {
@@ -66,9 +66,9 @@ export const skillCards: SkillCard[] = [
     rank: 5,
     color: '#B8860B',
     iconName: 'Gem',
-    tagline: 'Past average and still filing refinements.',
+    tagline: 'Baseline first - then keep raising the score.',
     flavorText:
-      "When I took over SWIFT it tested in the 3rd usability percentile. Getting to average would have counted as a win. We passed the 50th and I was still filing refinements - that's the affliction. I don't rescue broken things; I take what already works and polish it until it gleams.",
+      "Our knowledge base felt like a C with no number behind it - hand-auditing every article is work no one finishes. An agent read all 113 against a fixed rubric: full catalog (only ~20 visible), 61/100 baseline, 22 dead links fixed, 8 defect groups. A baseline would have counted as a win. I was planning the next pass - that's the affliction. Measure first, then polish until the score holds.",
     relatedTraits: [],
   },
 ]

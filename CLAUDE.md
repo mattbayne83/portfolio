@@ -34,7 +34,7 @@ Premium tabletop game-inspired personal portfolio. Character sheet hero with 5 C
 - `src/App.tsx` — Hub shell: LandingPage vs ArtifactShell
 - `src/index.css` — Tailwind @theme tokens (palette, gradients, animations), `Cormorant Fallback` @font-face (CLS), and the global `prefers-reduced-motion` block
 - `src/types/index.ts` — SkillCard, ArtifactMeta, QuestType, ArtifactCategory, DifficultyLevel
-- `src/data/skills.ts` — 5 skill cards. **Front taglines** and **back flavorText** are both first-person with receipts (never Gallup third-person). Receipts: Belief=endurance/joinery; Communication=SWIFT pitch → funded usability effort (not "a new product"); Woo=field-user adoption; Ideation=bin-packing→Plyplan; Maximizer=3rd→50th
+- `src/data/skills.ts` — 5 skill cards. **Front taglines** and **back flavorText** are both first-person with receipts (never Gallup third-person). Receipts: Belief=endurance/joinery; Communication=release-comms play (ADO stories → 5 channels · ~15 min · 7 releases); Woo=Williams Operational Risk (40+ trained · CAPEX prioritization); Ideation=bin-packing→Plyplan; Maximizer=KB audit (113 articles · 61/100 · 22 dead links)
 - `src/data/artifacts.ts` — Artifact registry (subject, subtitle, description, difficulty, skillsUsed, flavorText). Descriptions are plain one-liners with receipts; one rhetorical "What if" max across flavors (Shape Matters)
 - `src/store/useAppStore.ts` — activeArtifactId only (persisted); open/close actions wrap `withViewTransition`
 - `src/utils/viewTransition.ts` — `withViewTransition(commit, afterCommit)`: flushSync inside `startViewTransition`, plain fallback for reduced-motion/unsupported
@@ -86,5 +86,5 @@ Premium tabletop game-inspired personal portfolio. Character sheet hero with 5 C
 - **Skill-card flip** takes a `flipScale` prop; the mobile carousel passes `1.06` (subtle pop that stays inside the scroller's `pt-8 pb-12` — bigger scales clip in `overflow-x-auto`)
 - `npx impeccable --json src` should stay at **0 findings** — it gates banned visual anti-patterns (accent stripes, gradient text, glassmorphism); `VOICE.md` gates verbal AI-slop
 - **User-facing copy joints** — prefer spaced hyphen ` - ` (or period/comma); do not "upgrade" to em dashes for polish. Code comments may still use em dashes
-- **SWIFT facts** — Senior PM on SWIFT from **2024** (not 2022). Communication skill: pitch retelling funded a **usability improvement effort**, not a new product. Storage product funding is a separate bet (3% adoption IRR)
+- **SWIFT facts** — Senior PM on SWIFT from **2024** (not 2022). Storage product funding is a separate bet (3% adoption IRR). Skill-card receipts are *not* the usability turnaround (that story lives on the SWIFT quest only)
 - **Never invent receipts** — if a metric or anecdote is uncertain, ask Matt; wrong numbers destroy trust faster than missing ones

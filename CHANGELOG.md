@@ -5,6 +5,9 @@ Format follows [Keep a Changelog](https://keepachangelog.com/); this project is 
 
 ## [Unreleased]
 
+### Changed
+- **Skill-card receipts diversified** — Communication → release-comms play (ADO stories → 5 channels · ~15 min · 7 releases); Woo → Williams Operational Risk (40+ trained · 2,500 projects / $1.5B CAPEX); Maximizer → KB audit (113 articles · 61/100 · 22 dead links). Belief (furniture) and Ideation (Plyplan) unchanged. SWIFT usability turnaround no longer repeats on skill backs.
+
 ### Added
 - **`VOICE.md`** — single writing doctrine merging ONEOK work corpus (Teams/email mechanics, anti-slop) with portfolio gold (receipts, hard calls, registers). `CLAUDE.md` and `README.md` point agents here before any user-facing copy. Audit: `tasks/voice-audit-2026-07-12.md`.
 - **Maker's note** — ultra-short parchment card in the Character Sheet bio column (`MakersNote.tsx`): why a gaming table, Tulsa, open invitation. Text-only v1; theme as signature, not costume.

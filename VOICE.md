@@ -169,8 +169,8 @@ Compressed verdict + reason: "Four strong quests beat five when one deck is the 
 
 ## Canon (match these)
 
-**Skill receipt (Communication):**  
-*"Numbers don't fund products - the story around them does. When I pitched the SWIFT turnaround, I didn't open with a roadmap; I told the story of a tool stuck in the 3rd usability percentile and the people stuck using it. Leadership retold that story up the chain. The retelling funded a new effort to improve usability."*
+**Skill receipt (Communication — release-comms play):**  
+*"Every release used to start from a blank page - re-deciding what shipped, re-finding the voice. Now the ADO user stories seed the enhancement list, a codified voice reframes each item as user benefit, and a five-channel launch ships in about fifteen minutes a channel. Seven releases through the same play. The story doesn't get reinvented - it compounds."*
 
 **Hard call (Plyplan):**  
 *"if the optimizer says two sheets and the woodworker fits it on one, the tool is broken."*

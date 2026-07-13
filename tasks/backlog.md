@@ -75,6 +75,7 @@
 | 2026-07-12 | Prefer spaced hyphen in user-facing copy | Work typing uses ` - `; stacked em-dash essay cadence reads as tool voice |
 | 2026-07-12 | Skill taglines first-person like backs | Card fronts were Gallup paste; name-swap failure at first glance |
 | 2026-07-12 | SWIFT tenure 2024; Communication funded usability effort | Fact corrections from Matt - never invent or soft-guess receipts |
+| 2026-07-12 | Skill receipts: Comm=release-comms, Woo=Williams risk, Maximizer=KB audit | Diversify off SWIFT turnaround overuse; Belief/Ideation kept |
 | 2026-07-01 | Skill-card copy is first-person with one receipt each | Third-person Gallup paraphrase was horoscope — swap-any-name-in generic; receipts make the centerpiece hiring-manager-usable |
 | 2026-07-01 | Demo pages lead with live-product screenshots + one real decision | The audience's core skepticism is "does he ship?" — shipped software was hidden behind blog-stub interstitials |
 | 2026-07-01 | Deleted category filter | Filtering 4 quests hid work ("Lore" = one card); revisit past ~8 quests |
