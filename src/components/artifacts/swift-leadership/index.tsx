@@ -24,7 +24,7 @@ export default function SwiftLeadershipArtifact() {
         </h2>
         <div className="space-y-4">
           <p className="drop-cap font-serif text-text-on-dark leading-relaxed">
-            In 2022 I became Senior Product Manager for SWIFT - ONEOK's B2B
+            In 2024 I became Senior Product Manager for SWIFT - ONEOK's B2B
             authorization and logistics platform that more than 100 companies
             and 400 weekly users depend on to move product worth $1.5 billion in
             annual revenue. I led a cross-functional team of roughly 10-15 across

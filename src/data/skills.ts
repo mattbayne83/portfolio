@@ -26,7 +26,7 @@ export const skillCards: SkillCard[] = [
     iconName: 'Feather',
     tagline: "Numbers don't fund products - stories do.",
     flavorText:
-      "Numbers don't fund products - the story around them does. When I pitched the SWIFT turnaround, I didn't open with a roadmap; I told the story of a tool stuck in the 3rd usability percentile and the people stuck using it. Leadership retold that story up the chain. The retelling funded a new product.",
+      "Numbers don't fund products - the story around them does. When I pitched the SWIFT turnaround, I didn't open with a roadmap; I told the story of a tool stuck in the 3rd usability percentile and the people stuck using it. Leadership retold that story up the chain. The retelling funded a new effort to improve usability.",
     relatedTraits: [],
   },
   {

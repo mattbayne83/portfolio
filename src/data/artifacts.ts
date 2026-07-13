@@ -8,7 +8,7 @@ export const artifacts: ArtifactMeta[] = [
     subject: 'SWIFT Product Turnaround',
     subtitle: 'Case study · enterprise product leadership',
     description:
-      'Senior PM for SWIFT since 2022: rebuilt intake before the feature factory, lifted usability from 3rd to 50th percentile, and funded a 0→1 storage product - 100+ companies, $1.5B revenue stream.',
+      'Senior PM for SWIFT since 2024: rebuilt intake before the feature factory, lifted usability from 3rd to 50th percentile, and funded a 0→1 storage product - 100+ companies, $1.5B revenue stream.',
     type: 'article',
     category: 'lore',
     categoryLabel: 'Lore',

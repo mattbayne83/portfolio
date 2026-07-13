@@ -45,7 +45,7 @@
 
 ## P2 — Content Refinement
 
-- [x] **Deepen the SWIFT case study** — tenure (2022–), team ~10–15, hard call = intake over feature factory; cut circular 380% maturity metric, keep Foundations honestly framed (2026-07-12)
+- [x] **Deepen the SWIFT case study** — tenure (2024–), team ~10–15, hard call = intake over feature factory; cut circular 380% maturity metric, keep Foundations honestly framed (2026-07-12)
 - [x] **Maker's note** — ultra-short parchment card inside Character Sheet (why the table, Tulsa, open to hard problems); text-only v1 (2026-07-12)
 - [x] **Voice doctrine codified** — `VOICE.md` merges ONEOK work corpus + portfolio gold; CLAUDE.md points at it (2026-07-12)
 - [x] **Voice alignment pass** — P0 taglines, P1 blurbs/SWIFT, P2 joints per `tasks/voice-audit-2026-07-12.md` (2026-07-12)

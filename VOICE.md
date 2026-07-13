@@ -170,7 +170,7 @@ Compressed verdict + reason: "Four strong quests beat five when one deck is the 
 ## Canon (match these)
 
 **Skill receipt (Communication):**  
-*"Numbers don't fund products - the story around them does. When I pitched the SWIFT turnaround, I didn't open with a roadmap; I told the story of a tool stuck in the 3rd usability percentile and the people stuck using it. Leadership retold that story up the chain. The retelling funded a new product."*
+*"Numbers don't fund products - the story around them does. When I pitched the SWIFT turnaround, I didn't open with a roadmap; I told the story of a tool stuck in the 3rd usability percentile and the people stuck using it. Leadership retold that story up the chain. The retelling funded a new effort to improve usability."*
 
 **Hard call (Plyplan):**  
 *"if the optimizer says two sheets and the woodworker fits it on one, the tool is broken."*

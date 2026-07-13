@@ -134,7 +134,7 @@ These fail **name-swap**, **receipt**, and **never-write (third-person Gallup)**
 ### P1 - SWIFT manuscript
 
 **Keep**
-- Challenge setup (2022, team, $1.5B, shout-loudest intake)  
+- Challenge setup (2024, team, $1.5B, shout-loudest intake)  
 - Hard Call section title + tradeoff ("shipping theater")  
 - Foundations honest-yardstick sentence  
 - Metrics without 380%
