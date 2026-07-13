@@ -46,7 +46,8 @@
 ## P2 — Content Refinement
 
 - [ ] **Deepen the SWIFT case study** — add tenure dates, team/scope, one named hard decision; footnote or cut the circular "380% maturity gain" metric (measured against Matt's own model — a sharp reader will notice)
-- [ ] **Maker's note** — short block: why a gaming table, photo or workshop shot, location, what Matt is open to. Turns the theme from costume into signature (top remaining authenticity gap from the 2026-07-01 review)
+- [x] **Maker's note** — ultra-short parchment card inside Character Sheet (why the table, Tulsa, open to hard problems); text-only v1 (2026-07-12)
+- [ ] **Maker's note photo** — optional workshop/portrait shot if a photo becomes available
 
 ## P3 — New Quests (Future)
 

@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react'
 import SkillCardSpread from '../cards/SkillCardSpread'
 import GoldDivider from '../shared/GoldDivider'
+import MakersNote from './MakersNote'
 
 /** Shared inline style for centering both coin face letters */
 const letterBase: React.CSSProperties = {
@@ -166,6 +167,11 @@ export default function CharacterSheet() {
               Rebuilding the $1.5B SWIFT platform &mdash; usability up from the
               3rd to the 50th percentile
             </p>
+
+            {/* Theme → signature: why this table, where from, what he's open to */}
+            <div className="mt-5">
+              <MakersNote />
+            </div>
           </div>
         </div>
 

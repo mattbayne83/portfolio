@@ -6,6 +6,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/); this project is 
 ## [Unreleased]
 
 ### Added
+- **Maker's note** — ultra-short parchment card in the Character Sheet bio column (`MakersNote.tsx`): why a gaming table, Tulsa, open invitation. Text-only v1; theme as signature, not costume.
 - **Quest-card → manuscript morph** (`utils/viewTransition.ts`) — nav actions run inside `document.startViewTransition`; each quest card shares a `view-transition-name` with its article page, so opening a quest expands the parchment card into the reading page and Back reverses it (scroll handled inside the snapshot window; skipped under reduced motion and in unsupported browsers). Suspense moved inside `ArtifactShell` so the morph target commits on first visit.
 - **"Begin Quest →" affordance** on quest cards — always visible (touch has no hover), gold, arrow nudges on hover.
 - **First-person skill cards with receipts** — all five CliftonStrengths flavor texts rewritten from third-person Gallup paraphrase to Matt's voice, each anchored to one verifiable story (SWIFT funding pitch, field-user adoption, bin-packing→Plyplan, 3rd→50th percentile climb). A caption under the spread names the framework ("My top five of 34 CliftonStrengths") and cues the flip.
