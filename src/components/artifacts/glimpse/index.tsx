@@ -31,18 +31,16 @@ export default function GlimpseArtifact() {
         <div className="space-y-4">
           <p className="drop-cap font-serif text-text-on-dark leading-relaxed">
             Every CSV-analysis tool on the web asks you to upload your data to
-            someone else&rsquo;s servers &mdash; financial records, customer
-            lists, proprietary datasets, all sent to strangers who promise not
-            to look. I wanted the analysis without the upload, so I built
-            Glimpse to run Python&rsquo;s pandas library entirely in the
-            browser via WebAssembly.
+            someone else's servers - financial records, customer lists,
+            proprietary datasets, all sent to strangers who promise not to look.
+            I wanted the analysis without the upload, so I built Glimpse to run
+            Python's pandas library entirely in the browser via WebAssembly.
           </p>
           <p className="font-serif text-text-on-dark-muted leading-relaxed">
             Drop in a CSV or Excel file and you get statistics, distributions,
-            correlations, and quality checks &mdash; and not a single byte
-            leaves your machine. The architecture stays deliberately small:
-            React for the UI, Zustand for state, Pyodide executing pandas on
-            the main thread.
+            correlations, and quality checks - and not a single byte leaves your
+            machine. The architecture stays deliberately small: React for the
+            UI, Zustand for state, Pyodide executing pandas on the main thread.
           </p>
         </div>
       </section>
@@ -50,7 +48,7 @@ export default function GlimpseArtifact() {
       <ProductShot
         src={analysisShot}
         alt="Glimpse analyzing a retail sales dataset in the browser: statistics, column structure, and quality checks"
-        caption="A 731-row dataset profiled entirely in-browser &mdash; the file never leaves the machine."
+        caption="A 731-row dataset profiled entirely in-browser - the file never leaves the machine."
       />
 
       {/* The Hard Bug */}
@@ -60,21 +58,30 @@ export default function GlimpseArtifact() {
         </h2>
         <div className="space-y-4">
           <p className="font-serif text-text-on-dark-muted leading-relaxed">
-            Dark mode should have been trivial. It wasn&rsquo;t. My first
+            Dark mode should have been trivial. It wasn't. My first
             implementation read CSS variables from the DOM via{' '}
-            <code className="font-mono text-sm bg-bg-elevated px-1.5 py-0.5 rounded">getComputedStyle()</code>,
-            which created a race: React state updated, the component
+            <code className="font-mono text-sm bg-bg-elevated px-1.5 py-0.5 rounded">
+              getComputedStyle()
+            </code>
+            , which created a race: React state updated, the component
             re-rendered, a{' '}
-            <code className="font-mono text-sm bg-bg-elevated px-1.5 py-0.5 rounded">useEffect</code>{' '}
-            added the <code className="font-mono text-sm bg-bg-elevated px-1.5 py-0.5 rounded">.dark</code>{' '}
-            class <em>after</em> the render &mdash; but the canvas code read
-            CSS <em>during</em> the render. Wrong colors, every time.
+            <code className="font-mono text-sm bg-bg-elevated px-1.5 py-0.5 rounded">
+              useEffect
+            </code>{' '}
+            added the{' '}
+            <code className="font-mono text-sm bg-bg-elevated px-1.5 py-0.5 rounded">
+              .dark
+            </code>{' '}
+            class <em>after</em> the render - but the canvas code read CSS{' '}
+            <em>during</em> the render. Wrong colors, every time.
           </p>
           <p className="font-serif text-text-on-dark-muted leading-relaxed">
-            <strong className="text-text-on-dark">Seven attempts later</strong>, the
-            insight: don&rsquo;t read the DOM. I hardcoded the theme colors in
-            TypeScript, selected them via React state, and let the data flow
-            through the tree. No race conditions, no timing bugs.
+            <strong className="text-text-on-dark">Seven attempts later</strong>,
+            the insight:{' '}
+            <em className="text-text-on-dark">don't read the DOM.</em> I
+            hardcoded the theme colors in TypeScript, selected them via React
+            state, and let the data flow through the tree. No race conditions,
+            no timing bugs.
           </p>
         </div>
       </section>
@@ -89,10 +96,9 @@ export default function GlimpseArtifact() {
             The first version had a 3D data visualization (409 lines), four
             tabs, and 50MB file support. Impressive, unused, and slow. I
             questioned each requirement, deleted the 3D viz outright, merged
-            correlation into the Overview tab, and cut the file limit to 10MB
-            &mdash; the size real spreadsheets actually are. The tool got
-            faster and clearer, and nobody has missed a single deleted
-            feature.
+            correlation into the Overview tab, and cut the file limit to 10MB -
+            the size real spreadsheets actually are. The tool got faster and
+            clearer, and nobody has missed a single deleted feature.
           </p>
         </div>
       </section>

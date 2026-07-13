@@ -7,6 +7,9 @@ Format follows [Keep a Changelog](https://keepachangelog.com/); this project is 
 
 ### Added
 - **`VOICE.md`** — single writing doctrine merging ONEOK work corpus (Teams/email mechanics, anti-slop) with portfolio gold (receipts, hard calls, registers). `CLAUDE.md` points agents here before any user-facing copy. Audit report: `tasks/voice-audit-2026-07-12.md`.
+
+### Changed
+- **Voice alignment pass** — skill taglines rewritten first-person with receipts (no Gallup paste); Shape/Glimpse descriptions plain; Glimpse flavor declarative; SWIFT flavor drops "not just"; SWIFT Approach renamed, storage bet leads with 3% underwrite, actable aphorism after Hard Call, hallway CTA; user-facing em dashes → spaced hyphens; optional italic pivots on Plyplan/Glimpse/Shape.
 - **Deepened SWIFT case study** — tenure (2022 Senior PM), team scope (~10–15 cross-functional), named hard call (intake funnel over feature factory), 220+ triaged / 2× key-feature adoption metrics; cut circular 380% maturity grid number; Foundations kept in prose as internal yardstick.
 - **Maker's note** — ultra-short parchment card in the Character Sheet bio column (`MakersNote.tsx`): why a gaming table, Tulsa, open invitation. Text-only v1; theme as signature, not costume.
 - **Quest-card → manuscript morph** (`utils/viewTransition.ts`) — nav actions run inside `document.startViewTransition`; each quest card shares a `view-transition-name` with its article page, so opening a quest expands the parchment card into the reading page and Back reverses it (scroll handled inside the snapshot window; skipped under reduced motion and in unsupported browsers). Suspense moved inside `ArtifactShell` so the morph target commits on first visit.

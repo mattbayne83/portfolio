@@ -44,7 +44,7 @@ export default function SkillCard({
       aria-pressed={isFlipped}
       aria-label={
         isFlipped
-          ? `${skill.name} — showing details. Activate to flip back.`
+          ? `${skill.name} - showing details. Activate to flip back.`
           : `${skill.name}, ${skill.thematicTitle}. Activate to flip the card and read more.`
       }
       onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onFlip() } }}

@@ -8,7 +8,7 @@ export const artifacts: ArtifactMeta[] = [
     subject: 'SWIFT Product Turnaround',
     subtitle: 'Case study · enterprise product leadership',
     description:
-      'Senior PM for SWIFT since 2022: rebuilt intake before the feature factory, lifted usability from 3rd to 50th percentile, and funded a 0→1 storage product — 100+ companies, $1.5B revenue stream.',
+      'Senior PM for SWIFT since 2022: rebuilt intake before the feature factory, lifted usability from 3rd to 50th percentile, and funded a 0→1 storage product - 100+ companies, $1.5B revenue stream.',
     type: 'article',
     category: 'lore',
     categoryLabel: 'Lore',
@@ -19,15 +19,15 @@ export const artifacts: ArtifactMeta[] = [
     difficulty: 4,
     skillsUsed: ['communication', 'maximizer', 'belief'],
     flavorText:
-      'From 3rd percentile to market standard — by fixing how work gets chosen, not just how screens look.',
+      'From 3rd percentile to market standard - by fixing how work gets chosen.',
   },
   {
     id: 'shape-matters',
     title: 'Shape Shifter',
     subject: 'Org Shape & Signal Decay',
-    subtitle: 'Interactive research tool',
+    subtitle: 'Research tool · org signal decay',
     description:
-      'Interactive research tool exploring how organizational depth drives signal decay and shapes institutional behavior.',
+      "Model your org's depth and watch signal die on the way up - 15 reference companies, 223 tests.",
     type: 'demo',
     category: 'artifact',
     categoryLabel: 'Artifact',
@@ -65,7 +65,7 @@ export const artifacts: ArtifactMeta[] = [
     subject: 'Private Data Explorer',
     subtitle: 'Browser EDA · Python / WebAssembly',
     description:
-      'Privacy-first exploratory data analysis. Upload CSV files and glimpse the truth in your data — all processed locally in your browser using Python.',
+      'CSV analysis in the browser - pandas via WebAssembly, zero server calls.',
     type: 'demo',
     category: 'artifact',
     categoryLabel: 'Artifact',
@@ -76,7 +76,6 @@ export const artifacts: ArtifactMeta[] = [
     difficulty: 5,
     skillsUsed: ['maximizer', 'ideation', 'belief'],
     flavorText:
-      "What if data analysis didn't require sending your data to strangers? Pyodide brings Python to the browser. Privacy stays with you.",
+      'Analysis without the upload. Python stays on your machine.',
   },
 ]
-

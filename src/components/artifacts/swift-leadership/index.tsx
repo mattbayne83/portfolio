@@ -24,10 +24,10 @@ export default function SwiftLeadershipArtifact() {
         </h2>
         <div className="space-y-4">
           <p className="drop-cap font-serif text-text-on-dark leading-relaxed">
-            In 2022 I became Senior Product Manager for SWIFT — ONEOK's B2B
+            In 2022 I became Senior Product Manager for SWIFT - ONEOK's B2B
             authorization and logistics platform that more than 100 companies
             and 400 weekly users depend on to move product worth $1.5 billion in
-            annual revenue. I led a cross-functional team of roughly 10–15 across
+            annual revenue. I led a cross-functional team of roughly 10-15 across
             engineering, operations, and support.
           </p>
           <p className="font-serif text-text-on-dark-muted leading-relaxed">
@@ -35,12 +35,12 @@ export default function SwiftLeadershipArtifact() {
             usability. Intake was ad-hoc: whoever shouted loudest got work.
             Cycle times were bloated, and the team had no shared language for
             measuring progress. Users tolerated the system because they had no
-            alternative — not because it worked well.
+            alternative - not because it worked well.
           </p>
         </div>
       </section>
 
-      {/* The Hard Call — peer to Glimpse's named decision sections */}
+      {/* The Hard Call */}
       <section className="mb-10">
         <h2 className="font-display text-sm font-semibold tracking-widest uppercase text-primary mb-4">
           The Hard Call: Intake Over Features
@@ -56,36 +56,40 @@ export default function SwiftLeadershipArtifact() {
             .
           </p>
           <p className="font-serif text-text-on-dark-muted leading-relaxed">
-            That meant saying no — or not yet — while we installed a repeatable
-            engine for evaluating work. Over twelve months we triaged 220+
-            requests and cut cycle time 60%. The tradeoff was real: less
-            visible shipping theater early on, in exchange for a system that
-            could actually decide what deserved engineering time.
+            That meant saying no - or not yet - while we installed a repeatable
+            engine for evaluating work. Over twelve months the team and I
+            triaged 220+ requests and cut cycle time 60%. The tradeoff was real:
+            less visible shipping theater early on, in exchange for a system
+            that could actually decide what deserved engineering time.
+          </p>
+          <p className="font-serif italic text-text-on-dark leading-relaxed">
+            When everything is a P0, rebuild intake before the next feature.
           </p>
         </div>
       </section>
 
-      {/* The Approach */}
+      {/* What We Built Next */}
       <section className="mb-10">
         <h2 className="font-display text-sm font-semibold tracking-widest uppercase text-primary mb-4">
-          The Approach
+          Foundations, Then the Storage Bet
         </h2>
         <div className="space-y-4">
           <p className="font-serif text-text-on-dark-muted leading-relaxed">
             With intake under control, I went after what we still couldn't see.
-            I built the Foundations maturity model — a scorecard across nine
-            dimensions of reliability, service, and usability — so leadership
+            I built the Foundations maturity model - a scorecard across nine
+            dimensions of reliability, service, and usability - so leadership
             and the team shared a language for product health. It is{' '}
             <em className="text-text-on-dark">our</em> yardstick, not a
-            third-party benchmark: the value is how we prioritize, not a
-            vanity percentage on a slide.
+            third-party benchmark: the value is how we prioritize, not a vanity
+            percentage on a slide.
           </p>
           <p className="font-serif text-text-on-dark-muted leading-relaxed">
-            In parallel, I identified an unmet need in digital storage
-            management, designed the product concept, built the business case,
-            and secured funding — positive NPV at 30% IRR, underwritten at just
-            3% adoption. Usability climbed from the 3rd to the 50th percentile,
-            and adoption of key features doubled.
+            In parallel, I put a 0→1 digital storage product in front of
+            leadership. The business case underwrote at just 3% adoption and
+            still cleared a positive NPV at 30% IRR. That bar was the point:
+            fund the bet only if it worked thin. The team then shipped the
+            turnaround work that moved usability and key-feature adoption - the
+            numbers are below.
           </p>
         </div>
       </section>
@@ -112,13 +116,12 @@ export default function SwiftLeadershipArtifact() {
         </div>
       </section>
 
-      {/* Closing CTA — catch intent at its peak */}
       <GoldDivider className="my-8" />
       <div className="text-center">
         <p className="font-serif italic text-text-on-dark-muted mb-4">
-          Want the full story behind these numbers?
+          Curious about the intake system - or the storage bet?
         </p>
-        <ContactButton label="Let's talk" subject="SWIFT — let's talk" />
+        <ContactButton label="Let's talk" subject="SWIFT - let's talk" />
       </div>
     </div>
   )

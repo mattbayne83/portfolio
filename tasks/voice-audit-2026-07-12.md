@@ -1,155 +1,245 @@
-# Voice audit — 2026-07-12
+# Voice critical review — Portfolio × `VOICE.md`
 
-Against `VOICE.md` (work corpus + portfolio gold). **Report only** — no copy applied until approved.
-
-Severity: **P0** blocks trust / fails name-swap · **P1** clear drift · **P2** mechanical / polish · **OK** leave alone
-
----
-
-## Summary
-
-| Zone | Grade | Notes |
-|------|-------|--------|
-| Skill card backs | A | Canon — protect |
-| Plyplan / Glimpse / Shape bodies | A− | Strong; mostly em-dash mechanics |
-| Hero bio + Current Quest | A− | Strong; minor joint polish |
-| Maker's Note | B+ | On-voice; slight slogan polish + em dash |
-| SWIFT body | B | Hard call good; Approach + CTA softer |
-| Skill card taglines (front) | D | Gallup third-person — P0 |
-| Quest `description`s | C | Marketing paste on Shape/Glimpse |
-| Quest flavors | B | Two "What if" openers; SWIFT "not just X" |
-| Meta / chrome CTAs | B− | Brochure CTA on SWIFT |
+**Date:** 2026-07-12 (refreshed against merged VOICE.md)  
+**Scope:** All user-facing strings (not code comments, not README)  
+**Verdict:** Gold core, cracked veneer. The manuscripts and skill *backs* already *are* the doctrine. The card fronts, two quest blurbs, SWIFT Approach/CTA, and joint mechanics still fail the name-swap and wire tests.
 
 ---
 
-## Issues and proposed resolutions
+## Overall scorecard
 
-### Skill cards (`src/data/skills.ts`)
+| Zone | Score | Pass core tests? | One-line judgment |
+|------|-------|------------------|-------------------|
+| Skill **backs** | **9/10** | Yes | Canon. Protect. Joints only. |
+| Plyplan body | **9/10** | Yes | Gold standard case study. |
+| Glimpse body | **9/10** | Yes | Gold. Aphorism-adjacent insight lands. |
+| Shape Matters body | **8.5/10** | Yes | Strong honesty; card blurb betrays it. |
+| Hero + Current Quest | **8.5/10** | Yes | Staccato identity is pure Matt. |
+| Maker's Note | **7.5/10** | Mostly | On-voice; one "What if" slot used; slight slogan polish. |
+| Chrome (footer, errors, CTAs demo) | **8/10** | Yes | "Have a problem worth solving?" is wire-adjacent. |
+| SWIFT body | **7/10** | Mixed | Hard call strong; Approach résumé-lists; CTA sells. |
+| Quest flavors + descriptions | **5/10** | No | Marketing + dual "What if" + "not just X". |
+| Skill **taglines** (front) | **2/10** | **Fail** | Gallup horoscope. Worst failure on the site. |
+| Meta description | **7.5/10** | Mostly | Facts good; em-dash joint. |
 
-| ID | Sev | Issue | Location | Proposed resolution |
-|----|-----|--------|----------|---------------------|
-| S1 | **P0** | Third-person Gallup tagline | Belief: `"Core values provide clarity and conviction."` | First-person one-liner, e.g. `"Will it hold up after I've moved on?"` (pulls from the back) |
-| S2 | **P0** | Third-person Gallup tagline | Communication: `"Puts thoughts into words that capture and hold attention."` | e.g. `"Numbers don't fund products - stories do."` |
-| S3 | **P0** | Third-person Gallup tagline | Woo: `"Draws energy from meeting new people and winning them over."` | e.g. `"Show up, learn the workarounds, follow through."` |
-| S4 | **P0** | Third-person Gallup tagline | Ideation: `"Fascinated by ideas and connections between disparate phenomena."` | e.g. `"Best ideas are trespassers from other fields."` |
-| S5 | **P0** | Third-person Gallup tagline | Maximizer: `"Transforms what's strong into something superb."` | e.g. `"Past average and still filing refinements."` |
-| S6 | P2 | Em dashes in skill backs | All five `flavorText` strings | Replace pivot em dashes with ` - ` (or period) per VOICE mechanics; keep content |
-| S7 | OK | Skill backs content | All five | **No content change** — canon |
-
----
-
-### Quest registry (`src/data/artifacts.ts`)
-
-| ID | Sev | Issue | Location | Proposed resolution |
-|----|-----|--------|----------|---------------------|
-| Q1 | P1 | Marketing / abstract description | Shape Matters: `"Interactive research tool exploring how organizational depth drives signal decay…"` | Plain: e.g. `"Model your org's depth and watch signal die on the way up - 15 reference companies, 223 tests."` |
-| Q2 | P1 | Marketing / abstract description | Glimpse: `"Privacy-first exploratory data analysis. Upload CSV files and glimpse the truth…"` | Plain: e.g. `"CSV analysis in the browser - pandas via WebAssembly, zero server calls."` |
-| Q3 | P2 | Em dash + density | SWIFT `description` | Keep facts; joint to ` - `; optional tighten "0→1" if too résumé |
-| Q4 | P1 | "not just X, Y" tool rhythm | SWIFT flavor: `"…not just how screens look."` | e.g. `"From 3rd percentile to market standard - by fixing how work gets chosen."` (drop the "not just") |
-| Q5 | P1 | "What if" as flavor default | Shape Matters flavor | Diversify: e.g. `"Most communication problems are geometry problems. I built a model to check."` |
-| Q6 | P1 | Second "What if" flavor | Glimpse flavor | Keep one site-wide max; rewrite Glimpse to declarative: e.g. `"Analysis without the upload. Python stays on your machine."` |
-| Q7 | OK | Plyplan description + flavor | Plyplan | **Leave** — plain, physical, on-voice |
-| Q8 | OK | Dual labels (subject vs title) | All quests | **Leave structure** — already correct |
-
-*Note: `description` may be lightly used in UI today; still fix for OG/future and consistency.*
+**Site-level risk:** A hiring manager flips a skill card and reads *you*. They never flip and only read the fronts → they meet a stranger writing Gallup paste. That is a doctrine failure at the first interaction.
 
 ---
 
-### Landing — Character Sheet (`CharacterSheet.tsx`, `MakersNote.tsx`)
+## Against the three core tests
 
-| ID | Sev | Issue | Location | Proposed resolution |
-|----|-----|--------|----------|---------------------|
-| L1 | P2 | Em dash joints | Current Quest, skill caption (`&mdash;`) | ` - ` or rephrase with period |
-| L2 | OK | Hero bio | "Started in the field…" | **Leave** — canon staccato |
-| L3 | OK | Role line / Current Quest facts | | **Leave** facts |
-| L4 | P2 | Maker's Note: em dash + slight slogan polish | `"…craft seriously—not a pitch deck in costume."` | `"…craft seriously - not a pitch deck in costume."` Content OK |
-| L5 | OK | Maker's Note open + Tulsa + open invitation | | **Leave** structure |
-| L6 | OK | "The Quest Log" / table chrome | | **Leave** — Register E |
+### 1. Every claim carries a receipt
 
----
+| Pass | Fail |
+|------|------|
+| Skill backs (3rd %, lumberyard, field users) | Skill taglines (zero receipts) |
+| Plyplan kerf, 30 tests, two optimizers | Shape/Glimpse `description` fields (abstractions) |
+| Glimpse 7 tries, 409 lines, 0 server calls | SWIFT "unmet need in digital storage" (true but thin - no named who/when) |
+| Shape 223 tests, 1,030,301 combos, 17% signal | |
+| SWIFT 220+, 60%, 3rd→50th, 3% adoption IRR | |
 
-### Maker's Mark / chrome (`MakersMark.tsx`, `ContactButton`, errors)
+### 2. Earned, not sold
 
-| ID | Sev | Issue | Location | Proposed resolution |
-|----|-----|--------|----------|---------------------|
-| C1 | OK | `"Have a problem worth solving?"` | Footer | **Leave** — on-voice, Register F |
-| C2 | OK | `"Get in touch"` | Footer button | **Leave** (or `"Email me"` if you want plainer) |
-| C3 | OK | Error: `"This quest didn't load"` / back to board | ArtifactErrorBoundary | **Leave** — theme + clear |
+| Pass | Fail |
+|------|------|
+| Foundations "our yardstick" | SWIFT CTA "Want the full story behind these numbers?" |
+| Plyplan "No AI, no magic" | Shape description "exploring how… shapes institutional behavior" |
+| Maximizer "that's the affliction" | Glimpse description "glimpse the truth in your data" (product brochure) |
+| Hard Call tradeoff named | SWIFT flavor "not just how screens look" (tool rhythm) |
 
----
+### 3. Would Matt type this on the wire?
 
-### SWIFT case study (`swift-leadership/index.tsx`)
-
-| ID | Sev | Issue | Location | Proposed resolution |
-|----|-----|--------|----------|---------------------|
-| W1 | P2 | Em dashes throughout body | Multiple | Mechanical pass to ` - ` / commas / periods |
-| W2 | OK | Challenge: tenure, team, 3rd % | Setup | **Leave** facts; optional tighten "roughly 10–15" if you want firmer |
-| W3 | OK | Hard Call section | Intake over features | **Leave** intent — strongest SWIFT section |
-| W4 | P1 | Approach drifts toward deck cadence | Foundations + storage paragraphs | Break into shorter beats; lead storage with the 3% underwrite; keep honest-yardstick line |
-| W5 | P1 | Brochure CTA | `"Want the full story behind these numbers?"` | Hallway voice: e.g. `"Curious about the intake system - or the storage bet?"` + button `"Let's talk"` |
-| W6 | P2 | Mailto subject uses em dash | `SWIFT — let's talk` | `SWIFT - let's talk` |
-| W7 | OK | Metrics set (no 380%) | MetricGrid | **Leave** set; labels already plain |
+| Sounds like hallway Matt | Does not |
+|--------------------------|----------|
+| "whoever shouted loudest got work" | "Fascinated by ideas and connections between disparate phenomena." |
+| "Dark mode should have been trivial. It wasn't." | "Interactive research tool exploring how organizational depth drives…" |
+| "Have a problem worth solving?" | "Puts thoughts into words that capture and hold attention." |
+| "Curious if…" energy in hard calls | "Want the full story behind these numbers?" |
 
 ---
 
-### Plyplan (`plyplan/index.tsx`)
+## DNA checklist (12 rules) — site diagnosis
 
-| ID | Sev | Issue | Location | Proposed resolution |
-|----|-----|--------|----------|---------------------|
-| P1 | P2 | Heavy `&mdash;` use | Body + caption | Mechanical joint pass only |
-| P2 | OK | Problem + Decision content | | **Leave** — gold standard |
-| P3 | OK | Accuracy bar / kerf honesty | | **Leave** |
-| P4 | OK | Stats + Launch App | | **Leave** |
-
----
-
-### Glimpse (`glimpse/index.tsx`)
-
-| ID | Sev | Issue | Location | Proposed resolution |
-|----|-----|--------|----------|---------------------|
-| G1 | P2 | `&mdash;` joints | Body + caption | Mechanical joint pass only |
-| G2 | OK | Premise, seven tries, deletion | | **Leave** — gold |
-| G3 | OK | Metrics (0 server, 409 lines, 7 attempts) | | **Leave** |
+| # | Rule | Site status |
+|---|------|-------------|
+| 1 | First person, builder | **Pass** on manuscripts/backs; **fail** on taglines |
+| 2 | Problems through people | **Pass** Woo, Glimpse upload fear, SWIFT "whoever shouted"; **weak** Shape card description |
+| 3 | Affirm situation before hard call | **Pass** SWIFT Hard Call, Plyplan Decision |
+| 4 | Soft disagree / clear "I chose" | **Pass** manuscripts |
+| 5 | Physical imagery | **Pass** Plyplan/Belief; SWIFT still office-abstract in Approach |
+| 6 | One aphorism per piece | **Mixed** - embedded but rarely italicized as the pivot gift; Woo ends with a strong one; Plyplan accuracy bar is the best |
+| 7 | Honest ledger | **Pass** Foundations, Shape delete param, Glimpse unused 3D |
+| 8 | Story funds numbers | **Pass** demos; SWIFT Approach dumps outcomes in the same breath as the case |
+| 9 | Staccato identity | **Pass** hero |
+| 10 | Dry warmth | **Pass** Maximizer affliction; Maker's Note slightly too polished |
+| 11 | Lessons as gifts (actable) | **Weak** - Shape/Glimpse teach; SWIFT doesn't hand the reader a play they can run |
+| 12 | Team credit | **Partial** - "we triaged"; team size named; no explicit credit beat |
 
 ---
 
-### Shape Matters (`shape-matters/index.tsx`)
+## Critical findings by surface
 
-| ID | Sev | Issue | Location | Proposed resolution |
-|----|-----|--------|----------|---------------------|
-| M1 | P2 | `&mdash;` joints | Body + caption | Mechanical joint pass only |
-| M2 | OK | Question / Model / Keeping It Honest | | **Leave** content |
-| M3 | OK | Provenance + theorem honesty | | **Leave** |
+### P0 - Skill card fronts (`skills.ts` taglines)
 
----
+These fail **name-swap**, **receipt**, and **never-write (third-person Gallup)** in one stroke. The backs are the product; the fronts currently *contradict* the backs.
 
-### Meta (`index.html`)
+| Card | Current (horoscope) | Why it fails | Proposed (≤12 words, from the back) |
+|------|---------------------|--------------|-------------------------------------|
+| Belief | Core values provide clarity and conviction. | Third person, no receipt | Will it hold up after I've moved on? |
+| Communication | Puts thoughts into words that capture and hold attention. | Gallup paste | Numbers don't fund products - stories do. |
+| Woo | Draws energy from meeting new people and winning them over. | Generic influencer | Show up, learn the workarounds, follow through. |
+| Ideation | Fascinated by ideas and connections between disparate phenomena. | Academic brochure | Best ideas are trespassers from other fields. |
+| Maximizer | Transforms what's strong into something superb. | Empty superlative | Past average and still filing refinements. |
 
-| ID | Sev | Issue | Location | Proposed resolution |
-|----|-----|--------|----------|---------------------|
-| H1 | P2 | Title/description em dashes | `Matt Bayne — Portfolio`, meta description | `Matt Bayne - Portfolio`; description joint to ` - ` |
-| H2 | OK | Meta facts | ships software / $1.5B / gaming table | **Leave** substance |
-
----
-
-### Out of scope for this pass
-
-- Code comments (not user-facing)  
-- README / CHANGELOG engineering prose (optional later)  
-- Visual theme labels (Rags to Riches, Scrying Glass) — Register E, intentional  
+**Do not** soft-edit these. Replace wholesale.
 
 ---
 
-## Suggested implementation order
+### P1 - Quest registry (`artifacts.ts`)
 
-1. **P0** — Rewrite five skill taglines (S1–S5)  
-2. **P1** — Quest descriptions + flavors (Q1–Q2, Q4–Q6)  
-3. **P1** — SWIFT Approach tighten + CTA (W4–W5)  
-4. **P2** — Global user-facing joint pass (em dash → ` - ` / period) on strings only  
-5. Re-read aloud against `VOICE.md` checklist  
+**Shape Matters description**  
+- Now: *Interactive research tool exploring how organizational depth drives signal decay and shapes institutional behavior.*  
+- Failures: "exploring how," abstract institutional language, zero receipts, name-swap pass.  
+- Proposed: *Model your org's depth and watch signal die on the way up - 15 reference companies, 223 tests.*
+
+**Glimpse description**  
+- Now: *Privacy-first exploratory data analysis. Upload CSV… glimpse the truth…*  
+- Failures: category jargon ("privacy-first EDA"), "glimpse the truth" sells.  
+- Proposed: *CSV analysis in the browser - pandas via WebAssembly, zero server calls.*
+
+**SWIFT description**  
+- Mostly receipt-heavy; good. Em dash → ` - `. Slight résumé stack is OK for a one-liner.
+
+**SWIFT flavor**  
+- Now: *…not just how screens look.*  
+- Failure: banned "not just X but Y" family.  
+- Proposed: *From 3rd percentile to market standard - by fixing how work gets chosen.*
+
+**Shape flavor**  
+- *What if the shape of an organization…* — fine alone, but…
+
+**Glimpse flavor**  
+- Second *What if* on the board. Doctrine: max one rhetorical door per *page*, and never the default pattern across cards.  
+- Proposed (declarative): *Analysis without the upload. Python stays on your machine.*  
+- Keep Shape's "What if" **or** Maker's Note "Why a gaming table?" as the site's one open door - not three.
+
+**Plyplan description + flavor**  
+- **Leave.** Model for all other cards.
+
+**Subtitles**  
+- "Interactive research tool" / "enterprise product leadership" are fine as scannable types. Optional: Shape → `Research tool · org signal decay` if you want less generic.
 
 ---
 
-## Approval needed before edit
+### P1 - SWIFT manuscript
 
-Please flag any row to **skip**, **rewrite yourself**, or **approve as proposed**. Default next step after your go: implement P0→P1 in one PR-sized pass, then P2 joints.
+**Keep**
+- Challenge setup (2022, team, $1.5B, shout-loudest intake)  
+- Hard Call section title + tradeoff ("shipping theater")  
+- Foundations honest-yardstick sentence  
+- Metrics without 380%
+
+**Fix**
+
+| Spot | Issue | Proposed direction |
+|------|--------|-------------------|
+| Approach ¶1–2 | Deck cadence: identify → design → business case → secured funding (résumé stack) | Split: Foundations beat, then storage bet. Lead storage with *3% adoption underwrite*. Shorter sentences. |
+| Approach ends with results | Numbers appear before Results section - story/metrics tangle | Move 3rd→50th / 2× into Results only; Approach stops at what you built |
+| "The Approach" heading | Generic vs named hard-call style | e.g. *What We Built Next* or *Foundations, Then the Storage Bet* |
+| CTA | Brochure sell | *Curious about the intake system - or the storage bet?* + `Let's talk` |
+| Team credit | Size only | One clause: what the team owned vs what you owned |
+| Actable lesson (DNA 11) | Missing | One short play, e.g. *When everything is a P0, rebuild intake before the next feature.* (italic at pivot) |
+| Joints | Em dashes throughout | ` - ` / periods |
+
+**People-in-problem (DNA 2):** Challenge mentions "users tolerated" - good. Could name *who* shouted (shippers? internal ops?) without breaking confidentiality - optional.
+
+---
+
+### P2 - Mechanics: joints site-wide
+
+User-facing em dashes / `&mdash;` appear in:
+
+- All five skill `flavorText`s  
+- Hero Current Quest, skill caption  
+- Maker's Note (tight `—` without spaces)  
+- SWIFT / Plyplan / Glimpse / Shape bodies + captions  
+- `index.html` title + meta (×3)  
+- Artifact mailto subject  
+
+**Rule from VOICE:** prefer ` - `; one pivot max per paragraph; don't upgrade for polish.
+
+This is mechanical and should ride with content edits - not a separate personality change.
+
+---
+
+### P2 - Aphorism discipline (DNA 6)
+
+Doctrine wants **one** earned, optionally italicized pivot gift per piece.
+
+| Piece | Best candidate already in text | Action |
+|-------|-------------------------------|--------|
+| Plyplan | *if the optimizer says two sheets… tool is broken* | Optional: italicize as pivot |
+| Glimpse | *don't read the DOM* / delete unused impressiveness | Optional: surface one line italic |
+| Shape | *The model earns each mechanism or loses it.* | Optional: italicize |
+| SWIFT | Missing clean gift | Add one after Hard Call |
+| Belief back | *will it hold up after I've moved on?* | Already the tagline candidate |
+| Woo back | *allies who haven't seen you follow through yet* | Strong; leave in prose |
+
+Don't spray aphorisms. One per manuscript max.
+
+---
+
+### Landing & chrome
+
+| Line | Verdict |
+|------|---------|
+| Hero bio staccato | **Keep** - identity canon |
+| "The through-line: a product manager who builds the thing himself." | **Keep** - earned thesis |
+| Current Quest proof | **Keep** facts; fix joint |
+| Maker's Note | **Keep** content; fix joint; counts as one rhetorical "Why?" - if Glimpse/Shape keep "What if," cut one |
+| "My top five of 34…" | **Keep** - clear, first person |
+| Quest Log / Begin Quest | **Keep** - Register E |
+| "Have a problem worth solving?" | **Keep** - best chrome line on the site |
+| "Get in touch" | **Keep** (or "Email me" if plainer) |
+| Error "This quest didn't load" | **Keep** |
+
+---
+
+### Demo manuscripts (Plyplan / Glimpse / Shape)
+
+**Critical praise:** These already implement VOICE better than the doctrine file describes it. Do not "improve" them into softer marketing.
+
+**Only nits:**
+- Joints (`&mdash;` → ` - `)  
+- Shape/Glimpse **card** copy (registry) lags the **page** copy - fix registry, not body  
+- Shape CTA "Enter the Lab" is theme-forward (Register E) - acceptable; "Launch the model" is plainer if you ever tire of theme
+
+---
+
+## Priority queue (recommended edit order)
+
+1. **P0** Replace 5 skill taglines  
+2. **P1** Shape + Glimpse descriptions; SWIFT + Glimpse flavors; kill "not just"  
+3. **P1** SWIFT Approach rewrite + CTA + one actable aphorism  
+4. **P2** Global user-facing joint pass  
+5. **P2** Optional italic pivots on Plyplan/Shape/Glimpse (light touch)  
+6. Re-run pre-ship checklist aloud  
+
+---
+
+## What not to touch
+
+- Skill back *content* (joints only)  
+- Plyplan / Glimpse / Shape section narratives  
+- Hero staccato + through-line  
+- Dual-label structure (subject over theme)  
+- Metric choices on SWIFT (post-380% cut)  
+- Table theme labels (Rags to Riches, Scrying Glass, etc.)
+
+---
+
+## Bottom line
+
+The portfolio does not need a new voice. It needs **the gold voice to win at every layer** - especially the skill card fronts and quest blurbs that still speak Gallup and product marketing. SWIFT is 70% there: finish the Approach so it reads like Plyplan's Decision, and replace the brochure CTA with hallway Matt.
+
+**Ready to implement** when you say go (P0→P1 first, or full pass).

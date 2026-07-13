@@ -26,17 +26,16 @@ export default function PlyplanArtifact() {
           <p className="drop-cap font-serif text-text-on-dark leading-relaxed">
             Every project I build starts at the lumberyard with the same
             question: how many sheets do I need? I used to answer it with a
-            pencil sketch and a guess &mdash; and I built Plyplan the weekend I
+            pencil sketch and a guess - and I built Plyplan the weekend I
             realized that question is a bin-packing problem computer science
             solved decades ago.
           </p>
           <p className="font-serif text-text-on-dark-muted leading-relaxed">
-            Type your pieces in &mdash; width, length, how many &mdash; and a
-            simple nesting algorithm packs them onto standard sheets. The
-            answer comes back as one bold number, with a cost estimate and a
-            cut diagram you can take straight to the saw. No AI, no magic
-            &mdash; a well-understood algorithm, applied where it earns its
-            keep.
+            Type your pieces in - width, length, how many - and a simple nesting
+            algorithm packs them onto standard sheets. The answer comes back as
+            one bold number, with a cost estimate and a cut diagram you can take
+            straight to the saw. No AI, no magic - a well-understood algorithm,
+            applied where it earns its keep.
           </p>
         </div>
       </section>
@@ -44,7 +43,7 @@ export default function PlyplanArtifact() {
       <ProductShot
         src={resultShot}
         alt="Plyplan on a phone: three pieces entered, one sheet needed, labeled cut diagram"
-        caption="Three pieces in, one answer out &mdash; sheet count, cost, and the cut diagram."
+        caption="Three pieces in, one answer out - sheet count, cost, and the cut diagram."
         maxWidth={300}
       />
 
@@ -55,19 +54,22 @@ export default function PlyplanArtifact() {
         </h2>
         <div className="space-y-4">
           <p className="font-serif text-text-on-dark-muted leading-relaxed">
-            Plyplan ships two optimizers because waste isn&rsquo;t the only
-            cost. Minimum-waste packing gives the tightest sheets, but at the
-            saw, every fence change is a chance to make a mistake. The
-            second strategy packs pieces into shelves &mdash; same-height rows,
-            same-width rips &mdash; so you set the fence once per row and just
-            cut. Fewer perfect rectangles, fewer ruined ones.
+            Plyplan ships two optimizers because waste isn't the only cost.
+            Minimum-waste packing gives the tightest sheets, but at the saw,
+            every fence change is a chance to make a mistake. The second
+            strategy packs pieces into shelves - same-height rows, same-width
+            rips - so you set the fence once per row and just cut. Fewer perfect
+            rectangles, fewer ruined ones.
           </p>
           <p className="font-serif text-text-on-dark-muted leading-relaxed">
-            The physics is modeled honestly: the blade eats an eighth of an
-            inch of material with every pass, so the packer charges kerf to the
-            right and bottom edge of every placed piece &mdash; the way a real
-            saw does. My accuracy bar for the whole tool: if the optimizer says
-            two sheets and the woodworker fits it on one, the tool is broken.
+            The physics is modeled honestly: the blade eats an eighth of an inch
+            of material with every pass, so the packer charges kerf to the right
+            and bottom edge of every placed piece - the way a real saw does. My
+            accuracy bar for the whole tool:{' '}
+            <em className="text-text-on-dark">
+              if the optimizer says two sheets and the woodworker fits it on
+              one, the tool is broken.
+            </em>
           </p>
         </div>
       </section>

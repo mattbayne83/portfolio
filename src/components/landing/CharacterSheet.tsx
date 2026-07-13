@@ -164,8 +164,8 @@ export default function CharacterSheet() {
               <span className="text-primary text-[11px] font-bold uppercase tracking-widest mr-2">
                 Current Quest
               </span>
-              Rebuilding the $1.5B SWIFT platform &mdash; usability up from the
-              3rd to the 50th percentile
+              Rebuilding the $1.5B SWIFT platform - usability up from the 3rd to
+              the 50th percentile
             </p>
 
             {/* Theme → signature: why this table, where from, what he's open to */}
@@ -180,8 +180,8 @@ export default function CharacterSheet() {
 
         {/* Card mechanic caption — names the framework, cues the flip */}
         <p className="text-center font-serif italic text-sm text-text-on-dark-muted mt-1">
-          My top five of 34 CliftonStrengths &mdash; flip a card to read the
-          story behind each.
+          My top five of 34 CliftonStrengths - flip a card to read the story
+          behind each.
         </p>
 
         {/* Scroll cue — the quest board lives below the fold. Button (not an
