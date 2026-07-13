@@ -8,7 +8,7 @@ export const artifacts: ArtifactMeta[] = [
     subject: 'SWIFT Product Turnaround',
     subtitle: 'Case study · enterprise product leadership',
     description:
-      'Transformed a legacy authorization platform into a modern product serving 100+ companies and protecting $1.5B in revenue.',
+      'Senior PM for SWIFT since 2022: rebuilt intake before the feature factory, lifted usability from 3rd to 50th percentile, and funded a 0→1 storage product — 100+ companies, $1.5B revenue stream.',
     type: 'article',
     category: 'lore',
     categoryLabel: 'Lore',
@@ -19,7 +19,7 @@ export const artifacts: ArtifactMeta[] = [
     difficulty: 4,
     skillsUsed: ['communication', 'maximizer', 'belief'],
     flavorText:
-      'From 3rd percentile to market standard. The story of rebuilding a product that 100 companies depend on every day.',
+      'From 3rd percentile to market standard — by fixing how work gets chosen, not just how screens look.',
   },
   {
     id: 'shape-matters',
